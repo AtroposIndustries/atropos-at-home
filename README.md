@@ -81,13 +81,18 @@ Two others are kept as harmless safeguards, and are **not** what they look like:
 The form posts directly to Zoho CRM Web-to-Lead, targeted at a hidden iframe.
 Configuration lives in `lib/zoho-form.js`.
 
-**The form ID and secret in that file are still placeholders**, so
-`isZohoConfigured()` returns `false`. In that state the form does not submit: it
-shows the enquirer `hello@atropos.com.au` instead of a success panel, and logs a
-console warning in development. This matters because the POST is cross-origin
-and its response unreadable — without the guard, an unconfigured form would show
-a success panel for every enquiry and keep none of them. See `docs/LAUNCH.md`
-for the two values that still need filling in.
+The form ID and secret are live as of 2026-08-23, so `isZohoConfigured()`
+returns `true`. They are public by design — both ship in this site's page source
+on every route, making them identifiers rather than secrets. What actually
+prevents arbitrary submissions is the webform's **Form Location URL**
+restriction, configured in Zoho.
+
+Should either ever revert to a placeholder, `isZohoConfigured()` returns `false`
+and the form stops submitting: it shows the enquirer `hello@atropos.com.au`
+rather than a success panel. That guard matters because the POST is cross-origin
+and its response unreadable — without it, an unconfigured form shows a success
+panel for every enquiry and keeps none of them. A unit test asserts the shipped
+config is not a placeholder, so the revert cannot pass CI.
 
 `submitDisposition()` is what decides this. It resolves a submit attempt to
 `invalid`, `ignore`, `unavailable` or `send`, and **`send` is the only one the

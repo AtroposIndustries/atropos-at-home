@@ -296,12 +296,24 @@ be set to `atroposathome.com.au` in Zoho before launch, and Zoho validates
 
 ### Configuration to supply before launch
 
-| Value | Where |
-|-------|-------|
-| `xnQsjsdp` (form ID) | `lib/zoho-form.js` |
-| `xmIwtLD` (form secret) | `lib/zoho-form.js` |
-| Accepted domain (captcha off — see above) | Zoho CRM webform settings |
-| Lead Create notification + auto-response rules | Zoho CRM workflow settings |
+| Value | Where | Status |
+|-------|-------|--------|
+| `xnQsjsdp` (form ID) | `lib/zoho-form.js` | Supplied 2026-08-23 |
+| `xmIwtLD` (form secret) | `lib/zoho-form.js` | Supplied 2026-08-23 |
+| Form Location URL (captcha off — see above) | Zoho CRM webform settings | Set |
+| Lead Create notification | Webform → `Notify Leads Owner` | On |
+| Acknowledgement to enquirer | Webform → `Acknowledge Visitor` | **Deferred — off** |
+
+The last two turned out not to need separate workflow rules; the webform's own
+Notification section covers both. `Acknowledge Visitor` is deliberately off
+until a confirmation email template exists, so enquirers currently receive no
+email. See `docs/LAUNCH.md` section 2.
+
+Reading the generated source also revealed two hidden inputs Zoho posts and this
+hand-built form did not: `aG9uZXlwb3Q` (base64 `"honeypot"`, Zoho's own decoy)
+and `zc_gad`. Both are now mirrored empty as `ZOHO_COMPAT_FIELDS`, on the
+principle that a hand-built form should differ from Zoho's generated one only
+where the difference is intended.
 
 ## Brand changes
 

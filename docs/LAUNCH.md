@@ -8,11 +8,18 @@ Everything below is outside the codebase.
 issued, HTTPS enforced, all nine routes serving. They are kept below as a
 record of the configuration, not as work outstanding.
 
-**Outstanding:** section 1 (the Zoho webform), section 2 (the workflow rules)
-and the unticked boxes in sections 5 and 6. Until section 1 is done the contact
-form has nowhere to post — it detects this and shows the enquirer
-`hello@atropos.com.au` rather than a false success, so enquiries reach you by
-email in the meantime.
+**Section 1 is done** — the webform exists and its credentials are wired into
+`lib/zoho-form.js`, so the form submits for real.
+
+**Outstanding:**
+
+1. **Action on Submission still points at `https://www.atropos.com.au`** on the
+   Zoho webform. It must be `https://atroposathome.com.au/zoho-thanks.html`,
+   matching `ZOHO_CONFIG.returnUrl`. See section 1 step 5.
+2. **Acknowledge Visitor is deliberately off** pending a confirmation email
+   template — see section 2. Enquirers currently get no email at all.
+3. The unticked boxes in sections 5 and 6, including the first real end-to-end
+   submission. **Nothing here has been submitted through a browser yet.**
 
 ## 1. Zoho CRM webform
 
@@ -47,8 +54,25 @@ this site's form is built around. If the generated code does not post to
    were wrong.
 7. Publish as **Source code** (not Embed, Link or iFrame) and copy the two
    hidden values:
-   - `xnQsjsdp` → `ZOHO_CONFIG.formId` in `lib/zoho-form.js`
-   - `xmIwtLD`  → `ZOHO_CONFIG.formSecret` in `lib/zoho-form.js`
+   - `xnQsjsdp` → `ZOHO_CONFIG.formId` in `lib/zoho-form.js` — **done**
+   - `xmIwtLD`  → `ZOHO_CONFIG.formSecret` in `lib/zoho-form.js` — **done**
+
+   The generated source is worth reading rather than just harvesting, because
+   this form is hand-built and has to match what Zoho expects. What that check
+   caught on 2026-08-23:
+
+   - Zoho posts two hidden inputs we did not have: `aG9uZXlwb3Q`
+     (base64 `"honeypot"` — Zoho's own decoy) and `zc_gad` (Google Ads click
+     id). Both are now mirrored, empty, as `ZOHO_COMPAT_FIELDS`.
+   - Zoho's mandatory set is First Name, Last Name, Email, Description, which
+     matches our client-side validation exactly, Phone optional.
+   - The field names came through readable, not as `LEADCF*` custom fields, so
+     no mapping was needed.
+   - `Atropos at Home - Contact Form` was already present in the Lead Source
+     picklist and pre-selected, so step 3 was already satisfied.
+   - No captcha field was emitted, confirming step 6.
+
+   If the form is ever regenerated, re-read the source and re-check these.
 
 `isZohoConfigured()` returns false while either is a placeholder. In that state
 the form blocks the submit and shows the enquirer `hello@atropos.com.au` instead
@@ -58,16 +82,34 @@ carries it.
 
 ## 2. Zoho workflow rules
 
-These replace the emails the retired Microsoft Graph API route used to send:
+These replace the emails the retired Microsoft Graph API route used to send.
+Separate workflow rules turned out to be unnecessary: the webform's own
+**Notification** section covers both natively.
 
-- **Internal notification** — workflow rule on Lead Create, emailing
-  `hello@atropos.com.au`.
-- **Acknowledgement to the enquirer** — auto-response rule on the webform.
+- **Internal notification** — `Notify Leads Owner`, **on**. The browser cannot
+  read Zoho's cross-origin response, so a rejected lead still shows the visitor
+  a success message. An absent notification email is the only signal that
+  something has broken, which makes this a monitoring mechanism rather than a
+  convenience. Do not switch it off.
+- **Acknowledgement to the enquirer** — `Acknowledge Visitor`, **currently off,
+  deliberately**. Deferred on 2026-08-23 until a confirmation email template is
+  written. **Until then an enquirer receives no email at all** — the site's
+  inline panel promising contact within one business day is the only
+  acknowledgement they get.
 
-Set both up. The browser cannot read Zoho's cross-origin response, so a
-rejected lead still shows the visitor a success message. An absent notification
-email is the only signal that something has broken — which makes rule 1 a
-monitoring mechanism, not just a convenience.
+  The webform was repurposed from the dissolved Atropos Technologies business,
+  so any template already attached to it is likely branded for that company.
+  Check or rewrite the template before enabling the toggle: this email goes to
+  a customer.
+
+Two other things on that screen are worth knowing:
+
+- **Duplicates are detected on Email** and go to manual approval instead of
+  creating a lead, so a returning enquirer's message waits in Leads → Actions →
+  **Approve Leads**. Do not assume the owner notification fires for those.
+  Meanwhile our form has already shown them a success panel.
+- **Assign Owner** is set to Brock Pinnington. Double Opt-in, Cookie Consent
+  Management, Visitor Tracking and Request for Approval are all off.
 
 ## 3. GitHub settings — DONE
 

@@ -13,6 +13,7 @@ import {
   validateContactFields,
   nextSubmitState,
   submitDisposition,
+  ZOHO_COMPAT_FIELDS,
 } from '../../lib/zoho-form'
 
 /** How long to wait for the hidden iframe's `load` event before giving up. */
@@ -168,6 +169,11 @@ export function ContactForm({
             value={ZOHO_CONFIG.leadSource}
             readOnly
           />
+
+          {/* Empty inputs Zoho's own generated form posts. See ZOHO_COMPAT_FIELDS. */}
+          {Object.entries(ZOHO_COMPAT_FIELDS).map(([name, value]) => (
+            <input key={name} type="hidden" name={name} value={value} readOnly />
+          ))}
 
           {sent ? (
             <div className="form-success visible">
