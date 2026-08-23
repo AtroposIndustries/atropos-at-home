@@ -16,10 +16,9 @@ record of the configuration, not as work outstanding.
 1. **Action on Submission still points at `https://www.atropos.com.au`** on the
    Zoho webform. It must be `https://atroposathome.com.au/zoho-thanks.html`,
    matching `ZOHO_CONFIG.returnUrl`. See section 1 step 5.
-2. **The welcome email is still branded for Atropos Technologies** — see
-   section 2. It comes from a module-level workflow rule, not the webform, and
-   it reaches customers. The webform's own `Acknowledge Visitor` is separately
-   off, pending a template.
+2. **Enquirers receive no acknowledgement email**, deliberately — see section
+   2. The inherited Technologies welcome email has been disabled; the Atropos
+   at Home replacement has not been written yet.
 3. The unticked boxes in sections 5 and 6, including the first real end-to-end
    submission. **Nothing here has been submitted through a browser yet.**
 
@@ -82,7 +81,7 @@ of a success panel, and logs a console warning in development. Replacing both
 values is the whole of the code-side work — commit and push, and the deploy
 carries it.
 
-## 2. Zoho workflow rules
+## 2. Zoho email notifications
 
 These replace the emails the retired Microsoft Graph API route used to send.
 Separate workflow rules turned out to be unnecessary: the webform's own
@@ -97,39 +96,45 @@ Separate workflow rules turned out to be unnecessary: the webform's own
   deliberately**. Deferred on 2026-08-23 until a confirmation email template is
   written.
 
-  **This does not mean enquirers receive no email.** A separate, pre-existing
-  Zoho **workflow automation on new lead inbound** sends every new lead a
-  welcome email, and as of 2026-08-23 that email is still branded for the
-  dissolved Atropos Technologies business. It is not attached to the webform,
-  so nothing on the webform screens reveals it and switching form toggles will
-  not affect it. Find it at `Setup → Automation → Workflow Rules`; the copy
-  lives on the rule's Email Notification action.
+  As of 2026-08-23 an enquirer therefore receives **no email at all**. The
+  site's inline "within one business day" panel is the only acknowledgement.
+  That is deliberate, not a defect — but it is the one genuine remaining gap.
 
-  **Rebranding that template is outstanding, and it reaches customers.**
+### Three places an email to the enquirer can come from
 
-  Keep that rule at module level — do not re-point it at the webform. Leads
-  arrive by phone, referral, manual entry and import as well as through the
-  site, and all of them should be acknowledged. Tying it to the form would make
-  the welcome email a property of one channel rather than of becoming a lead.
+Worth knowing all three, because "no email is configured on the form" does not
+mean "no email is sent". This cost real time to work out:
 
-  One open question: whether anything other than Atropos at Home still creates
-  leads in this CRM. The Lead Source picklist still carries `Atropos
-  Industries`, `Technologies-Zephyrus` and `Atropos Technologies - Contact
-  Form`. If Industries is still live, an unconditional rule sends its enquirers
-  an Atropos at Home welcome — in which case the rule needs a Lead Source
-  criterion and one template per brand.
+1. **The webform's `Acknowledge Visitor` toggle** — off, as above.
+2. **Webform auto-response rules**, at `Setup → Channels → Webforms →
+   Auto-Response Rules`. A separate tab from the form. These fire
+   independently of the toggle above and several can be active at once.
+   Deactivate one with its toggle rather than deleting it — deleting a rule
+   associated with a webform disables that form's acknowledgement option.
+3. **Zoho CRM Cadences.** These appear on neither the webform screens nor in
+   Workflow Rules.
 
-  Worth checking that rule's other actions too. If it also performs a field
-  update, it is the likely source of `LAUNCH10` appearing in Discount Code on
-  new leads.
+A Cadence inherited from the dissolved Atropos Technologies business was
+sending every new lead a Technologies-branded welcome email. It was found and
+**disabled on 2026-08-23**; Atropos at Home does not want a nurture sequence at
+this stage. Check Cadences first if an unexpected email ever goes out.
 
-  Distinct from the above: auto-response rules attached to webforms live at
-  `Setup → Channels → Webforms → Auto-Response Rules`, a separate tab from the
-  form. They fire independently of the `Acknowledge Visitor` toggle and several
-  can be active at once, so check there as well before concluding no form-level
-  email exists. Deactivate such a rule with its toggle rather than deleting it —
-  deleting one associated with a webform disables that form's acknowledgement
-  option.
+Also resolved 2026-08-23: `LAUNCH10` was being written into the Discount Code
+field on new leads, fixed Zoho-side.
+
+### If the acknowledgement email is built later
+
+Keep it at **module level** — do not attach it to the webform. Leads arrive by
+phone, referral, manual entry and import as well as through the site, and all
+of them should be acknowledged. Tying it to the form would make the
+acknowledgement a property of one channel rather than of becoming a lead.
+
+One open question if it is ever made unconditional: whether anything other than
+Atropos at Home still creates leads in this CRM. The Lead Source picklist still
+carries `Atropos Industries`, `Technologies-Zephyrus` and `Atropos Technologies
+- Contact Form`. If Industries is still live, an unconditional rule sends its
+enquirers an Atropos at Home email — in which case it needs a Lead Source
+criterion and one template per brand.
 
 Two other things on that screen are worth knowing:
 
