@@ -5,27 +5,39 @@ import { useTheme } from '../../lib/theme-context'
 import { SectionLabel } from '../ui/SectionLabel'
 import { Button } from '../ui/Button'
 import { initCircuitPulses } from '../../lib/circuit-pulses'
+import {
+  ZOHO_CONFIG,
+  ZOHO_FIELD_NAMES,
+  HONEYPOT_FIELD_NAME,
+  isZohoConfigured,
+  validateContactFields,
+  nextSubmitState,
+} from '../../lib/zoho-form'
 
 /**
  * ContactForm
  *
  * Props:
- *   label       — eyebrow label
- *   title       — JSX headline (use <em> for emphasis)
- *   intro       — supporting paragraph
- *   services    — array of { value, label } for the select dropdown
- *   apiEndpoint — where to POST the form (default: '/api/contact')
+ *   label    — eyebrow label
+ *   title    — JSX headline (use <em> for emphasis)
+ *   intro    — supporting paragraph
+ *   services — array of { value, label } for the select dropdown
+ *
+ * Submits natively to Zoho CRM's Web-to-Lead endpoint, into a hidden iframe.
+ * The site is statically hosted with no server to proxy through, and Zoho's
+ * endpoint sends no CORS headers, so fetch() would be blocked — a native form
+ * POST is a navigation rather than an XHR, so it is not subject to CORS.
  */
 export function ContactForm({
   label   = 'Get in Touch',
   title,
   intro   = "Tell us about your project and we'll be in touch within one business day.",
   services = [],
-  apiEndpoint = '/api/contact',
 }) {
   const brand = useTheme()
   const isHome = brand === 'home'
   const archRef = useRef(null)
+  const formRef = useRef(null)
 
   useEffect(() => {
     if (archRef.current) {
@@ -36,43 +48,48 @@ export function ContactForm({
 
   const [fields, setFields] = useState({
     firstName: '', lastName: '', email: '',
-    phone: '', message: '',
+    phone: '', message: '', [HONEYPOT_FIELD_NAME]: '',
   })
-  const [errors, setErrors]   = useState({})
-  const [sending, setSending] = useState(false)
-  const [sent, setSent]       = useState(false)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle')
+
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production' && !isZohoConfigured()) {
+      console.warn(
+        '[ContactForm] Zoho Web-to-Lead is not configured — formId/formSecret ' +
+        'are still placeholders in lib/zoho-form.js. Submissions will not reach the CRM.'
+      )
+    }
+  }, [])
+
+  const sending = status === 'submitting'
+  const sent    = status === 'sent'
 
   const set = (key) => (e) => {
     setFields((f) => ({ ...f, [key]: e.target.value }))
     setErrors((err) => ({ ...err, [key]: false }))
   }
 
-  function validate() {
-    const e = {}
-    if (!fields.firstName.trim())                                e.firstName = true
-    if (!fields.lastName.trim())                                 e.lastName  = true
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))      e.email     = true
-    if (!fields.message.trim())                                  e.message   = true
-    setErrors(e)
-    return Object.keys(e).length === 0
+  /**
+   * Validates, then lets the browser submit the form for real. The POST is a
+   * navigation targeted at the hidden iframe, which is what gets us past the
+   * absence of CORS headers on Zoho's endpoint — so this handler must NOT
+   * preventDefault on the success path.
+   */
+  function handleSubmit(e) {
+    const { valid, errors: nextErrors } = validateContactFields(fields)
+    setErrors(nextErrors)
+
+    if (!valid || status !== 'idle') {
+      e.preventDefault()
+      return
+    }
+    setStatus((s) => nextSubmitState(s, { type: 'submit' }))
+    // No preventDefault — the native submit proceeds into the iframe.
   }
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-    if (!validate()) return
-    setSending(true)
-    try {
-      await fetch(apiEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...fields, brand }),
-      })
-      setSent(true)
-    } catch {
-      // Keep sending state off so user can retry
-    } finally {
-      setSending(false)
-    }
+  function handleIframeLoad() {
+    setStatus((s) => nextSubmitState(s, { type: 'iframe-load' }))
   }
 
   const titleEl = title ?? (
@@ -101,7 +118,27 @@ export function ContactForm({
           <p className="contact-intro">{intro}</p>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <form
+          ref={formRef}
+          className="contact-form"
+          onSubmit={handleSubmit}
+          action={ZOHO_CONFIG.endpoint}
+          method="POST"
+          target="zoho-sink"
+          acceptCharset="UTF-8"
+          noValidate
+        >
+          <input type="hidden" name="xnQsjsdp"   value={ZOHO_CONFIG.formId}     readOnly />
+          <input type="hidden" name="xmIwtLD"    value={ZOHO_CONFIG.formSecret} readOnly />
+          <input type="hidden" name="actionType" value={ZOHO_CONFIG.actionType} readOnly />
+          <input type="hidden" name="returnURL"  value={ZOHO_CONFIG.returnUrl}  readOnly />
+          <input
+            type="hidden"
+            name={ZOHO_FIELD_NAMES.leadSource}
+            value={ZOHO_CONFIG.leadSource}
+            readOnly
+          />
+
           {sent ? (
             <div className="form-success visible">
               <div className="success-icon">✓</div>
@@ -114,13 +151,13 @@ export function ContactForm({
             <>
               <div className="form-row">
                 <Field
-                  id="firstName" label="First Name"
+                  id="firstName" name={ZOHO_FIELD_NAMES.firstName} label="First Name"
                   value={fields.firstName} onChange={set('firstName')}
                   invalid={errors.firstName} error="Please enter your first name."
                   autoComplete="given-name"
                 />
                 <Field
-                  id="lastName" label="Last Name"
+                  id="lastName" name={ZOHO_FIELD_NAMES.lastName} label="Last Name"
                   value={fields.lastName} onChange={set('lastName')}
                   invalid={errors.lastName} error="Please enter your last name."
                   autoComplete="family-name"
@@ -129,13 +166,13 @@ export function ContactForm({
 
               <div className="form-row">
                 <Field
-                  id="email" label="Email Address" type="email"
+                  id="email" name={ZOHO_FIELD_NAMES.email} label="Email Address" type="email"
                   value={fields.email} onChange={set('email')}
                   invalid={errors.email} error="Please enter a valid email address."
                   autoComplete="email"
                 />
                 <Field
-                  id="phone" label="Phone" type="tel"
+                  id="phone" name={ZOHO_FIELD_NAMES.phone} label="Phone" type="tel"
                   value={fields.phone} onChange={set('phone')}
                   optional autoComplete="tel"
                 />
@@ -145,6 +182,7 @@ export function ContactForm({
                 <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
+                  name={ZOHO_FIELD_NAMES.message}
                   rows={5}
                   value={fields.message}
                   onChange={set('message')}
@@ -152,6 +190,22 @@ export function ContactForm({
                   required
                 />
                 <span className="field-error">Please enter a message.</span>
+              </div>
+
+              <div
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}
+              >
+                <label htmlFor={HONEYPOT_FIELD_NAME}>Do not fill this in</label>
+                <input
+                  id={HONEYPOT_FIELD_NAME}
+                  name={HONEYPOT_FIELD_NAME}
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={fields[HONEYPOT_FIELD_NAME]}
+                  onChange={set(HONEYPOT_FIELD_NAME)}
+                />
               </div>
 
               <div className="form-footer">
@@ -165,13 +219,20 @@ export function ContactForm({
             </>
           )}
         </form>
+
+        <iframe
+          name="zoho-sink"
+          title="Contact form submission target"
+          onLoad={handleIframeLoad}
+          style={{ display: 'none' }}
+        />
       </div>
     </section>
   )
 }
 
 // Internal field helper
-function Field({ id, label, type = 'text', value, onChange, invalid, error, optional, autoComplete }) {
+function Field({ id, name, label, type = 'text', value, onChange, invalid, error, optional, autoComplete }) {
   return (
     <div className={`form-field ${invalid ? 'invalid' : ''}`}>
       <label htmlFor={id}>
@@ -180,6 +241,7 @@ function Field({ id, label, type = 'text', value, onChange, invalid, error, opti
       </label>
       <input
         id={id}
+        name={name}
         type={type}
         value={value}
         onChange={onChange}
