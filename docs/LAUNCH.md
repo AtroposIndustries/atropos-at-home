@@ -16,8 +16,10 @@ record of the configuration, not as work outstanding.
 1. **Action on Submission still points at `https://www.atropos.com.au`** on the
    Zoho webform. It must be `https://atroposathome.com.au/zoho-thanks.html`,
    matching `ZOHO_CONFIG.returnUrl`. See section 1 step 5.
-2. **Acknowledge Visitor is deliberately off** pending a confirmation email
-   template — see section 2. Enquirers currently get no email at all.
+2. **The welcome email is still branded for Atropos Technologies** — see
+   section 2. It comes from a module-level workflow rule, not the webform, and
+   it reaches customers. The webform's own `Acknowledge Visitor` is separately
+   off, pending a template.
 3. The unticked boxes in sections 5 and 6, including the first real end-to-end
    submission. **Nothing here has been submitted through a browser yet.**
 
@@ -91,16 +93,43 @@ Separate workflow rules turned out to be unnecessary: the webform's own
   a success message. An absent notification email is the only signal that
   something has broken, which makes this a monitoring mechanism rather than a
   convenience. Do not switch it off.
-- **Acknowledgement to the enquirer** — `Acknowledge Visitor`, **currently off,
+- **Acknowledgement to the enquirer** — `Acknowledge Visitor`, **off,
   deliberately**. Deferred on 2026-08-23 until a confirmation email template is
-  written. **Until then an enquirer receives no email at all** — the site's
-  inline panel promising contact within one business day is the only
-  acknowledgement they get.
+  written.
 
-  The webform was repurposed from the dissolved Atropos Technologies business,
-  so any template already attached to it is likely branded for that company.
-  Check or rewrite the template before enabling the toggle: this email goes to
-  a customer.
+  **This does not mean enquirers receive no email.** A separate, pre-existing
+  Zoho **workflow automation on new lead inbound** sends every new lead a
+  welcome email, and as of 2026-08-23 that email is still branded for the
+  dissolved Atropos Technologies business. It is not attached to the webform,
+  so nothing on the webform screens reveals it and switching form toggles will
+  not affect it. Find it at `Setup → Automation → Workflow Rules`; the copy
+  lives on the rule's Email Notification action.
+
+  **Rebranding that template is outstanding, and it reaches customers.**
+
+  Keep that rule at module level — do not re-point it at the webform. Leads
+  arrive by phone, referral, manual entry and import as well as through the
+  site, and all of them should be acknowledged. Tying it to the form would make
+  the welcome email a property of one channel rather than of becoming a lead.
+
+  One open question: whether anything other than Atropos at Home still creates
+  leads in this CRM. The Lead Source picklist still carries `Atropos
+  Industries`, `Technologies-Zephyrus` and `Atropos Technologies - Contact
+  Form`. If Industries is still live, an unconditional rule sends its enquirers
+  an Atropos at Home welcome — in which case the rule needs a Lead Source
+  criterion and one template per brand.
+
+  Worth checking that rule's other actions too. If it also performs a field
+  update, it is the likely source of `LAUNCH10` appearing in Discount Code on
+  new leads.
+
+  Distinct from the above: auto-response rules attached to webforms live at
+  `Setup → Channels → Webforms → Auto-Response Rules`, a separate tab from the
+  form. They fire independently of the `Acknowledge Visitor` toggle and several
+  can be active at once, so check there as well before concluding no form-level
+  email exists. Deactivate such a rule with its toggle rather than deleting it —
+  deleting one associated with a webform disables that form's acknowledgement
+  option.
 
 Two other things on that screen are worth knowing:
 

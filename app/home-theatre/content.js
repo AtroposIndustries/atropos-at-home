@@ -101,6 +101,6 @@ export const FAQ_ITEMS = [
 ]
 
 export const CTA = {
-  primaryCta: { label: 'Book a Consultation', href: 'mailto:hello@atropos.com.au' },
+  primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/#offerings' },
 }
