@@ -101,9 +101,9 @@ directory, `Dockerfile`, `DockerfileHome`, `DockerfileTech`, `cloudbuild.yaml`,
 `pnpm-workspace.yaml`.
 
 `.npmrc` (`shamefully-hoist=true`, `node-linker=hoisted`) exists to make pnpm's
-symlinked store behave inside the workspace. With the workspace gone it should
-no longer be needed, but removal must be **confirmed by a clean install and
-build**, not assumed — if the build breaks without it, keep it.
+symlinked store behave. **Resolved by experiment on 2026-08-23: it is still
+required** even with the workspace gone — without it, `next dev`'s require-hook
+fails under pnpm on Windows. The file is retained.
 
 The `.gitignore` is rewritten for a single Next app: `node_modules`, `.next`,
 `out`, `.env*`, editor and OS noise. The Terraform block goes.
