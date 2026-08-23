@@ -9,6 +9,11 @@ export const metadata = {
   alternates: {
     canonical: 'https://atroposathome.com.au/review',
   },
+  openGraph: {
+    type:        'website',
+    url:         'https://atroposathome.com.au/review',
+    description: 'Share your experience with Atropos at Home. We\'ll help you put it into words.',
+  },
 }
 
 // Baked in at build time by the deploy workflow — static export has no runtime env.
