@@ -37,7 +37,7 @@ components/   UI library — layout/, sections/, ui/
 hooks/        useScrollReveal, useNavScroll
 lib/          Theme context, circuit pulses, Zoho form config
 styles/       base.css, home-theme.css, local.css, alt-theme.css
-public/       Images, llms.txt, CNAME, .nojekyll
+public/       Images, llms.txt, CNAME, .nojekyll, zoho-thanks.html
 ```
 
 `components/` intentionally contains components no page currently renders. They
@@ -54,12 +54,14 @@ components. Start there.
 Every push to `main` runs `.github/workflows/deploy.yml`: test, lint, build,
 publish `out/` to GitHub Pages. There is no server and no container.
 
-Two files in `public/` are load-bearing and must never be deleted:
+Three files in `public/` are load-bearing and must never be deleted:
 
 - **`.nojekyll`** — without it GitHub runs Jekyll, which ignores
   underscore-prefixed directories and drops `_next/`, leaving the site
   unstyled.
 - **`CNAME`** — keeps the custom domain attached across deploys.
+- **`zoho-thanks.html`** — the contact form's `returnURL` target; Zoho
+  redirects the hidden iframe here after accepting a lead.
 
 ## Contact form
 

@@ -27,7 +27,7 @@
 
 :root {
   /* ── Colour Palette ───────────────────────────────────────
-     Core brand colours shared by both sites.
+     Core brand colours shared across the site's themes.
      Site-specific accent colours are set in the theme file.  */
   --forrest:    #1f2e30;
   --forrest-rgb:  31, 46, 48;

@@ -8,11 +8,15 @@ any of it; the contact form and the custom domain do not work until it is done.
 1. Zoho CRM → Setup → Developer Space → Webforms → create a form for the
    **Leads** module.
 2. Add the fields: First Name, Last Name, Email, Phone, Description, Lead Source.
-3. Set **accept submissions from** to `atroposathome.com.au`. Leaving this
+3. `Lead Source` is a picklist — Zoho drops a submitted value that is not a
+   configured option, silently, with the lead still arriving but unattributed.
+   Setup → Modules and Fields → Leads → Lead Source → add the picklist value
+   `Atropos at Home - Contact Form` exactly.
+4. Set **accept submissions from** to `atroposathome.com.au`. Leaving this
    unrestricted lets anyone post leads into the CRM.
-4. Enable Zoho's captcha. The form ID and secret are public in the page source,
+5. Enable Zoho's captcha. The form ID and secret are public in the page source,
    so the endpoint is publicly submittable.
-5. Publish as **HTML source code** and copy the two hidden values:
+6. Publish as **HTML source code** and copy the two hidden values:
    - `xnQsjsdp` → `ZOHO_CONFIG.formId` in `lib/zoho-form.js`
    - `xmIwtLD`  → `ZOHO_CONFIG.formSecret` in `lib/zoho-form.js`
 
@@ -80,15 +84,23 @@ things here are entirely client-side:
 
 - [ ] The custom cursor renders and follows the pointer.
 - [ ] The browser console is clean on every route.
+- [ ] Confirm whether any Adobe Fonts (Typekit) face served by
+      `use.typekit.net/zjg4jao.css` (imported in `styles/home-theme.css` and
+      `styles/alt-theme.css`) is actually rendering anywhere on the site. It
+      looks likely to be a leftover from the shared monorepo; if nothing on
+      the page actually uses one of its faces, the import can be removed.
 
 Do this on the deployed static site, not the dev server — `output: 'export'` is the
-artefact that actually ships.
+artefact that actually ships. Since the site is only addressable at the custom
+domain set up in section 4, `pnpm build && npx serve out` over a local build
+satisfies this too — it is the same artefact, just served from localhost.
 
 ## 6. Post-launch checks
 
 - [ ] All nine routes load over HTTPS on the custom domain.
 - [ ] `https://atroposathome.com.au/sitemap.xml` and `/robots.txt` resolve.
 - [ ] A real form submission creates a Lead in Zoho CRM.
+- [ ] The new Lead's Lead Source reads "Atropos at Home - Contact Form".
 - [ ] The internal notification email arrives.
 - [ ] The enquirer receives the acknowledgement.
 - [ ] Google Analytics (`G-8RGK41Y2L5`) records the visit.

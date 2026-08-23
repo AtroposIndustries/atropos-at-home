@@ -14,6 +14,9 @@ import {
   nextSubmitState,
 } from '../../lib/zoho-form'
 
+/** How long to wait for the hidden iframe's `load` event before giving up. */
+const SUBMIT_TIMEOUT_MS = 15000
+
 /**
  * ContactForm
  *
@@ -21,7 +24,9 @@ import {
  *   label    — eyebrow label
  *   title    — JSX headline (use <em> for emphasis)
  *   intro    — supporting paragraph
- *   services — array of { value, label } for the select dropdown
+ *   services — currently unused; no <select> exists to render it into. All
+ *              nine pages still pass it. Retained for an upcoming redesign —
+ *              do not remove it as dead code.
  *
  * Submits natively to Zoho CRM's Web-to-Lead endpoint, into a hidden iframe.
  * The site is statically hosted with no server to proxy through, and Zoho's
@@ -37,7 +42,6 @@ export function ContactForm({
   const brand = useTheme()
   const isHome = brand === 'home'
   const archRef = useRef(null)
-  const formRef = useRef(null)
 
   useEffect(() => {
     if (archRef.current) {
@@ -52,6 +56,12 @@ export function ContactForm({
   })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
+  const [stalled, setStalled] = useState(false)
+  const timeoutRef = useRef(null)
+
+  useEffect(() => {
+    return () => clearTimeout(timeoutRef.current)
+  }, [])
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production' && !isZohoConfigured()) {
@@ -84,11 +94,19 @@ export function ContactForm({
       e.preventDefault()
       return
     }
+    setStalled(false)
     setStatus((s) => nextSubmitState(s, { type: 'submit' }))
     // No preventDefault — the native submit proceeds into the iframe.
+
+    clearTimeout(timeoutRef.current)
+    timeoutRef.current = setTimeout(() => {
+      setStatus((s) => nextSubmitState(s, { type: 'reset' }))
+      setStalled(true)
+    }, SUBMIT_TIMEOUT_MS)
   }
 
   function handleIframeLoad() {
+    clearTimeout(timeoutRef.current)
     setStatus((s) => nextSubmitState(s, { type: 'iframe-load' }))
   }
 
@@ -119,7 +137,6 @@ export function ContactForm({
         </div>
 
         <form
-          ref={formRef}
           className="contact-form"
           onSubmit={handleSubmit}
           action={ZOHO_CONFIG.endpoint}
@@ -212,9 +229,17 @@ export function ContactForm({
                 <Button variant="submit" type="submit" loading={sending}>
                   Send Message
                 </Button>
-                <p className="form-privacy">
-                  We respect your privacy. Your details will never be shared.
-                </p>
+                {stalled ? (
+                  <p className="form-privacy">
+                    That&apos;s taking longer than expected. Please try again, or
+                    email us directly at{' '}
+                    <a href="mailto:hello@atropos.com.au">hello@atropos.com.au</a>.
+                  </p>
+                ) : (
+                  <p className="form-privacy">
+                    We respect your privacy. Your details will never be shared.
+                  </p>
+                )}
               </div>
             </>
           )}

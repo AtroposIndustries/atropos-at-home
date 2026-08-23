@@ -5,10 +5,10 @@ import { createContext, useContext } from 'react'
 /**
  * ThemeContext
  * Provides brand identity ('tech' | 'home' | 'industries') to
- * every component in the tree. Set once in each app's root layout.
+ * every component in the tree. Set once in the app's root layout.
  */
 
-const ThemeContext = createContext('tech')
+const ThemeContext = createContext('home')
 
 export function ThemeProvider({ brand, children }) {
   return (
@@ -32,5 +32,5 @@ export function useTheme() {
  */
 export function useBrandClass() {
   const brand = useTheme()
-  return (map) => map[brand] ?? map.tech ?? ''
+  return (map) => map[brand] ?? map.home ?? ''
 }
