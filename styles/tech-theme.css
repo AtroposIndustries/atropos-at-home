@@ -1,0 +1,63 @@
+/* ============================================================
+   ATROPOS TECHNOLOGIES — Theme
+   Overrides the base.css design tokens for this brand.
+
+   Link order in every Technologies HTML file:
+     <link rel="stylesheet" href="../shared/base.css">
+     <link rel="stylesheet" href="tech-theme.css">
+   ============================================================ */
+
+@import url("https://use.typekit.net/zjg4jao.css");
+
+:root {
+  --font-heading: 'Lexend', sans-serif;
+  --font-body:    'Lexend', sans-serif;
+  --font-display: 'Lexend', sans-serif; /* override base default — Cormorant not used on Technologies */
+
+  /* Accent colour — Gum Tree green */
+  --accent:       var(--gum);
+  --accent-light: var(--mist);
+
+  /* Type scale — ~20% smaller than base defaults */
+  --text-xs:  11px;
+  --text-sm:  13px;
+  --text-md:  15px;
+  --text-lg:  16px;
+  --text-xl:  clamp(22px, 3.2vw, 42px);
+  --text-2xl: clamp(22px, 2.4vw, 30px);
+  --text-3xl: clamp(28px, 3.2vw, 48px);
+  --text-4xl: clamp(32px, 4.8vw, 60px);
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
+nav {
+  background: linear-gradient(180deg, rgba(31,31,38,0.96) 0%, transparent 100%);
+}
+nav.scrolled {
+  background-color: rgba(31,31,38,0.97);
+}
+
+.nav-drawer {
+  background-color: rgba(31,31,38,0.98);
+}
+
+/* Nav CTA — gold outline, fills on hover */
+.nav-cta {
+  color: var(--gold);
+  background-color: transparent;
+  border: 1px solid rgba(201,185,154,0.4);
+}
+.nav-cta:hover {
+  background-color: var(--gold);
+  color: var(--warm-dark);
+  border-color: var(--gold);
+}
+
+/* ── Hero title em colour ────────────────────────────────── */
+.hero-title em { color: var(--mist); }
+
+/* ── CTA title em colour ─────────────────────────────────── */
+.cta-title em { color: var(--mist); }
+
+/* ── Contact title em ────────────────────────────────────── */
+.contact-title em { color: var(--mist); }

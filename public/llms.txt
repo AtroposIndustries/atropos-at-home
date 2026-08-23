@@ -1,0 +1,29 @@
+# Atropos at Home
+> Premium smart home automation, distributed audio, and home theatre — Hobart, Tasmania, Australia
+
+## About
+Atropos at Home is a Tasmanian business delivering end-to-end smart home automation, distributed audio, premium home theatre design, home networking, and acoustic treatment. We work with architects, builders, and discerning homeowners across Tasmania. Parent company: Atropos Industries Pty Ltd, Hobart, TAS 7000.
+
+## Services
+- Smart Home Automation: Whole-home integration of lighting, climate, security, blinds, and entertainment using RTI, Control4, and Crestron. New builds and retrofits.
+- Premium Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration.
+- Distributed Audio / Full-home Sound: Multi-room audio with Bluesound, Sonance, KEF, and Bowers & Wilkins. Outdoor audio included.
+- Network & Connectivity: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
+- Acoustic Treatment: Purpose-built broadband absorbers, diffusers, and bass traps for home theatres and listening rooms.
+- Ongoing Support & Maintenance: Remote monitoring, update management, and priority on-site support.
+
+## Service Area
+Primary: Hobart, Tasmania. Also: Launceston, and broader Tasmania.
+
+## Contact
+Email: hello@atropos.com.au
+Website: https://atroposathome.com.au
+
+## Links
+- Smart Home: https://atroposathome.com.au/smart-home
+- Home Theatre: https://atroposathome.com.au/home-theatre
+- Audio: https://atroposathome.com.au/audio
+- Network: https://atroposathome.com.au/network
+- Acoustic Treatment: https://atroposathome.com.au/acoustic
+- Support: https://atroposathome.com.au/support
+- About: https://atroposathome.com.au/about
