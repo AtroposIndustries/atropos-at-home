@@ -79,10 +79,25 @@ Two others are kept as harmless safeguards, and are **not** what they look like:
 ## Contact form
 
 The form posts directly to Zoho CRM Web-to-Lead, targeted at a hidden iframe.
-Configuration lives in `lib/zoho-form.js`. The form ID and secret in that file
-are still placeholders, so `isZohoConfigured()` currently returns `false` and
-the form logs a console warning in development. See `docs/LAUNCH.md` for the
-values that still need filling in.
+Configuration lives in `lib/zoho-form.js`.
+
+**The form ID and secret in that file are still placeholders**, so
+`isZohoConfigured()` returns `false`. In that state the form does not submit: it
+shows the enquirer `hello@atropos.com.au` instead of a success panel, and logs a
+console warning in development. This matters because the POST is cross-origin
+and its response unreadable — without the guard, an unconfigured form would show
+a success panel for every enquiry and keep none of them. See `docs/LAUNCH.md`
+for the two values that still need filling in.
+
+`submitDisposition()` is what decides this. It resolves a submit attempt to
+`invalid`, `ignore`, `unavailable` or `send`, and **`send` is the only one the
+handler may let through without `preventDefault`** — the native POST is what
+gets past the missing CORS headers, so a stray `preventDefault` on that path
+silently breaks the form. Anything you add to the submit handler needs to
+preserve that. Zoho's captcha must also stay off: enabling it adds a required
+field to Zoho's generated form that this hand-built form does not render, which
+would make every submission fail — and fail invisibly, for the same unreadable-
+response reason.
 
 ## Design
 

@@ -1,7 +1,18 @@
 # Launch runbook
 
-Everything below is outside the codebase. The site builds and deploys without
-any of it; the contact form and the custom domain do not work until it is done.
+Everything below is outside the codebase.
+
+**Status as of 2026-08-23:** the site is live at
+[atroposathome.com.au](https://atroposathome.com.au) over HTTPS. Sections 3
+(GitHub settings) and 4 (DNS) are **done** — domain verified, certificate
+issued, HTTPS enforced, all nine routes serving. They are kept below as a
+record of the configuration, not as work outstanding.
+
+**Outstanding:** section 1 (the Zoho webform), section 2 (the workflow rules)
+and the unticked boxes in sections 5 and 6. Until section 1 is done the contact
+form has nowhere to post — it detects this and shows the enquirer
+`hello@atropos.com.au` rather than a false success, so enquiries reach you by
+email in the meantime.
 
 ## 1. Zoho CRM webform
 
@@ -13,15 +24,23 @@ any of it; the contact form and the custom domain do not work until it is done.
    Setup → Modules and Fields → Leads → Lead Source → add the picklist value
    `Atropos at Home - Contact Form` exactly.
 4. Set **accept submissions from** to `atroposathome.com.au`. Leaving this
-   unrestricted lets anyone post leads into the CRM.
-5. Enable Zoho's captcha. The form ID and secret are public in the page source,
-   so the endpoint is publicly submittable.
+   unrestricted lets anyone post leads into the CRM. Zoho validates `returnURL`
+   against this same list, so `zoho-thanks.html` fails without it.
+5. **Leave Zoho's captcha off.** It adds a required field to Zoho's own
+   generated form; this form is hand-built and renders no such field, so
+   enabling captcha rejects every submission — invisibly, because the response
+   is cross-origin. Spam is handled by the domain restriction above plus the
+   honeypot input. An earlier version of this runbook and the design spec both
+   called for captcha; both were wrong.
 6. Publish as **HTML source code** and copy the two hidden values:
    - `xnQsjsdp` → `ZOHO_CONFIG.formId` in `lib/zoho-form.js`
    - `xmIwtLD`  → `ZOHO_CONFIG.formSecret` in `lib/zoho-form.js`
 
-`isZohoConfigured()` returns false while either is a placeholder, and the form
-logs a console warning in development.
+`isZohoConfigured()` returns false while either is a placeholder. In that state
+the form blocks the submit and shows the enquirer `hello@atropos.com.au` instead
+of a success panel, and logs a console warning in development. Replacing both
+values is the whole of the code-side work — commit and push, and the deploy
+carries it.
 
 ## 2. Zoho workflow rules
 
@@ -36,7 +55,7 @@ rejected lead still shows the visitor a success message. An absent notification
 email is the only signal that something has broken — which makes rule 1 a
 monitoring mechanism, not just a convenience.
 
-## 3. GitHub settings
+## 3. GitHub settings — DONE
 
 Note there are **two** different Settings pages, and both are needed. The
 organisation one verifies a domain for the whole org; the repository one
@@ -70,10 +89,11 @@ workflow"** button (`workflow_dispatch`) builds but does **not** deploy. To
 redeploy, either push a commit, or use **"Re-run all jobs"** on a previous push
 run, which preserves the original push event.
 
-## 4. DNS
+## 4. DNS — DONE
 
-The domain is currently delegated to a deleted Google Cloud DNS zone, so it
-does not resolve at all. Move the delegation to Synergy Wholesale, then:
+This was resolved on 2026-08-23: the delegation was moved off the deleted
+Google Cloud DNS zone and the records below are live. `www` redirects to the
+apex. Retained as the record of what is configured.
 
 | Type | Name | Value |
 |------|------|-------|
@@ -81,8 +101,8 @@ does not resolve at all. Move the delegation to Synergy Wholesale, then:
 | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 | CNAME | `www` | `atroposindustries.github.io` |
 
-Then Settings → Pages → **Enforce HTTPS**, once the certificate issues (up to
-24 hours).
+HTTPS is enforced and the certificate covers both `atroposathome.com.au` and
+`www.atroposathome.com.au`.
 
 ## 5. Pre-launch check that has NOT been done
 
@@ -93,12 +113,20 @@ handler's branches, the iframe/target wiring, the Zoho field names, the state
 machine's unit tests. What curl cannot see is client-side behaviour, and three
 things here are entirely client-side:
 
-**The contact form** — the highest stakes, because it has no failure feedback path:
+**The contact form** — the highest stakes. Once section 1 is done it has no
+failure feedback path at all; until then, the only feedback path it has is the
+unconfigured fallback, which is itself untested in a browser:
 
 - [ ] Load the page. The success panel must NOT already be showing.
 - [ ] Submit the form empty. Inline field errors appear; the page does not navigate.
 - [ ] Submit it validly. The success panel appears and the page does NOT navigate away.
 - [ ] The Network tab shows a POST to `crm.zoho.com.au`.
+
+While section 1 is still outstanding, the third box behaves differently and is
+worth checking in its own right — it is the state the live site is in now:
+
+- [ ] With placeholders still in place, a valid submit shows the
+      `hello@atropos.com.au` message, NOT the success panel, and issues no POST.
 
 **The review wizard** at `/review/`:
 
@@ -115,15 +143,18 @@ things here are entirely client-side:
       looks likely to be a leftover from the shared monorepo; if nothing on
       the page actually uses one of its faces, the import can be removed.
 
-Do this on the deployed static site, not the dev server — `output: 'export'` is the
-artefact that actually ships. Since the site is only addressable at the custom
-domain set up in section 4, `pnpm build && npx serve out` over a local build
-satisfies this too — it is the same artefact, just served from localhost.
+Do this on the deployed static site, not the dev server — `output: 'export'` is
+the artefact that actually ships. The live domain serves exactly that artefact,
+so checking there is the real thing; `pnpm build && npx serve out` over a local
+build satisfies it equally, being the same artefact served from localhost.
 
 ## 6. Post-launch checks
 
-- [ ] All nine routes load over HTTPS on the custom domain.
-- [ ] `https://atroposathome.com.au/sitemap.xml` and `/robots.txt` resolve.
+- [x] All nine routes load over HTTPS on the custom domain. *(Verified by curl
+      2026-08-23: all nine return 200, `www` redirects to the apex.)*
+- [x] `https://atroposathome.com.au/sitemap.xml` and `/robots.txt` resolve.
+      *(Verified by curl 2026-08-23, along with `/llms.txt` and
+      `/zoho-thanks.html`.)*
 - [ ] A real form submission creates a Lead in Zoho CRM.
 - [ ] The new Lead's Lead Source reads "Atropos at Home - Contact Form".
 - [ ] The internal notification email arrives.

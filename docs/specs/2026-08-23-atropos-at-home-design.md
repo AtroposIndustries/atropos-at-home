@@ -235,9 +235,17 @@ navigation rather than an XHR, so CORS does not apply. The form therefore uses:
   preserves the channel tagging the old API route sent to Zoho;
 - a hidden `<iframe name="zoho-sink">` whose `load` event advances the UI to the
   existing success state;
-- a honeypot input hidden via CSS, plus Zoho's own captcha enabled on the
-  webform. The form ID and secret are public in page source, so the endpoint is
-  publicly submittable and needs both.
+- a honeypot input hidden via CSS, plus the webform's "accept submissions from"
+  domain restriction. The form ID and secret are public in page source, so the
+  endpoint is publicly submittable and needs both.
+
+  **Superseded:** this originally specified Zoho's own captcha as the second
+  measure. Enabling it is incompatible with the mechanism above — Zoho's captcha
+  adds a required field to the generated form, and this form is hand-built and
+  renders no such field, so every submission would be rejected. Combined with
+  the accepted limitation below, that failure would be invisible: the visitor
+  would see a success panel for a lead that never arrived. The domain
+  restriction takes the captcha's place.
 
 ### Accepted limitation
 
@@ -247,6 +255,27 @@ the Zoho side: a notification rule on Lead Create means an absent email is the
 signal that something has broken. If stronger guarantees are needed later, a
 Cloudflare Worker calling the Zoho REST API is a drop-in replacement for the
 submit path and this design stays compatible with that change.
+
+### Unconfigured fail-safe
+
+The limitation above has one case the Zoho-side mitigation cannot cover: a form
+whose credentials are still placeholders has no rule to fire, because there is
+no webform to reject the lead. The site went live in that state, showing a
+success panel for every enquiry and keeping none of them.
+
+`submitDisposition({ configured, valid, state })` in `lib/zoho-form.js` resolves
+a submit attempt to one of `invalid` / `ignore` / `unavailable` / `send`, and
+`send` is the only one the handler allows through to the native POST. When
+`isZohoConfigured()` is false the attempt resolves to `unavailable` and the form
+offers `hello@atropos.com.au` instead of pretending to have sent. Field errors
+outrank the outage deliberately, so a visitor with an empty surname is shown the
+field rather than an email address.
+
+This narrows the limitation rather than removing it: a rejection by a webform
+that *does* exist is still invisible, and that remains the notification rule's
+job. It also decouples the two halves of launch — the guard ships without
+waiting on the CRM, and a future placeholder regression degrades to a working
+contact route instead of silent loss.
 
 ### Moved into Zoho
 
@@ -261,8 +290,9 @@ The Microsoft Graph code and the `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`,
 Per the agreed sequencing, the full mechanism is built now with the
 account-specific values as clearly-marked placeholders in a single
 `lib/zoho-form.js` config export, so going live is a matter of filling in the
-three values in the table below. The webform's "accept submissions from" domain
-must be set to `atroposathome.com.au` in Zoho before launch.
+values in the table below. The webform's "accept submissions from" domain must
+be set to `atroposathome.com.au` in Zoho before launch, and Zoho validates
+`returnURL` against the same permitted-domain list.
 
 ### Configuration to supply before launch
 
@@ -270,7 +300,7 @@ must be set to `atroposathome.com.au` in Zoho before launch.
 |-------|-------|
 | `xnQsjsdp` (form ID) | `lib/zoho-form.js` |
 | `xmIwtLD` (form secret) | `lib/zoho-form.js` |
-| Accepted domain + captcha | Zoho CRM webform settings |
+| Accepted domain (captcha off — see above) | Zoho CRM webform settings |
 | Lead Create notification + auto-response rules | Zoho CRM workflow settings |
 
 ## Brand changes

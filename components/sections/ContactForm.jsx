@@ -12,6 +12,7 @@ import {
   isZohoConfigured,
   validateContactFields,
   nextSubmitState,
+  submitDisposition,
 } from '../../lib/zoho-form'
 
 /** How long to wait for the hidden iframe's `load` event before giving up. */
@@ -56,7 +57,9 @@ export function ContactForm({
   })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
-  const [stalled, setStalled] = useState(false)
+  // null | 'stalled' | 'unavailable' — which footer message to show in place
+  // of the privacy line. Both are failure paths; they need different copy.
+  const [notice, setNotice] = useState(null)
   const timeoutRef = useRef(null)
 
   useEffect(() => {
@@ -84,24 +87,34 @@ export function ContactForm({
    * Validates, then lets the browser submit the form for real. The POST is a
    * navigation targeted at the hidden iframe, which is what gets us past the
    * absence of CORS headers on Zoho's endpoint — so this handler must NOT
-   * preventDefault on the success path.
+   * preventDefault on the 'send' path.
    */
   function handleSubmit(e) {
     const { valid, errors: nextErrors } = validateContactFields(fields)
     setErrors(nextErrors)
 
-    if (!valid || status !== 'idle') {
+    const disposition = submitDisposition({
+      configured: isZohoConfigured(),
+      valid,
+      state: status,
+    })
+
+    if (disposition !== 'send') {
       e.preventDefault()
+      // An unconfigured form would otherwise POST into the void and still show
+      // the success panel, because the cross-origin response is unreadable.
+      if (disposition === 'unavailable') setNotice('unavailable')
       return
     }
-    setStalled(false)
+
+    setNotice(null)
     setStatus((s) => nextSubmitState(s, { type: 'submit' }))
     // No preventDefault — the native submit proceeds into the iframe.
 
     clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => {
       setStatus((s) => nextSubmitState(s, { type: 'reset' }))
-      setStalled(true)
+      setNotice('stalled')
     }, SUBMIT_TIMEOUT_MS)
   }
 
@@ -195,7 +208,7 @@ export function ContactForm({
                 />
               </div>
 
-<div className={`form-field ${errors.message ? 'invalid' : ''}`}>
+              <div className={`form-field ${errors.message ? 'invalid' : ''}`}>
                 <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
@@ -229,8 +242,15 @@ export function ContactForm({
                 <Button variant="submit" type="submit" loading={sending}>
                   Send Message
                 </Button>
-                {stalled ? (
-                  <p className="form-privacy">
+                {notice === 'unavailable' ? (
+                  <p className="form-privacy" role="status">
+                    Our enquiry form is temporarily unavailable. Please email us
+                    directly at{' '}
+                    <a href="mailto:hello@atropos.com.au">hello@atropos.com.au</a>{' '}
+                    and we&apos;ll come straight back to you.
+                  </p>
+                ) : notice === 'stalled' ? (
+                  <p className="form-privacy" role="status">
                     That&apos;s taking longer than expected. Please try again, or
                     email us directly at{' '}
                     <a href="mailto:hello@atropos.com.au">hello@atropos.com.au</a>.
