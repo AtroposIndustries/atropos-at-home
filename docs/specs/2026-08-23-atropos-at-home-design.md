@@ -167,9 +167,11 @@ Two files in `public/` are load-bearing:
 - **`.nojekyll`** — without it GitHub runs Jekyll, which ignores
   underscore-prefixed directories, so `_next/` is never published and the site
   loads with no CSS or JS. This is the most common Next-on-Pages failure.
-- **`CNAME`** containing `atroposathome.com.au` — keeps the custom domain
-  attached across deploys. A domain set only in repository settings is wiped by
-  Actions-based deploys.
+- **`CNAME`** containing `atroposathome.com.au` — **superseded by execution on
+  2026-08-23.** This rationale was wrong: it describes branch-based publishing.
+  Under a custom Actions workflow GitHub ignores any `CNAME` file, and the
+  Settings → Pages value is authoritative. The file is retained as a harmless
+  safeguard only. See README.
 
 `404.html` is emitted by the export automatically and picked up by Pages.
 

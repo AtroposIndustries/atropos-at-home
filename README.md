@@ -54,14 +54,27 @@ components. Start there.
 Every push to `main` runs `.github/workflows/deploy.yml`: test, lint, build,
 publish `out/` to GitHub Pages. There is no server and no container.
 
-Three files in `public/` are load-bearing and must never be deleted:
+One file in `public/` is load-bearing:
 
-- **`.nojekyll`** — without it GitHub runs Jekyll, which ignores
-  underscore-prefixed directories and drops `_next/`, leaving the site
-  unstyled.
-- **`CNAME`** — keeps the custom domain attached across deploys.
 - **`zoho-thanks.html`** — the contact form's `returnURL` target; Zoho
-  redirects the hidden iframe here after accepting a lead.
+  redirects the hidden iframe here after accepting a lead. Deleting it breaks
+  the form's success path.
+
+Two others are kept as harmless safeguards, and are **not** what they look like:
+
+- **`CNAME`** does nothing here. It configures the custom domain only for
+  branch-based publishing. This site deploys from a GitHub Actions workflow, and
+  GitHub's docs are explicit that in that case "no `CNAME` file is created, and
+  any existing `CNAME` file is ignored and is not required". **The custom domain
+  is set in Settings → Pages, and that setting is authoritative.** The file is
+  retained only so the two cannot silently disagree if publishing ever moves to
+  a branch. If you change the domain, change it in Settings — editing this file
+  achieves nothing.
+- **`.nojekyll`** prevents Jekyll from dropping `_next/`, which matters for
+  branch-based publishing. Whether Jekyll runs at all on an artifact uploaded by
+  `actions/upload-pages-artifact` is not something GitHub documents either way,
+  so this is retained untested rather than removed on an assumption. It costs
+  nothing; leave it.
 
 ## Contact form
 

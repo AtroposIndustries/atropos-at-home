@@ -36,14 +36,39 @@ rejected lead still shows the visitor a success message. An absent notification
 email is the only signal that something has broken — which makes rule 1 a
 monitoring mechanism, not just a convenience.
 
-## 3. GitHub repository settings
+## 3. GitHub settings
 
-- Settings → Pages → Source: **GitHub Actions**.
-- Settings → Secrets and variables → Actions → Variables: add
-  `NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME` with the Google review link.
-- Organisation settings → Pages → **verify `atroposathome.com.au`** before
-  attaching it to the repository. GitHub's own guidance: verification prevents
-  domain-takeover attacks.
+Note there are **two** different Settings pages, and both are needed. The
+organisation one verifies a domain for the whole org; the repository one
+attaches it to this specific site.
+
+**Organisation** — `github.com/organizations/AtroposIndustries/settings/pages`:
+
+- **Verify `atroposathome.com.au`** before attaching it to the repository, via
+  the TXT record it gives you. GitHub's own guidance: verification prevents
+  domain-takeover attacks. There is no "custom domain" field on this page.
+
+**Repository** — `github.com/AtroposIndustries/atropos-at-home/settings/pages`:
+
+- Build and deployment → Source: **GitHub Actions**. Not "Deploy from a branch",
+  which runs Jekyll and will not serve the `out/` artifact.
+- Custom domain: **`atroposathome.com.au`**. This is the setting that actually
+  attaches the domain — the `CNAME` file in `public/` is ignored under Actions
+  publishing. If the field is not visible, the site has not deployed
+  successfully yet; deploy first, then set it.
+- Enforce HTTPS, once the certificate has issued (up to 24 hours).
+
+**Repository → Secrets and variables → Actions → Variables:**
+
+- `NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME` — the Google review link. Optional; the
+  review page falls back to an inert `#` without it.
+
+### Re-deploying
+
+The `deploy` job is gated on `github.event_name == 'push'`, so the **"Run
+workflow"** button (`workflow_dispatch`) builds but does **not** deploy. To
+redeploy, either push a commit, or use **"Re-run all jobs"** on a previous push
+run, which preserves the original push event.
 
 ## 4. DNS
 
