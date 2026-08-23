@@ -95,7 +95,6 @@ export default function AudioPage() {
         label="Book a Consultation"
         title={<>Tell us about<br /><em>your home.</em></>}
         services={CONTACT_SERVICES}
-        apiEndpoint="/api/contact"
       />
 
       <Footer
@@ -105,9 +104,6 @@ export default function AudioPage() {
         location={FOOTER.location}
         columns={FOOTER.columns}
         copyright={FOOTER.copyright}
-        sisterLabel={FOOTER.sisterLabel}
-        sisterName={FOOTER.sisterName}
-        sisterHref={FOOTER.sisterHref}
       />
     </>
   )

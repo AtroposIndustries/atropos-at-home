@@ -5,8 +5,8 @@ import { Button } from '../ui/Button'
 import { initCircuitPulses } from '../../lib/circuit-pulses'
 
 /**
- * HeroTech
- * The Technologies homepage hero with scan line animation,
+ * HeroSplit
+ * A split-layout homepage hero with scan line animation,
  * grid overlay, and architectural circuit pulse effect.
  *
  * Props:
@@ -16,7 +16,7 @@ import { initCircuitPulses } from '../../lib/circuit-pulses'
  *   primaryCta  — { label, href }
  *   ghostCta    — { label, href }
  */
-export function HeroTech({
+export function HeroSplit({
   label = 'ICT Consulting & Implementation',
   titleLines = ['Sever the ties', 'of old', 'technology.'],
   body,

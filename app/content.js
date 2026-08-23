@@ -151,7 +151,4 @@ export const FOOTER = {
     },
   ],
   copyright:   '© 2026 Atropos at Home Pty Ltd. All rights reserved.',
-  sisterLabel: 'Sister company:',
-  sisterName:  'Atropos Technologies ↗',
-  sisterHref:  'https://atropostechnologies.com.au',
 }

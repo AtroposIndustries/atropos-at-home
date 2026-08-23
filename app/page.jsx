@@ -75,7 +75,6 @@ export default function HomePage() {
         title={<>Tell us about<br /><em>your home.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
         services={CONTACT_SERVICES}
-        apiEndpoint="/api/contact"
       />
 
       <Footer
@@ -85,9 +84,6 @@ export default function HomePage() {
         location={FOOTER.location}
         columns={FOOTER.columns}
         copyright={FOOTER.copyright}
-        sisterLabel={FOOTER.sisterLabel}
-        sisterName={FOOTER.sisterName}
-        sisterHref={FOOTER.sisterHref}
       />
     </>
   )

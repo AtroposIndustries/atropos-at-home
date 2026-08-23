@@ -19,7 +19,7 @@ import { Nav }          from '@/components/layout/Nav'
 import { Footer }       from '@/components/layout/Footer'
 import { PageHero }     from '@/components/sections/PageHero'
 import { SectionIntro } from '@/components/sections/PageSections'
-import { AboutTech }    from '@/components/sections/AboutTech'
+import { AboutSplit }   from '@/components/sections/AboutSplit'
 import { PullQuote }    from '@/components/sections/PageSections'
 import { ContactForm }  from '@/components/sections/ContactForm'
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <AboutTech
+      <AboutSplit
         label="Our Philosophy"
         labelVariant="label"
         quote={<>Technology that<br /><em>disappears.</em></>}
@@ -102,7 +102,6 @@ export default function AboutPage() {
         title={<>Tell us about<br /><em>your home.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
         services={CONTACT_SERVICES}
-        apiEndpoint="/api/contact"
       />
 
       <Footer
@@ -112,9 +111,6 @@ export default function AboutPage() {
         location={FOOTER.location}
         columns={FOOTER.columns}
         copyright={FOOTER.copyright}
-        sisterLabel={FOOTER.sisterLabel}
-        sisterName={FOOTER.sisterName}
-        sisterHref={FOOTER.sisterHref}
       />
     </>
   )

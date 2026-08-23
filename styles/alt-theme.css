@@ -1,10 +1,10 @@
 /* ============================================================
-   ATROPOS TECHNOLOGIES — Theme
-   Overrides the base.css design tokens for this brand.
+   ALT THEME
+   Overrides the base.css design tokens for this alternate layout.
 
-   Link order in every Technologies HTML file:
+   Link order in every alt-theme HTML file:
      <link rel="stylesheet" href="../shared/base.css">
-     <link rel="stylesheet" href="tech-theme.css">
+     <link rel="stylesheet" href="alt-theme.css">
    ============================================================ */
 
 @import url("https://use.typekit.net/zjg4jao.css");
@@ -12,7 +12,7 @@
 :root {
   --font-heading: 'Lexend', sans-serif;
   --font-body:    'Lexend', sans-serif;
-  --font-display: 'Lexend', sans-serif; /* override base default — Cormorant not used on Technologies */
+  --font-display: 'Lexend', sans-serif; /* override base default — Cormorant not used here */
 
   /* Accent colour — Gum Tree green */
   --accent:       var(--gum);

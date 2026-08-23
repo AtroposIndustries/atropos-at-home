@@ -42,9 +42,6 @@ export default function ReviewPage() {
         location={FOOTER.location}
         columns={FOOTER.columns}
         copyright={FOOTER.copyright}
-        sisterLabel={FOOTER.sisterLabel}
-        sisterName={FOOTER.sisterName}
-        sisterHref={FOOTER.sisterHref}
       />
     </>
   )

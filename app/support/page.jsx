@@ -94,7 +94,6 @@ export default function SupportPage() {
         label="Book a Consultation"
         title={<>Tell us about<br /><em>your home.</em></>}
         services={CONTACT_SERVICES}
-        apiEndpoint="/api/contact"
       />
 
       <Footer
@@ -104,9 +103,6 @@ export default function SupportPage() {
         location={FOOTER.location}
         columns={FOOTER.columns}
         copyright={FOOTER.copyright}
-        sisterLabel={FOOTER.sisterLabel}
-        sisterName={FOOTER.sisterName}
-        sisterHref={FOOTER.sisterHref}
       />
     </>
   )

@@ -5,7 +5,7 @@ import { SectionLabel } from '../ui/SectionLabel'
 import { Button } from '../ui/Button'
 
 /**
- * AboutTech
+ * AboutSplit
  *
  * Props:
  *   label   — eyebrow
@@ -14,7 +14,7 @@ import { Button } from '../ui/Button'
  *   cta     — { label, href }
  *   stats   — array of { num, label }
  */
-export function AboutTech({ label, quote, body, cta, stats = [], imgMain, imgSecondary, labelVariant }) {
+export function AboutSplit({ label, quote, body, cta, stats = [], imgMain, imgSecondary, labelVariant }) {
   const ref = useScrollReveal()
 
   return (
