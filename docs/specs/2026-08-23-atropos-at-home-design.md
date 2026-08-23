@@ -173,9 +173,9 @@ Two files in `public/` are load-bearing:
 
 `404.html` is emitted by the export automatically and picked up by Pages.
 
-`app/robots.js` and `app/sitemap.js` are retained unchanged. Next generates both
-as static files at build time; this must be **verified in `out/`** rather than
-assumed.
+`app/robots.js` and `app/sitemap.js` are retained unchanged. **Verified in `out/`
+on 2026-08-23: Next does generate both as static files under `output: 'export'`.**
+`out/sitemap.xml` and `out/robots.txt` are present with correct content.
 
 ### Deployment
 
@@ -277,7 +277,7 @@ Atropos Technologies is removed. Atropos Industries is retained as parent.
 
 | Location | Change |
 |----------|--------|
-| `content.js` `FOOTER.sisterName` / `sisterHref` | Removed; `Footer` loses the sister props |
+| `content.js` `FOOTER.sisterName` / `sisterHref` | Removed, and removed from all nine `<Footer>` call sites. **`Footer`'s prop signature keeps them** — the props are brand-neutral (nothing in `Footer.jsx` names Atropos Technologies), the component guards on `{sisterName && ...}` so nothing renders, and the decision to retain the library intact for the redesign covers this too. Superseded the original "loses the sister props" wording, which predated that decision. |
 | `layout.jsx` `sameAs` LinkedIn | `atropos-industries` → `atroposptyltd`, correcting an existing mismatch with the footer |
 | `layout.jsx` `parentOrganization` | Retained |
 | `layout.jsx` `email` | `hello@atropos.com.au` retained — all group mail routes to this domain |
@@ -324,8 +324,9 @@ Manual verification before the domain is pointed:
 3. Confirm `out/.nojekyll`, `out/CNAME`, `out/404.html`, `out/sitemap.xml` and
    `out/robots.txt` all exist.
 4. Grep **the source tree, not just `out/`**, for `atropostechnologies`,
-   `Atropos Technologies`, `HeroTech`, `AboutTech`, `tech-theme` and `sister` —
-   expect no matches. Grepping only the build would give a false pass, because
+   `Atropos Technologies`, `HeroTech`, `AboutTech` and `tech-theme` — expect no
+   matches. Do **not** grep for `sister`: `Footer`'s retained sister props are
+   brand-neutral plumbing, so that pattern only produces a false failure. Grepping only the build would give a false pass, because
    the retained-but-unused components are tree-shaken out of it.
 5. Submit the form and confirm a Lead appears in Zoho CRM.
 

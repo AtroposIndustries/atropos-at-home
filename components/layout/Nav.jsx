@@ -14,7 +14,7 @@ import { useNavScroll } from '../../hooks/useNavScroll'
  *   ctaLabel  — CTA button text
  *   ctaHref   — CTA button href
  */
-export function Nav({ brand = 'tech', logo, links = [], ctaLabel, ctaHref = '#contact' }) {
+export function Nav({ brand = 'home', logo, links = [], ctaLabel, ctaHref = '#contact' }) {
   const scrolled = useNavScroll()
   const [drawerOpen, setDrawerOpen]   = useState(false)
   const [openIndex, setOpenIndex]     = useState(null)

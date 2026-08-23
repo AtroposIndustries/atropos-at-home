@@ -16,7 +16,7 @@ import { useTheme } from '../../lib/theme-context'
  *   sisterHref    — link to sister site
  */
 export function Footer({
-  brand = 'tech',
+  brand = 'home',
   logo,
   tagline,
   location,

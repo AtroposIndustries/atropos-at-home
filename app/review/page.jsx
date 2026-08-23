@@ -15,6 +15,7 @@ export default function ReviewPage() {
   return (
     <>
       <Nav
+        brand="home"
         logo="/img/atropos-at-home-ash.svg"
         links={NAV.links}
         ctaLabel={NAV.ctaLabel}
@@ -37,6 +38,7 @@ export default function ReviewPage() {
       </div>
 
       <Footer
+        brand="home"
         logo="/img/atropos-at-home-ash.svg"
         tagline={FOOTER.tagline}
         location={FOOTER.location}
