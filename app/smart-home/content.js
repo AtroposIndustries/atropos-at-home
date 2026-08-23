@@ -36,7 +36,7 @@ export const FEATURES = [
   {
     number: '05',
     title:  'Unified Control',
-    desc:   'One intuitive interface for everything. RTI, Control4, or Crestron — we configure the control system that suits your home, your lifestyle, and your budget.',
+    desc:   'One intuitive interface for everything. We specialise across Control4, RTI, Crestron and the other major platforms — breadth that lets us choose the right system for your home rather than the one we happen to be tied to. Where a project calls for it, we design custom interfaces for mobile, tablet, and web.',
   },
   {
     number: '06',
@@ -80,7 +80,7 @@ export const PROCESS = {
 export const FAQ_ITEMS = [
   {
     question: 'What control systems do you install?',
-    answer:   'We work primarily with RTI, Control4, and Crestron — the leading professional automation platforms. The right choice depends on the size and complexity of your home. We will recommend the best fit during our design consultation.',
+    answer:   'Control4, RTI, Crestron and the other leading professional platforms — we specialise across all of them, and that is rather the point. Because we are not tied to any single system, we can choose on the merits of your project: the size and complexity of your home, how you want to live in it, and your budget. Where a home calls for something bespoke, we design custom interfaces for mobile, tablet, and web that fit the architecture rather than dictate it.',
   },
   {
     question: 'Can you automate an existing home, or is it only for new builds?',

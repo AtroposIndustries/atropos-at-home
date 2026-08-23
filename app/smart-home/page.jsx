@@ -10,7 +10,7 @@ import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 
 export const metadata = {
   title:       'Smart Home Automation Hobart & Tasmania',
-  description: 'Whole-home automation integrating lighting, climate, security, and AV into a single intuitive control system. RTI, Control4, and Crestron — designed and installed by Atropos at Home.',
+  description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
   keywords: [
     'smart home Hobart',
     'home automation Tasmania',
@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     type:        'website',
     url:         'https://atroposathome.com.au/smart-home',
-    description: 'Whole-home automation integrating lighting, climate, security, and AV into a single intuitive control system. RTI, Control4, and Crestron — designed and installed by Atropos at Home.',
+    description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
   },
 }
 
