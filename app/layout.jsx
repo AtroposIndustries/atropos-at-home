@@ -98,7 +98,6 @@ const schemaHome = {
         'Custom AV Integration',
       ],
       sameAs: [
-        'https://www.linkedin.com/company/atroposptyltd',
         'https://www.facebook.com/atroposptyltd',
         'https://www.instagram.com/atroposptyltd',
         BASE_URL,

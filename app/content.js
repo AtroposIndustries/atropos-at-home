@@ -146,7 +146,6 @@ export const FOOTER = {
       links: [
         { label: 'Facebook',  href: 'https://www.facebook.com/atroposptyltd' },
         { label: 'Instagram', href: 'https://www.instagram.com/atroposptyltd' },
-        { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/atroposptyltd' },
       ],
     },
   ],
