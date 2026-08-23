@@ -16,23 +16,37 @@ email in the meantime.
 
 ## 1. Zoho CRM webform
 
-1. Zoho CRM → Setup → Developer Space → Webforms → create a form for the
-   **Leads** module.
+**This is Zoho CRM's own webform feature — not Zoho Forms (`forms.zoho.com.au`),
+which is a separate product.** Zoho Forms builds a hosted form and syncs to CRM
+through an integration; it never emits the `xnQsjsdp` / `xmIwtLD` hidden inputs
+this site's form is built around. If the generated code does not post to
+`crm.zoho.com.au/crm/WebToLeadForm`, you are in the wrong product.
+
+1. Zoho CRM → **Setup → Channels → Webforms** → create a form for the **Leads**
+   module. (Zoho's older docs call this Setup → Developer Space → Webforms; the
+   menu moved.)
 2. Add the fields: First Name, Last Name, Email, Phone, Description, Lead Source.
 3. `Lead Source` is a picklist — Zoho drops a submitted value that is not a
    configured option, silently, with the lead still arriving but unattributed.
    Setup → Modules and Fields → Leads → Lead Source → add the picklist value
    `Atropos at Home - Contact Form` exactly.
-4. Set **accept submissions from** to `atroposathome.com.au`. Leaving this
-   unrestricted lets anyone post leads into the CRM. Zoho validates `returnURL`
-   against this same list, so `zoho-thanks.html` fails without it.
-5. **Leave Zoho's captcha off.** It adds a required field to Zoho's own
-   generated form; this form is hand-built and renders no such field, so
-   enabling captcha rejects every submission — invisibly, because the response
-   is cross-origin. Spam is handled by the domain restriction above plus the
-   honeypot input. An earlier version of this runbook and the design spec both
-   called for captcha; both were wrong.
-6. Publish as **HTML source code** and copy the two hidden values:
+4. In **Step 2, Specify Form Details**, set **Form location URL** to
+   `atroposathome.com.au`. This is the domain restriction — leaving it
+   unrestricted lets anyone post leads into the CRM.
+5. Still in Step 2, set the redirect to **redirect to a custom URL** →
+   `https://atroposathome.com.au/zoho-thanks.html`, matching
+   `ZOHO_CONFIG.returnUrl`. Our form also sends `returnURL` as a hidden input;
+   check the generated source to see which of the two Zoho actually honours,
+   and keep them identical so it cannot matter.
+6. **Insert neither captcha.** Zoho offers these as *"Insert Standard Captcha"*
+   and *"Insert reCAPTCHA"* — they are form fields you add, so a hand-built form
+   that does not render one cannot satisfy it. Inserting either rejects every
+   submission, invisibly, because the response is cross-origin. Spam is handled
+   by the Form location URL restriction above plus the honeypot input. An earlier
+   version of this runbook and the design spec both called for captcha; both
+   were wrong.
+7. Publish as **Source code** (not Embed, Link or iFrame) and copy the two
+   hidden values:
    - `xnQsjsdp` → `ZOHO_CONFIG.formId` in `lib/zoho-form.js`
    - `xmIwtLD`  → `ZOHO_CONFIG.formSecret` in `lib/zoho-form.js`
 
