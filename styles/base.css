@@ -1,38 +1,28 @@
 /* ============================================================
    ATROPOS — BASE STYLESHEET
-   Shared design tokens for Atropos at Home (and, historically,
-   a sister brand that has since been dissolved).
+   Shared design tokens for Atropos at Home.
 
    HOW IT WORKS:
-   Each site links BOTH this file and its own theme file:
+   app/layout.jsx imports this file alongside a theme file:
 
-     <link rel="stylesheet" href="../shared/base.css">
-     <link rel="stylesheet" href="tech-theme.css">   ← or home-theme.css
+     import '@/styles/base.css'
+     import '@/styles/home-theme.css'
 
    The theme file overrides the CSS variables defined here,
    which cascade through every component automatically.
 
    FILE STRUCTURE:
-     shared/
+     styles/
        base.css          ← you are here
-     atropos-technologies/
-       tech-theme.css
-       index.html
-       style-guide.html
-       main.js
-       img/
-     atropos-at-home/
-       home-theme.css
-       index.html
-       style-guide.html
-       main.js
-       img/
+       home-theme.css    (active theme)
+       alt-theme.css     (retained, unused — for the redesign)
+       local.css
    ============================================================ */
 
 
 /* ============================================================
-   1. DESIGN TOKENS — Base defaults (Technologies palette)
-      Override any of these in tech-theme.css / home-theme.css
+   1. DESIGN TOKENS — Base defaults
+      Override any of these in home-theme.css / alt-theme.css
    ============================================================ */
 
 :root {
@@ -3851,42 +3841,6 @@ footer {
 .review-btn-ghost.copied {
   color: #52c07a;
   border-color: rgba(82, 192, 122, 0.4);
-}
-
-/* ── Generated text area ──────────────────────────────────── */
-.review-generating {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 28px 20px;
-  background-color: var(--forrest);
-  border: 1px solid var(--border-medium);
-  border-radius: 6px;
-  margin-bottom: 12px;
-}
-
-.review-generating-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--gum);
-  display: inline-block;
-  animation: review-pulse 1.2s ease-in-out infinite;
-}
-
-.review-generating-dot:nth-child(2) { animation-delay: 0.2s; }
-.review-generating-dot:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes review-pulse {
-  0%, 80%, 100% { opacity: 0.2; transform: scale(0.9); }
-  40%           { opacity: 1;   transform: scale(1.1); }
-}
-
-.review-generating-label {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--text-muted);
-  margin-left: 4px;
 }
 
 .review-output {
