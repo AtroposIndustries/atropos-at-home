@@ -1,7 +1,13 @@
 # Atropos at Home
 
 The Atropos at Home website — a static Next.js 14 site hosted on GitHub Pages
-at [atroposathome.com.au](https://atroposathome.com.au).
+at [atropos.com.au](https://atropos.com.au).
+
+The site moved from `atroposathome.com.au` on 2026-08-24, when the business
+rebranded to a single Atropos identity covering both residential and
+commercial work. `lib/site.js` holds the canonical origin — every absolute URL
+derives from it, and that file documents the copies of the domain that live
+outside the codebase.
 
 ## Local development
 

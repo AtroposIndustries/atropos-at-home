@@ -7,10 +7,10 @@ export const metadata = {
     'home AV specialists Hobart',
     'Rafal Urban Brock Pinnington',
   ],
-  alternates: { canonical: 'https://atroposathome.com.au/about' },
+  alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/about',
+    url:         `${SITE_URL}/about`,
     description: 'Atropos at Home was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Smart home, premium AV, and acoustic design for discerning homeowners.',
   },
 }
@@ -26,6 +26,7 @@ import { ContactForm }  from '@/components/sections/ContactForm'
 import {
   NAV, CONTACT_SERVICES, FOOTER,
 } from '../content'
+import { SITE_URL }     from '@/lib/site'
 
 export default function AboutPage() {
   return (

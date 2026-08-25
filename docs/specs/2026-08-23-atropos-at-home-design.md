@@ -1,3 +1,11 @@
+> **Superseded in part, 2026-08-24.** This document records the design as
+> decided on 2026-08-23, when the site was `atroposathome.com.au`. The business
+> has since rebranded to a single Atropos identity covering both residential and
+> commercial work, and the site moved to `atropos.com.au`. Every
+> `atroposathome.com.au` reference below is retained as the historical record of
+> what was decided at the time; the live value is `SITE_URL` in `lib/site.js`.
+> See `docs/LAUNCH.md` section 7.
+
 # Atropos at Home — standalone static site
 
 **Date:** 2026-08-23

@@ -2,16 +2,17 @@ import { Nav }          from '@/components/layout/Nav'
 import { Footer }       from '@/components/layout/Footer'
 import { ReviewWizard } from '@/components/sections/ReviewWizard'
 import { NAV, FOOTER } from '../content'
+import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Leave a Review',
   description: 'Share your experience with Atropos at Home. We\'ll help you put it into words.',
   alternates: {
-    canonical: 'https://atroposathome.com.au/review',
+    canonical: `${SITE_URL}/review`,
   },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/review',
+    url:         `${SITE_URL}/review`,
     description: 'Share your experience with Atropos at Home. We\'ll help you put it into words.',
   },
 }

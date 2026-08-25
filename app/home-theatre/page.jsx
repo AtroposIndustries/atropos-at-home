@@ -7,6 +7,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Premium Home Theatre Design & Installation Tasmania',
@@ -19,10 +20,10 @@ export const metadata = {
     'acoustic cinema treatment',
     'home theatre installer Tasmania',
   ],
-  alternates: { canonical: 'https://atroposathome.com.au/home-theatre' },
+  alternates: { canonical: `${SITE_URL}/home-theatre` },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/home-theatre',
+    url:         `${SITE_URL}/home-theatre`,
     description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
   },
 }

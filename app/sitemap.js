@@ -1,4 +1,6 @@
-const BASE = 'https://atroposathome.com.au'
+import { SITE_URL } from '@/lib/site'
+
+const BASE = SITE_URL
 const NOW  = new Date().toISOString()
 
 // Next's metadata resolver renders every canonical tag with a trailing slash

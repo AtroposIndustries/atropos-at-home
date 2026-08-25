@@ -7,6 +7,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Smart Home Automation Hobart & Tasmania',
@@ -20,10 +21,10 @@ export const metadata = {
     'Crestron Tasmania',
     'smart home installer Tasmania',
   ],
-  alternates: { canonical: 'https://atroposathome.com.au/smart-home' },
+  alternates: { canonical: `${SITE_URL}/smart-home` },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/smart-home',
+    url:         `${SITE_URL}/smart-home`,
     description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
   },
 }

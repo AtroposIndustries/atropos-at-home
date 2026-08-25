@@ -1,3 +1,5 @@
+import { SITE_URL } from '@/lib/site'
+
 export default function robots() {
   return {
     rules: [
@@ -8,6 +10,6 @@ export default function robots() {
       { userAgent: 'anthropic-ai',  allow: '/'                      },
       { userAgent: 'Claude-Web',    allow: '/'                      },
     ],
-    sitemap: 'https://atroposathome.com.au/sitemap.xml',
+    sitemap: `${SITE_URL}/sitemap.xml`,
   }
 }

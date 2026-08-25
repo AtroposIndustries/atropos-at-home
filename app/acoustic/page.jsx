@@ -7,6 +7,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Acoustic Treatment for Home Theatre & Listening Rooms Tasmania',
@@ -19,10 +20,10 @@ export const metadata = {
     'acoustic panels Hobart',
     'broadband absorber installation',
   ],
-  alternates: { canonical: 'https://atroposathome.com.au/acoustic' },
+  alternates: { canonical: `${SITE_URL}/acoustic` },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/acoustic',
+    url:         `${SITE_URL}/acoustic`,
     description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos at Home, Hobart.',
   },
 }

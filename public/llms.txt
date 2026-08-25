@@ -17,13 +17,13 @@ Primary: Hobart, Tasmania. Also: Launceston, and broader Tasmania.
 
 ## Contact
 Email: hello@atropos.com.au
-Website: https://atroposathome.com.au/
+Website: https://atropos.com.au/
 
 ## Links
-- Smart Home: https://atroposathome.com.au/smart-home/
-- Home Theatre: https://atroposathome.com.au/home-theatre/
-- Audio: https://atroposathome.com.au/audio/
-- Network: https://atroposathome.com.au/network/
-- Acoustic Treatment: https://atroposathome.com.au/acoustic/
-- Support: https://atroposathome.com.au/support/
-- About: https://atroposathome.com.au/about/
+- Smart Home: https://atropos.com.au/smart-home/
+- Home Theatre: https://atropos.com.au/home-theatre/
+- Audio: https://atropos.com.au/audio/
+- Network: https://atropos.com.au/network/
+- Acoustic Treatment: https://atropos.com.au/acoustic/
+- Support: https://atropos.com.au/support/
+- About: https://atropos.com.au/about/

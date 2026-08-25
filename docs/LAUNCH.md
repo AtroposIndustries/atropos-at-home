@@ -3,7 +3,7 @@
 Everything below is outside the codebase.
 
 **Status as of 2026-08-23:** the site is live at
-[atroposathome.com.au](https://atroposathome.com.au) over HTTPS. Sections 3
+[atropos.com.au](https://atropos.com.au) over HTTPS. Sections 3
 (GitHub settings) and 4 (DNS) are **done** — domain verified, certificate
 issued, HTTPS enforced, all nine routes serving. They are kept below as a
 record of the configuration, not as work outstanding.
@@ -13,9 +13,9 @@ record of the configuration, not as work outstanding.
 
 **Outstanding:**
 
-1. **Action on Submission still points at `https://www.atropos.com.au`** on the
-   Zoho webform. It must be `https://atroposathome.com.au/zoho-thanks.html`,
-   matching `ZOHO_CONFIG.returnUrl`. See section 1 step 5.
+1. **The Zoho webform still refers to the old domain.** See section 7 — the
+   Form Location URL list and Action on Submission both need re-pointing at
+   `atropos.com.au`, and neither failure is visible from the site.
 2. **Enquirers receive no acknowledgement email**, deliberately — see section
    2. The inherited Technologies welcome email has been disabled; the Atropos
    at Home replacement has not been written yet.
@@ -38,12 +38,12 @@ this site's form is built around. If the generated code does not post to
    configured option, silently, with the lead still arriving but unattributed.
    Setup → Modules and Fields → Leads → Lead Source → add the picklist value
    `Atropos at Home - Contact Form` exactly.
-4. In **Step 2, Specify Form Details**, set **Form location URL** to
-   `atroposathome.com.au`. This is the domain restriction — leaving it
-   unrestricted lets anyone post leads into the CRM.
+4. In **Step 2, Specify Form Details**, set **Form location URL** to the
+   **full URL of every page carrying the form** — this is validated per page,
+   not per domain. See section 7 for the current list. Leaving it unrestricted
+   lets anyone post leads into the CRM.
 5. Still in Step 2, set the redirect to **redirect to a custom URL** →
-   `https://atroposathome.com.au/zoho-thanks.html`, matching
-   `ZOHO_CONFIG.returnUrl`. Our form also sends `returnURL` as a hidden input;
+   `https://atropos.com.au/zoho-thanks.html`, matching `ZOHO_CONFIG.returnUrl`. Our form also sends `returnURL` as a hidden input;
    check the generated source to see which of the two Zoho actually honours,
    and keep them identical so it cannot matter.
 6. **Insert neither captcha.** Zoho offers these as *"Insert Standard Captcha"*
@@ -153,7 +153,7 @@ attaches it to this specific site.
 
 **Organisation** — `github.com/organizations/AtroposIndustries/settings/pages`:
 
-- **Verify `atroposathome.com.au`** before attaching it to the repository, via
+- **Verify the domain** before attaching it to the repository, via
   the TXT record it gives you. GitHub's own guidance: verification prevents
   domain-takeover attacks. There is no "custom domain" field on this page.
 
@@ -161,7 +161,7 @@ attaches it to this specific site.
 
 - Build and deployment → Source: **GitHub Actions**. Not "Deploy from a branch",
   which runs Jekyll and will not serve the `out/` artifact.
-- Custom domain: **`atroposathome.com.au`**. This is the setting that actually
+- Custom domain: **`atropos.com.au`**. This is the setting that actually
   attaches the domain — the `CNAME` file in `public/` is ignored under Actions
   publishing. If the field is not visible, the site has not deployed
   successfully yet; deploy first, then set it.
@@ -191,8 +191,8 @@ apex. Retained as the record of what is configured.
 | AAAA | `@` | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
 | CNAME | `www` | `atroposindustries.github.io` |
 
-HTTPS is enforced and the certificate covers both `atroposathome.com.au` and
-`www.atroposathome.com.au`.
+HTTPS is enforced. Note the DNS table above is the **`atropos.com.au`** zone
+as of the 2026-08-24 domain move; see section 7.
 
 ## 5. Pre-launch check that has NOT been done
 
@@ -242,7 +242,7 @@ build satisfies it equally, being the same artefact served from localhost.
 
 - [x] All nine routes load over HTTPS on the custom domain. *(Verified by curl
       2026-08-23: all nine return 200, `www` redirects to the apex.)*
-- [x] `https://atroposathome.com.au/sitemap.xml` and `/robots.txt` resolve.
+- [x] `https://atropos.com.au/sitemap.xml` and `/robots.txt` resolve.
       *(Verified by curl 2026-08-23, along with `/llms.txt` and
       `/zoho-thanks.html`.)*
 - [ ] A real form submission creates a Lead in Zoho CRM.
@@ -250,6 +250,62 @@ build satisfies it equally, being the same artefact served from localhost.
 - [ ] The internal notification email arrives.
 - [ ] The enquirer receives the acknowledgement.
 - [ ] Google Analytics (`G-8RGK41Y2L5`) records the visit.
+
+## 7. The 2026-08-24 domain move
+
+The site moved from `atroposathome.com.au` to `atropos.com.au` when the
+business rebranded to a single Atropos identity covering residential and
+commercial work.
+
+`atropos.com.au` also runs **Microsoft 365 email**. When editing that zone,
+never use a bulk "reset" or template operation — the records below must
+survive, and losing SPF or DKIM breaks outbound mail silently:
+
+| Record | Value |
+|--------|-------|
+| `MX` | `atropos-com-au.mail.protection.outlook.com` |
+| `autodiscover` CNAME | `autodiscover.outlook.com` |
+| `_dmarc` TXT | `v=DMARC1; p=quarantine;` |
+| apex TXT | five records: SPF, Zoho, Microsoft, and two Google verifications |
+
+The SPF record already authorises Zoho (`one.zoho.com.au`, `transmail.net.au`),
+so CRM-sent mail needs no DNS work.
+
+### Done
+
+- Apex `A` → the four GitHub Pages IPs, replacing a dangling `34.50.153.87`.
+- Apex `AAAA` → the four GitHub Pages IPv6 addresses.
+- `www` CNAME → `atroposindustries.github.io`, replacing a dangling record
+  pointing at a deleted Cloud Run WordPress instance.
+- Organisation-level domain verification for `atropos.com.au`.
+- Every absolute URL in the codebase, now derived from `lib/site.js`.
+
+### Outstanding
+
+**GitHub Pages allows one custom domain per site.** The moment the repo's
+custom domain becomes `atropos.com.au`, `atroposathome.com.au` stops being
+served and starts failing. A redirect needs its own mechanism — registrar URL
+forwarding, Cloudflare, or a second Pages repo.
+
+**Re-register the Form Location URLs in Zoho.** Validated per page, so all
+eight need re-pointing. A missed page still creates the lead but never confirms
+it to the visitor, and nothing surfaces the failure:
+
+```
+https://atropos.com.au/            https://atropos.com.au/network/
+https://atropos.com.au/about/      https://atropos.com.au/acoustic/
+https://atropos.com.au/audio/      https://atropos.com.au/support/
+https://atropos.com.au/home-theatre/
+https://atropos.com.au/smart-home/
+```
+
+`/review/` carries no form and is not needed here.
+
+**Also outstanding:** Action on Submission → `https://atropos.com.au/zoho-thanks.html`;
+the welcome email template's logo `src` and footer links; the GA4 data stream
+URL (keep measurement ID `G-8RGK41Y2L5` for continuity); a Search Console
+property for the new domain — `atropos.com.au` already carries a
+`google-site-verification` TXT, so it may already be verified.
 
 ## Outstanding, outside this project
 

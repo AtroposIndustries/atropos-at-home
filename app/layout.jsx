@@ -5,10 +5,10 @@ import '@/styles/local.css'
 import { ThemeProvider }  from '@/lib/theme-context'
 import { CustomCursor }   from '@/components/ui/CustomCursor'
 
-const BASE_URL = 'https://atroposathome.com.au'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default:  'Smart Home Automation, AV & Home Theatre Tasmania | Atropos at Home',
     template: '%s | Atropos at Home',
@@ -31,7 +31,7 @@ export const metadata = {
     type:     'website',
     locale:   'en_AU',
     siteName: 'Atropos at Home',
-    url:      BASE_URL,
+    url:      SITE_URL,
     images: [
       {
         url:    '/img/og-image.jpg',
@@ -51,7 +51,7 @@ export const metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: BASE_URL,
+    canonical: SITE_URL,
   },
 }
 
@@ -61,10 +61,10 @@ const schemaHome = {
   '@graph': [
     {
       '@type':             ['LocalBusiness', 'HomeAndConstructionBusiness'],
-      '@id':               `${BASE_URL}/#business`,
+      '@id':               `${SITE_URL}/#business`,
       name:                'Atropos at Home',
       parentOrganization:  { '@id': 'https://atropos.com.au/#organisation' },
-      url:                 BASE_URL,
+      url:                 SITE_URL,
       description:
         'Atropos at Home delivers premium smart home automation, distributed audio, and home theatre for architects, builders, and discerning homeowners across Tasmania.',
       priceRange: '$$$',
@@ -100,61 +100,61 @@ const schemaHome = {
       sameAs: [
         'https://www.facebook.com/atroposptyltd',
         'https://www.instagram.com/atroposptyltd',
-        BASE_URL,
+        SITE_URL,
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name:    'Atropos at Home Services',
         itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@id': `${BASE_URL}/#service-smart-home`  } },
-          { '@type': 'Offer', itemOffered: { '@id': `${BASE_URL}/#service-home-theatre`} },
-          { '@type': 'Offer', itemOffered: { '@id': `${BASE_URL}/#service-audio`       } },
-          { '@type': 'Offer', itemOffered: { '@id': `${BASE_URL}/#service-network`     } },
-          { '@type': 'Offer', itemOffered: { '@id': `${BASE_URL}/#service-acoustic`    } },
+          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-smart-home`  } },
+          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-home-theatre`} },
+          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-audio`       } },
+          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-network`     } },
+          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-acoustic`    } },
         ],
       },
     },
     {
       '@type':      'Service',
-      '@id':        `${BASE_URL}/#service-smart-home`,
+      '@id':        `${SITE_URL}/#service-smart-home`,
       name:         'Smart Home Automation',
-      provider:     { '@id': `${BASE_URL}/#business` },
+      provider:     { '@id': `${SITE_URL}/#business` },
       description:  'Whole-home automation integrating lighting, climate, security, and AV into a single intuitive control system. Designed for new builds and retrofits across Tasmania.',
       serviceType:  'Smart Home Automation',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
     {
       '@type':      'Service',
-      '@id':        `${BASE_URL}/#service-home-theatre`,
+      '@id':        `${SITE_URL}/#service-home-theatre`,
       name:         'Premium Home Theatre',
-      provider:     { '@id': `${BASE_URL}/#business` },
+      provider:     { '@id': `${SITE_URL}/#business` },
       description:  'Bespoke home theatre design and installation — from acoustic treatment and projection systems to immersive surround sound. Built for the discerning homeowner.',
       serviceType:  'Home Theatre Installation',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
     {
       '@type':      'Service',
-      '@id':        `${BASE_URL}/#service-audio`,
+      '@id':        `${SITE_URL}/#service-audio`,
       name:         'Distributed Audio',
-      provider:     { '@id': `${BASE_URL}/#business` },
+      provider:     { '@id': `${SITE_URL}/#business` },
       description:  'Whole-home and multi-room audio distribution — high-fidelity music delivered to every room, controlled from a single app or in-wall panel.',
       serviceType:  'Audio Installation',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
     {
       '@type':      'Service',
-      '@id':        `${BASE_URL}/#service-network`,
+      '@id':        `${SITE_URL}/#service-network`,
       name:         'Network & Connectivity',
-      provider:     { '@id': `${BASE_URL}/#business` },
+      provider:     { '@id': `${SITE_URL}/#business` },
       description:  'Resilient, high-performance home networking infrastructure to support smart devices, streaming, and remote work — designed and installed by our team.',
       serviceType:  'Network Installation',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
     {
       '@type':      'Service',
-      '@id':        `${BASE_URL}/#service-acoustic`,
+      '@id':        `${SITE_URL}/#service-acoustic`,
       name:         'Acoustic Treatment',
-      provider:     { '@id': `${BASE_URL}/#business` },
+      provider:     { '@id': `${SITE_URL}/#business` },
       description:  'Acoustic design and treatment for dedicated home theatres and listening rooms — panel placement, room analysis, and material specification for optimal sound.',
       serviceType:  'Acoustic Treatment',
       areaServed:   { '@type': 'State', name: 'Tasmania' },

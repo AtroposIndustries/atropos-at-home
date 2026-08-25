@@ -7,6 +7,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Distributed Audio & Whole-home Sound Tasmania',
@@ -19,10 +20,10 @@ export const metadata = {
     'outdoor audio Hobart',
     'Sonance installer Tasmania',
   ],
-  alternates: { canonical: 'https://atroposathome.com.au/audio' },
+  alternates: { canonical: `${SITE_URL}/audio` },
   openGraph: {
     type:        'website',
-    url:         'https://atroposathome.com.au/audio',
+    url:         `${SITE_URL}/audio`,
     description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
   },
 }
