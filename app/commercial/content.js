@@ -3,7 +3,7 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Systems your business can depend on.',
-  body:  'Atropos works across two sides of the same business: homes, and the offices, hospitality venues and function spaces this side serves. This is the commercial side — building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security and access, digital signage, acoustic treatment, and managed support, usually engaged from the plans stage on a new fit-out but retrofitted into an existing premises just as often. Twenty-five years of combined audiovisual and ICT experience, accredited across every major control platform rather than tied to one, backed by contracted response times rather than a call when something breaks.',
+  body:  'Atropos works across two sides of the same business: homes, and the offices, hospitality venues and function spaces this side is built for. This is the commercial side — building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security and access, digital signage, acoustic treatment, and managed support, scoped from the plans stage on a new fit-out, or retrofitted into an existing premises. Twenty-five years of combined audiovisual and ICT experience, accredited across every major control platform rather than tied to one, backed by contracted response times rather than a call when something breaks.',
 }
 
 export const INTRO = {

@@ -3,16 +3,15 @@ export const metadata = {
   description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
   keywords: [
     'Atropos Hobart',
-    'smart home company Tasmania',
-    'home AV specialists Hobart',
+    'AV integration company Tasmania',
+    'residential & commercial AV specialists Hobart',
     'Rafal Urban Brock Pinnington',
   ],
   alternates: { canonical: `${SITE_URL}/about` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/about`,
     description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
-  },
+  }),
 }
 
 import { Nav }          from '@/components/layout/Nav'
@@ -27,6 +26,7 @@ import {
   NAV, CONTACT_SERVICES, FOOTER,
 } from '../content'
 import { SITE_URL }     from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export default function AboutPage() {
   return (
@@ -70,10 +70,10 @@ export default function AboutPage() {
             Raf has spent years building and refining his own personal studio — experimenting with acoustic treatment, tweaking speaker placement, and tuning listening environments from the inside out. Brock&apos;s love of music and AV runs just as deep; an avid guitar player who has poured the same obsessive attention into his own home systems that he brings to every client project. For both of us, this isn&apos;t just a profession. It&apos;s how we actually live.
           </p>
           <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 300, letterSpacing: '0.04em' }}>
-            Between us, we carry more than two decades of hands-on experience across ICT, AV control system design, and cloud infrastructure. Raf has engineered high-availability solutions at the scale of AWS, Stan, and Betfair — bringing a precision that borders on the intuitive to every system he designs. Brock has spent over a decade designing and programming AV control systems for environments where reliability isn&apos;t optional. We know these systems intimately: not just how to install them, but how they behave over years of real-world use.
+            Between us, we carry twenty-five years of combined hands-on experience across ICT, AV control system design, and cloud infrastructure. Raf has engineered high-availability solutions at the scale of AWS, Stan, and Betfair — bringing a precision that borders on the intuitive to every system he designs. Brock has spent over a decade designing and programming AV control systems for environments where reliability isn&apos;t optional. We know these systems intimately: not just how to install them, but how they behave over years of real-world use.
           </p>
           <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 300, letterSpacing: '0.04em' }}>
-            That combination — genuine personal investment in the craft, paired with professional-grade technical depth — is what sets us apart. When an architect needs to know how a control system integrates with their design intent, when a builder asks what infrastructure needs to go in the walls before the plasterers arrive, or when a homeowner simply wants a system that responds intuitively and never lets them down, we speak every one of those languages. We exist to give discerning homeowners, architects, and builders a rock-solid technical partner who cares about the outcome as much as they do.
+            That combination — genuine personal investment in the craft, paired with professional-grade technical depth — is what sets us apart. When an architect needs to know how a control system integrates with their design intent, when a builder asks what infrastructure needs to go in the walls before the plasterers arrive, or when a homeowner simply wants a system that responds intuitively and never lets them down, we speak every one of those languages. We exist to give discerning homeowners, business owners, architects, and builders a rock-solid technical partner who cares about the outcome as much as they do.
           </p>
         </div>
       </section>
@@ -82,12 +82,12 @@ export default function AboutPage() {
         label="Our Philosophy"
         labelVariant="label"
         quote={<>Technology that<br /><em>disappears.</em></>}
-        body="The best system in a home is the one you never have to think about. We design every installation around that principle — from the cabling behind the walls to the control interface in your hand. Invisible, reliable, and built to last."
+        body="The best system is the one you never have to think about. We design every installation around that principle — from the cabling behind the walls to the control interface in your hand. Invisible, reliable, and built to last."
         cta={{ label: 'Explore Our Services', href: '/#offerings' }}
         stats={[
           { num: 'TAS', label: 'Based & Proud' },
           { num: 'AV',  label: 'Design & Install' },
-          { num: '20+', label: 'Years Combined' },
+          { num: '25+', label: 'Years Combined' },
         ]}
         imgMain="/img/tasmania-1.jpg"
         imgSecondary="/img/river.jpg"
@@ -100,7 +100,7 @@ export default function AboutPage() {
 
       <ContactForm
         label="Book a Consultation"
-        title={<>Tell us about<br /><em>your home.</em></>}
+        title={<>Tell us about<br /><em>your project.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
         services={CONTACT_SERVICES}
       />

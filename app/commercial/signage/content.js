@@ -2,7 +2,7 @@
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Digital Signage',
+  title: 'Digital Signage & Wayfinding',
   body:  'Screens specified for the brightness and duty cycle the space actually demands, content scheduled and updated by whoever should be updating it, and wayfinding kept current across an entire site — managed remotely, not walked to floor by floor.',
 }
 
