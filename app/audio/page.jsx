@@ -48,7 +48,7 @@ export default function AudioPage() {
 
       <Nav
         brand="home"
-        logo="/img/atropos-at-home-ash.svg"
+        logo="/img/atropos-hero-ash.svg"
         links={NAV.links}
         ctaLabel={NAV.ctaLabel}
         ctaHref={NAV.ctaHref}
@@ -100,7 +100,7 @@ export default function AudioPage() {
 
       <Footer
         brand="home"
-        logo="/img/atropos-at-home-ash.svg"
+        logo="/img/atropos-hero-ash.svg"
         tagline={FOOTER.tagline}
         location={FOOTER.location}
         columns={FOOTER.columns}
