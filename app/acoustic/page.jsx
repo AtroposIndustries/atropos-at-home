@@ -11,7 +11,7 @@ import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Acoustic Treatment for Home Theatre & Listening Rooms Tasmania',
-  description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos at Home, Hobart.',
+  description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos, Hobart.',
   keywords: [
     'acoustic treatment Hobart',
     'home theatre acoustics Tasmania',
@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     type:        'website',
     url:         `${SITE_URL}/acoustic`,
-    description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos at Home, Hobart.',
+    description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos, Hobart.',
   },
 }
 

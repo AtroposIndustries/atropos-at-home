@@ -12,7 +12,7 @@ import { useTheme } from '../../lib/theme-context'
  *   columns       — array of { heading, links: [{ label, href }] }
  *   copyright     — copyright string
  *   sisterLabel   — e.g. "Sister company:"
- *   sisterName    — e.g. "Atropos at Home ↗"
+ *   sisterName    — e.g. "Atropos ↗"
  *   sisterHref    — link to sister site
  */
 export function Footer({

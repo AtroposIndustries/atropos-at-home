@@ -10,8 +10,8 @@ import { SITE_URL } from '@/lib/site'
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:  'Smart Home Automation, AV & Home Theatre Tasmania | Atropos at Home',
-    template: '%s | Atropos at Home',
+    default:  'Smart Home Automation, AV & Home Theatre Tasmania | Atropos',
+    template: '%s | Atropos',
   },
   description:
     'Premium smart home automation, distributed audio, and home theatre design, specification, installation and commissioning. Beautifully integrated technology for architects, builders and discerning homeowners across Tasmania.',
@@ -30,14 +30,14 @@ export const metadata = {
   openGraph: {
     type:     'website',
     locale:   'en_AU',
-    siteName: 'Atropos at Home',
+    siteName: 'Atropos',
     url:      SITE_URL,
     images: [
       {
         url:    '/img/og-image.jpg',
         width:  1200,
         height: 630,
-        alt:    'Atropos at Home — Smart Home, AV & Home Theatre Tasmania',
+        alt:    'Atropos — Smart Home, AV & Home Theatre Tasmania',
       },
     ],
   },
@@ -55,18 +55,18 @@ export const metadata = {
   },
 }
 
-// ── Schema.org: Atropos at Home ───────────────────────────
+// ── Schema.org: Atropos ───────────────────────────────────
 const schemaHome = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type':             ['LocalBusiness', 'HomeAndConstructionBusiness'],
       '@id':               `${SITE_URL}/#business`,
-      name:                'Atropos at Home',
+      name:                'Atropos',
       parentOrganization:  { '@id': 'https://atropos.com.au/#organisation' },
       url:                 SITE_URL,
       description:
-        'Atropos at Home delivers premium smart home automation, distributed audio, and home theatre for architects, builders, and discerning homeowners across Tasmania.',
+        'Atropos designs and installs integrated technology for Tasmanian homes and businesses — control and automation, audio, networks and acoustics. Hobart, Tasmania.',
       priceRange: '$$$',
       address: {
         '@type':          'PostalAddress',
@@ -104,7 +104,7 @@ const schemaHome = {
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name:    'Atropos at Home Services',
+        name:    'Atropos Services',
         itemListElement: [
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-smart-home`  } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-home-theatre`} },

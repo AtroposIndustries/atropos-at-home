@@ -1,4 +1,4 @@
-// ── Atropos at Home — Homepage Content ───────────────────
+// ── Atropos — Homepage Content ────────────────────────────
 
 export const NAV = {
   links: [
@@ -90,7 +90,7 @@ export const OFFERINGS = {
 
 
 export const TESTIMONIAL = {
-  quote:       'We handed over the keys to a house. Atropos at Home gave it back as a home that thinks.',
+  quote:       'We handed over the keys to a house. Atropos gave it back as a home that thinks.',
   attribution: 'Architect, South Hobart Residence',
 }
 
@@ -149,5 +149,5 @@ export const FOOTER = {
       ],
     },
   ],
-  copyright:   '© 2026 Atropos at Home Pty Ltd. All rights reserved.',
+  copyright:   '© 2026 Atropos Pty Ltd. All rights reserved.',
 }

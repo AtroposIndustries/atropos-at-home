@@ -11,7 +11,7 @@ import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Home Network & Connectivity Installation Tasmania',
-  description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos at Home, Hobart.',
+  description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
   keywords: [
     'home network Hobart',
     'Wi-Fi installation Tasmania',
@@ -24,7 +24,7 @@ export const metadata = {
   openGraph: {
     type:        'website',
     url:         `${SITE_URL}/network`,
-    description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos at Home, Hobart.',
+    description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
   },
 }
 

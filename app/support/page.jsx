@@ -11,7 +11,7 @@ import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Smart Home Ongoing Support & Maintenance Tasmania',
-  description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos at Home, Hobart.',
+  description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
   keywords: [
     'smart home support Tasmania',
     'home automation maintenance',
@@ -23,7 +23,7 @@ export const metadata = {
   openGraph: {
     type:        'website',
     url:         `${SITE_URL}/support`,
-    description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos at Home, Hobart.',
+    description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
   },
 }
 

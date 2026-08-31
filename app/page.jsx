@@ -57,7 +57,7 @@ export default function HomePage() {
       <AboutHome
         eyebrow={ABOUT.eyebrow}
         title={<>Tasmanian roots.<br /><em>Global standards.</em></>}
-        body="We're two mates who grew up loving both technology and music — and found that when you bring those worlds together thoughtfully, something extraordinary happens. Atropos at Home exists for the homeowner, builder, or architect who won't settle for ordinary."
+        body="We're two mates who grew up loving both technology and music — and found that when you bring those worlds together thoughtfully, something extraordinary happens. Atropos exists for the homeowner, builder, or architect who won't settle for ordinary."
         cta={ABOUT.cta}
         location={ABOUT.location}
         imgMain="/img/tasmania-1.jpg"

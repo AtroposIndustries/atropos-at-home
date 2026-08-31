@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-// ── Sentence banks — Atropos at Home (home) ──────────────
+// ── Sentence banks — Atropos (home) ───────────────────────
 
 const HOME_HIGHLIGHTS = [
   { id: 'smart_home',      label: 'Smart home design',        group: 'thread' },
@@ -19,7 +19,7 @@ const HOME_HIGHLIGHTS = [
 
 const HOME_OPENINGS = {
   5: [
-    'We couldn\'t be more impressed with what the Atropos at Home team has created for us.',
+    'We couldn\'t be more impressed with what the Atropos team has created for us.',
     'Genuinely exceptional work — the kind of result you hope for but rarely get.',
     'The finished result has exceeded every expectation we had going in.',
     'From the first consultation to final handover, this was a first-class experience.',
@@ -103,7 +103,7 @@ const HOME_SENTENCES = {
 
 const HOME_CLOSINGS = {
   5: [
-    'Unreservedly recommend Atropos at Home to anyone investing in premium technology for their home.',
+    'Unreservedly recommend Atropos to anyone investing in premium technology for their home.',
     'Without hesitation — the finest smart home and AV team we\'ve encountered.',
     'We\'ll be recommending them to every architect and homeowner we know.',
   ],

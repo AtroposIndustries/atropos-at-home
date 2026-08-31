@@ -1,8 +1,8 @@
 export const metadata = {
-  title:       'About Atropos at Home | Hobart, Tasmania',
-  description: 'Atropos at Home was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Smart home, premium AV, and acoustic design for discerning homeowners.',
+  title:       'About Atropos | Hobart, Tasmania',
+  description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
   keywords: [
-    'Atropos at Home Hobart',
+    'Atropos Hobart',
     'smart home company Tasmania',
     'home AV specialists Hobart',
     'Rafal Urban Brock Pinnington',
@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     type:        'website',
     url:         `${SITE_URL}/about`,
-    description: 'Atropos at Home was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Smart home, premium AV, and acoustic design for discerning homeowners.',
+    description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
   },
 }
 
@@ -48,7 +48,7 @@ export default function AboutPage() {
       <SectionIntro
         label="Our Story"
         title={<>Built on craft<br /><em>and conviction.</em></>}
-        body="Atropos at Home was founded by two mates who grew up loving both technology and music — and discovered that when you bring those worlds together thoughtfully, something extraordinary happens. We exist for the homeowner, builder, or architect who won't settle for ordinary: people who understand that the finest technology should disappear into the architecture, respond intuitively, and elevate every moment spent at home."
+        body="Atropos was founded by two mates who grew up loving both technology and music — and discovered that when you bring those worlds together thoughtfully, something extraordinary happens. We exist for the homeowner, business owner, builder, or architect who won't settle for ordinary: people who understand that the finest technology should disappear into the space, respond intuitively, and elevate every moment spent within it."
         labelVariant="label"
       />
 
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
       <PullQuote
         quote="The best technology is invisible — felt, not seen."
-        attribution="Atropos at Home"
+        attribution="Atropos"
       />
 
       <ContactForm

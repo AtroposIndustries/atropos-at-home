@@ -6,14 +6,14 @@ import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
   title:       'Leave a Review',
-  description: 'Share your experience with Atropos at Home. We\'ll help you put it into words.',
+  description: 'Share your experience with Atropos. We\'ll help you put it into words.',
   alternates: {
     canonical: `${SITE_URL}/review`,
   },
   openGraph: {
     type:        'website',
     url:         `${SITE_URL}/review`,
-    description: 'Share your experience with Atropos at Home. We\'ll help you put it into words.',
+    description: 'Share your experience with Atropos. We\'ll help you put it into words.',
   },
 }
 
