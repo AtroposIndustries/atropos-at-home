@@ -5,7 +5,7 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
@@ -19,10 +19,10 @@ export const metadata = {
     'smart home monitoring Tasmania',
     'Control4 support Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/support` },
+  alternates: { canonical: `${SITE_URL}/residential/support` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/support`,
+    url:         `${SITE_URL}/residential/support`,
     description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
   },
 }

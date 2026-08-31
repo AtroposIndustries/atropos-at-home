@@ -5,7 +5,7 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
@@ -20,10 +20,10 @@ export const metadata = {
     'acoustic panels Hobart',
     'broadband absorber installation',
   ],
-  alternates: { canonical: `${SITE_URL}/acoustic` },
+  alternates: { canonical: `${SITE_URL}/residential/acoustic` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/acoustic`,
+    url:         `${SITE_URL}/residential/acoustic`,
     description: 'Purpose-designed acoustic panels, diffusers, and bass trapping for home theatres and listening rooms. Measured, designed, and installed by Atropos, Hobart.',
   },
 }

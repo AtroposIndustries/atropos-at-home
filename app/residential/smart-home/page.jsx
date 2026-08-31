@@ -5,26 +5,27 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
-  title:       'Premium Home Theatre Design & Installation Tasmania',
-  description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
+  title:       'Smart Home Automation Hobart & Tasmania',
+  description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
   keywords: [
-    'home theatre Hobart',
-    'Dolby Atmos installation Tasmania',
-    'home cinema design Hobart',
-    'projector room design',
-    'acoustic cinema treatment',
-    'home theatre installer Tasmania',
+    'smart home Hobart',
+    'home automation Tasmania',
+    'Control4 installer',
+    'smart lighting system',
+    'RTI installer Hobart',
+    'Crestron Tasmania',
+    'smart home installer Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/home-theatre` },
+  alternates: { canonical: `${SITE_URL}/residential/smart-home` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/home-theatre`,
-    description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
+    url:         `${SITE_URL}/residential/smart-home`,
+    description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
   },
 }
 
@@ -38,7 +39,7 @@ const schemaFaq = {
   })),
 }
 
-export default function HomeTheatrePage() {
+export default function SmartHomePage() {
   return (
     <>
       <script
@@ -84,8 +85,8 @@ export default function HomeTheatrePage() {
       </section>
 
       <CtaBand
-        title={<>Ready to build your<br /><em>perfect cinema?</em></>}
-        body="Tell us about your room and your vision. We will handle everything from there."
+        title={<>Ready to make your home <em>intelligent?</em></>}
+        body="Begin with a conversation. We will design the right system for how you live."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

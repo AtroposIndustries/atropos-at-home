@@ -5,27 +5,26 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
-  title:       'Smart Home Automation Hobart & Tasmania',
-  description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
+  title:       'Home Network & Connectivity Installation Tasmania',
+  description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
   keywords: [
-    'smart home Hobart',
-    'home automation Tasmania',
-    'Control4 installer',
-    'smart lighting system',
-    'RTI installer Hobart',
-    'Crestron Tasmania',
-    'smart home installer Tasmania',
+    'home network Hobart',
+    'Wi-Fi installation Tasmania',
+    'Ubiquiti installer',
+    'smart home networking',
+    'enterprise Wi-Fi home',
+    'structured cabling Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/smart-home` },
+  alternates: { canonical: `${SITE_URL}/residential/network` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/smart-home`,
-    description: 'Whole-home automation — lighting, climate, security and AV behind one intuitive interface. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
+    url:         `${SITE_URL}/residential/network`,
+    description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
   },
 }
 
@@ -39,7 +38,7 @@ const schemaFaq = {
   })),
 }
 
-export default function SmartHomePage() {
+export default function NetworkPage() {
   return (
     <>
       <script
@@ -85,8 +84,8 @@ export default function SmartHomePage() {
       </section>
 
       <CtaBand
-        title={<>Ready to make your home <em>intelligent?</em></>}
-        body="Begin with a conversation. We will design the right system for how you live."
+        title={<>Ready for a network that<br /><em>never lets you down?</em></>}
+        body="Tell us about your home and your connectivity needs. We will design the infrastructure."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

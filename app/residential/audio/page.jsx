@@ -5,26 +5,26 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
-  title:       'Home Network & Connectivity Installation Tasmania',
-  description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
+  title:       'Distributed Audio & Whole-home Sound Tasmania',
+  description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
   keywords: [
-    'home network Hobart',
-    'Wi-Fi installation Tasmania',
-    'Ubiquiti installer',
-    'smart home networking',
-    'enterprise Wi-Fi home',
-    'structured cabling Tasmania',
+    'distributed audio Hobart',
+    'multi-room audio Tasmania',
+    'Bluesound installer',
+    'whole home sound system',
+    'outdoor audio Hobart',
+    'Sonance installer Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/network` },
+  alternates: { canonical: `${SITE_URL}/residential/audio` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/network`,
-    description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
+    url:         `${SITE_URL}/residential/audio`,
+    description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
   },
 }
 
@@ -38,7 +38,7 @@ const schemaFaq = {
   })),
 }
 
-export default function NetworkPage() {
+export default function AudioPage() {
   return (
     <>
       <script
@@ -84,8 +84,8 @@ export default function NetworkPage() {
       </section>
 
       <CtaBand
-        title={<>Ready for a network that<br /><em>never lets you down?</em></>}
-        body="Tell us about your home and your connectivity needs. We will design the infrastructure."
+        title={<>Ready to fill your home<br />with <em>sound?</em></>}
+        body="Tell us about your home and how you listen. We will design the rest."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

@@ -5,26 +5,26 @@ import { CtaBand }     from '@/components/sections/Cta'
 import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
+import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 
 export const metadata = {
-  title:       'Distributed Audio & Whole-home Sound Tasmania',
-  description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
+  title:       'Premium Home Theatre Design & Installation Tasmania',
+  description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
   keywords: [
-    'distributed audio Hobart',
-    'multi-room audio Tasmania',
-    'Bluesound installer',
-    'whole home sound system',
-    'outdoor audio Hobart',
-    'Sonance installer Tasmania',
+    'home theatre Hobart',
+    'Dolby Atmos installation Tasmania',
+    'home cinema design Hobart',
+    'projector room design',
+    'acoustic cinema treatment',
+    'home theatre installer Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/audio` },
+  alternates: { canonical: `${SITE_URL}/residential/home-theatre` },
   openGraph: {
     type:        'website',
-    url:         `${SITE_URL}/audio`,
-    description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
+    url:         `${SITE_URL}/residential/home-theatre`,
+    description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
   },
 }
 
@@ -38,7 +38,7 @@ const schemaFaq = {
   })),
 }
 
-export default function AudioPage() {
+export default function HomeTheatrePage() {
   return (
     <>
       <script
@@ -84,8 +84,8 @@ export default function AudioPage() {
       </section>
 
       <CtaBand
-        title={<>Ready to fill your home<br />with <em>sound?</em></>}
-        body="Tell us about your home and how you listen. We will design the rest."
+        title={<>Ready to build your<br /><em>perfect cinema?</em></>}
+        body="Tell us about your room and your vision. We will handle everything from there."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
