@@ -287,6 +287,21 @@ custom domain becomes `atropos.com.au`, `atroposathome.com.au` stops being
 served and starts failing. A redirect needs its own mechanism — registrar URL
 forwarding, Cloudflare, or a second Pages repo.
 
+**Update the `atroposathome-redirect` stubs to point at the new paths.** That
+separate repository is the mechanism above — a second Pages site serving
+`atroposathome.com.au` — and its stub pages still forward to this site's old,
+single-word paths: `/audio/`, `/smart-home/`, `/home-theatre/`, `/network/`,
+`/acoustic/`, `/support/`. On this site those same paths are now themselves
+thin redirect stubs (their entire body is "This page has moved.") pointing at
+`/residential/audio/` and its siblings — the rebrand moved residential's
+content one level deeper to sit alongside `/commercial/`. A visitor arriving
+from the 2026-08-23 outreach emails, which link the old `atroposathome.com.au`
+URLs, currently takes two hops to reach real content instead of one, and would
+land on a dead page outright if this site's old-style stubs are ever pruned.
+Re-point every stub in `atroposathome-redirect` straight at the corresponding
+`/residential/*` URL. **That repository is out of scope here** — this is a
+note for whoever next has it open, not a task for this codebase.
+
 **Re-register the Form Location URLs in Zoho.** Validated per page, so every
 form-bearing page needs re-pointing. A missed page still creates the lead but
 never confirms it to the visitor, and nothing surfaces the failure. The dual-
