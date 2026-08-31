@@ -267,6 +267,8 @@ nav.scrolled {
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
   min-width: 280px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   background-color: rgba(18, 18, 23, 0.98);
   border: 1px solid var(--border-subtle);
   backdrop-filter: blur(16px);
@@ -377,8 +379,10 @@ nav.scrolled {
   z-index: 99;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 36px;
+  padding: 96px 0 48px;
+  overflow-y: auto;
   opacity: 0;
   transition: opacity var(--transition-base);
   /* Background set in theme */

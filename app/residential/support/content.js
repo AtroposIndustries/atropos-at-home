@@ -97,5 +97,5 @@ export const FAQ_ITEMS = [
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
-  ghostCta:   { label: 'View All Services',   href: '/#offerings' },
+  ghostCta:   { label: 'View All Services',   href: '/residential/#services' },
 }
