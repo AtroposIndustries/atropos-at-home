@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev":   "next dev -p 3001",
-    "build": "next build",
+    "build": "node scripts/build-stubs.mjs && next build",
     "start": "npx serve out",
     "lint":  "next lint --dir app --dir components --dir hooks --dir lib",
     "test":  "node --test && node scripts/check-form-pages.mjs"
