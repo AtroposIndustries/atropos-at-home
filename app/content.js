@@ -3,14 +3,32 @@
 export const NAV = {
   links: [
     {
-      label: 'Our Services',
+      label: 'Residential',
+      href:  '/residential',
       children: [
-        { label: 'Smart Home Automation',  href: '/smart-home',    desc: 'Lighting, climate, security & control' },
-        { label: 'Premium Home Theatre',   href: '/home-theatre',  desc: 'Design, acoustics & calibration' },
-        { label: 'Full-home Sound',        href: '/audio',         desc: 'Multi-zone distributed audio' },
-        { label: 'Network & Connectivity', href: '/network',       desc: 'Reliable, invisible, fast' },
-        { label: 'Acoustic Treatment',     href: '/acoustic',      desc: 'Panels, diffusers & room design' },
-        { label: 'Ongoing Support',        href: '/support',       desc: 'Remote monitoring & maintenance' },
+        { label: 'Smart Home Automation',  href: '/residential/smart-home',   desc: 'Lighting, climate, security & control' },
+        { label: 'Premium Home Theatre',   href: '/residential/home-theatre', desc: 'Design, acoustics & calibration' },
+        { label: 'Full-home Sound',        href: '/residential/audio',        desc: 'Multi-zone distributed audio' },
+        { label: 'Network & Connectivity', href: '/residential/network',      desc: 'Reliable, invisible, fast' },
+        { label: 'Acoustic Treatment',     href: '/residential/acoustic',     desc: 'Panels, diffusers & room design' },
+        { label: 'Ongoing Support',        href: '/residential/support',      desc: 'Remote monitoring & maintenance' },
+        { label: 'All residential services', href: '/residential' },
+      ],
+    },
+    {
+      label: 'Commercial',
+      href:  '/commercial',
+      children: [
+        { label: 'Building & Room Control',  href: '/commercial/control',       desc: 'Scheduling, occupancy & zoning' },
+        { label: 'Meeting & Conference Rooms', href: '/commercial/meeting-rooms', desc: 'Video conferencing & room booking' },
+        { label: 'Distributed Audio & Paging', href: '/commercial/audio',       desc: 'Zoned audio, paging & override' },
+        { label: 'Managed Networks',         href: '/commercial/networks',      desc: 'Monitored, supported, under SLA' },
+        { label: 'Structured Cabling',       href: '/commercial/cabling',       desc: 'Comms rooms, racks & patching' },
+        { label: 'Security & Access',        href: '/commercial/security',      desc: 'CCTV, access control & intercom' },
+        { label: 'Digital Signage',          href: '/commercial/signage',       desc: 'Screens, scheduling & wayfinding' },
+        { label: 'Acoustic Treatment',       href: '/commercial/acoustic',      desc: 'Speech intelligibility & privacy' },
+        { label: 'Managed Services',         href: '/commercial/support',       desc: 'Contracted response & monitoring' },
+        { label: 'All commercial services',  href: '/commercial' },
       ],
     },
     { label: 'About', href: '/about' },
@@ -124,14 +142,28 @@ export const FOOTER = {
   location: 'Hobart, Tasmania',
   columns: [
     {
-      heading: 'Services',
+      heading: 'Residential Services',
       links: [
-        { label: 'Smart Home Automation',  href: '/smart-home' },
-        { label: 'Premium Home Theatre',   href: '/home-theatre' },
-        { label: 'Full-home Sound',        href: '/audio' },
-        { label: 'Network & Connectivity', href: '/network' },
-        { label: 'Acoustic Treatment',     href: '/acoustic' },
-        { label: 'Ongoing Support',        href: '/support' },
+        { label: 'Smart Home Automation',  href: '/residential/smart-home' },
+        { label: 'Premium Home Theatre',   href: '/residential/home-theatre' },
+        { label: 'Full-home Sound',        href: '/residential/audio' },
+        { label: 'Network & Connectivity', href: '/residential/network' },
+        { label: 'Acoustic Treatment',     href: '/residential/acoustic' },
+        { label: 'Ongoing Support',        href: '/residential/support' },
+      ],
+    },
+    {
+      heading: 'Commercial Services',
+      links: [
+        { label: 'Building & Room Control',    href: '/commercial/control' },
+        { label: 'Meeting & Conference Rooms', href: '/commercial/meeting-rooms' },
+        { label: 'Distributed Audio & Paging', href: '/commercial/audio' },
+        { label: 'Managed Networks',           href: '/commercial/networks' },
+        { label: 'Structured Cabling',         href: '/commercial/cabling' },
+        { label: 'Security & Access',          href: '/commercial/security' },
+        { label: 'Digital Signage',            href: '/commercial/signage' },
+        { label: 'Acoustic Treatment',         href: '/commercial/acoustic' },
+        { label: 'Managed Services',           href: '/commercial/support' },
       ],
     },
     {
@@ -139,13 +171,6 @@ export const FOOTER = {
       links: [
         { label: 'About',   href: '/about' },
         { label: 'Contact', href: '/#contact' },
-      ],
-    },
-    {
-      heading: 'Connect',
-      links: [
-        { label: 'Facebook',  href: 'https://www.facebook.com/atroposptyltd' },
-        { label: 'Instagram', href: 'https://www.instagram.com/atroposptyltd' },
       ],
     },
   ],
