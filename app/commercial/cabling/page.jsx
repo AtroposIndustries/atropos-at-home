@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Structured Cabling Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial cabling Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/cabling` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/cabling`,
     description: 'Cat6A and fibre backbone, comms room design and rack layout coordinated with your builder at rough-in, with every port tested and certified at handover. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

@@ -3,6 +3,7 @@ import { Footer }       from '@/components/layout/Footer'
 import { ReviewWizard } from '@/components/sections/ReviewWizard'
 import { NAV, FOOTER } from '../content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Leave a Review',
@@ -10,11 +11,10 @@ export const metadata = {
   alternates: {
     canonical: `${SITE_URL}/review`,
   },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/review`,
     description: 'Share your experience with Atropos. We\'ll help you put it into words.',
-  },
+  }),
 }
 
 // Baked in at build time by the deploy workflow — static export has no runtime env.

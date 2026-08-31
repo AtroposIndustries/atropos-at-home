@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Home Network & Connectivity Installation Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'structured cabling Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/network` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/network`,
     description: 'Enterprise-grade whole-home Wi-Fi, structured cabling, and network design for smart homes in Tasmania. Ubiquiti, Ruckus. Designed and installed by Atropos, Hobart.',
-  },
+  }),
 }
 
 const schemaFaq = {

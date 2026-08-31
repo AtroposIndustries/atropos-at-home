@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Managed Networks Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial network support Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/networks` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/networks`,
     description: 'Business networks monitored, patched and segmented under an agreed service level — guest, IoT and point-of-sale traffic kept apart, with documented failover and response times. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

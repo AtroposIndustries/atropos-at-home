@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Meeting & Conference Room AV Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial video conferencing Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/meeting-rooms` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/meeting-rooms`,
     description: 'Teams, Zoom and Google Meet meeting rooms designed around the room\'s own geometry — one-touch join, room booking panel integration, and a written AV/IT support boundary. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

@@ -6,6 +6,7 @@ import { ThemeProvider }  from '@/lib/theme-context'
 import { CustomCursor }   from '@/components/ui/CustomCursor'
 
 import { SITE_URL } from '@/lib/site'
+import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,14 +33,7 @@ export const metadata = {
     locale:   'en_AU',
     siteName: 'Atropos',
     url:      SITE_URL,
-    images: [
-      {
-        url:    '/img/og-image.jpg',
-        width:  1200,
-        height: 630,
-        alt:    'Atropos — Smart Home, AV & Home Theatre Tasmania',
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card:   'summary_large_image',
@@ -96,6 +90,12 @@ const schemaHome = {
         'Lutron',
         'Acoustic Treatment',
         'Custom AV Integration',
+        'Structured Cabling',
+        'Access Control',
+        'Digital Signage',
+        'Managed Networks',
+        'Conference Room AV',
+        'Building Automation',
       ],
       sameAs: [
         'https://www.facebook.com/atroposptyltd',

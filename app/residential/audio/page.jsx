@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Distributed Audio & Whole-home Sound Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'Sonance installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/audio` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/audio`,
     description: 'Whole-home and multi-room audio distribution — high-fidelity music in every room, controlled from a single app. Bluesound, Sonance, KEF, Bowers & Wilkins. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

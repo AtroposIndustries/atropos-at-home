@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Audio, Paging & Background Music Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial audio Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/audio` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/audio`,
     description: 'Zoned background music and all-call paging with emergency override into your fire alarm system, licensed correctly for a commercial premises rather than a household. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

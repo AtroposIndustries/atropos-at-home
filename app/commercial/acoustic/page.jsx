@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Acoustic Treatment for Offices & Meeting Rooms Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'conferencing room acoustics Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/acoustic` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/acoustic`,
     description: 'Speech intelligibility, speech privacy and open-plan noise control, with meeting-room reverberation addressed for conferencing audio and coordinated with your architect\'s finishes schedule. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

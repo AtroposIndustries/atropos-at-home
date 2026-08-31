@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Smart Home Ongoing Support & Maintenance Tasmania',
@@ -20,11 +21,10 @@ export const metadata = {
     'Control4 support Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/support` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/support`,
     description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
-  },
+  }),
 }
 
 const schemaFaq = {

@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Premium Home Theatre Design & Installation Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'home theatre installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/home-theatre` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/home-theatre`,
     description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

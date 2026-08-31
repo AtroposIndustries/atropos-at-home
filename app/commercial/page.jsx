@@ -8,6 +8,7 @@ import { ContactForm }   from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, SERVICES, CTA }    from './content'
 import { SITE_URL }      from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial AV, Control & Managed Networks Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial security integrator Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial`,
     description: 'Building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security, signage and managed support for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
-  },
+  }),
 }
 
 export default function CommercialPage() {

@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Digital Signage & Wayfinding Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'building directory signage',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/signage` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/signage`,
     description: 'Screens specified for brightness and duty cycle, content scheduling built around who updates it, wayfinding integration and remote management across a distributed screen estate. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

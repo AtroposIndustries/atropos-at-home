@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Building & Room Control Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial automation Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/control` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/control`,
     description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

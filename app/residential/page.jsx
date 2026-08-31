@@ -8,6 +8,7 @@ import { ContactForm }  from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../content'
 import { HERO, INTRO, SERVICES, CTA }    from './content'
 import { SITE_URL }     from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Residential Smart Home, AV & Automation Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'smart home company Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/residential` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential`,
     description: 'Smart home automation, home theatre, whole-home audio, networking, acoustic treatment and ongoing support for homeowners, builders and architects across Tasmania. Accredited across every major control platform. Hobart-based.',
-  },
+  }),
 }
 
 export default function ResidentialPage() {

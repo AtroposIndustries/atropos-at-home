@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Managed Services & IT/AV Support Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial support contract Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/support` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/support`,
     description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a written response commitment agreed before anything breaks. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {

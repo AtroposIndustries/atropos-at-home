@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/sections/ContactForm'
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
+import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial Security & Access Control Tasmania',
@@ -21,11 +22,10 @@ export const metadata = {
     'commercial security Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/security` },
-  openGraph: {
-    type:        'website',
+  openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/security`,
     description: 'CCTV, access control and intercom on one platform, with credential management, retention planning and audit reporting that scale across sites and staff turnover. Hobart, Tasmania.',
-  },
+  }),
 }
 
 const schemaFaq = {
