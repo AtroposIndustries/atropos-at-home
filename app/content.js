@@ -47,16 +47,16 @@ export const HERO = {
 
 export const EXPERIENCE_ITEMS = [
   {
-    title: 'Smart Home',
+    title: 'Automation & Control',
     sub:   'Lighting · Climate · Security',
   },
   {
-    title: 'Home Theatre',
+    title: 'Cinema & Meeting Rooms',
     sub:   'Design · Install · Calibrate',
   },
   {
-    title: 'Audio Distribution',
-    sub:   'Whole-home · Premium Brands',
+    title: 'Distributed Audio',
+    sub:   'Multi-zone · Premium Brands',
   },
   {
     title: 'Network & Connectivity',
