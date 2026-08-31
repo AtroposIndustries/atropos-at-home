@@ -1,23 +1,20 @@
-import { SITE_URL } from '@/lib/site'
+// Relative, not the @/ alias: lib/routes.test.mjs imports this file, and
+// `node --test` cannot resolve jsconfig path aliases. Next handles relative
+// imports identically.
+import { ROUTES, routeUrl } from '../lib/routes.js'
 
-const BASE = SITE_URL
-const NOW  = new Date().toISOString()
+const NOW = new Date().toISOString()
 
-// Next's metadata resolver renders every canonical tag with a trailing slash
-// under trailingSlash: true, root included, but a plain template string here
-// would not. Route through this helper so <loc> always agrees with the
-// canonical the page itself renders.
-const url = (path) => `${BASE}/${path}`
-
+/**
+ * Driven from lib/routes.js so a new page cannot be added without appearing
+ * here. routeUrl applies the trailing slash, which must match the canonical
+ * each page renders under trailingSlash: true.
+ */
 export default function sitemap() {
-  return [
-    { url: url(''),              lastModified: NOW, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: url('smart-home/'),   lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: url('home-theatre/'), lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: url('audio/'),        lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: url('network/'),      lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: url('acoustic/'),     lastModified: NOW, changeFrequency: 'monthly', priority: 0.8 },
-    { url: url('support/'),      lastModified: NOW, changeFrequency: 'monthly', priority: 0.7 },
-    { url: url('about/'),        lastModified: NOW, changeFrequency: 'yearly',  priority: 0.6 },
-  ]
+  return ROUTES.map((r) => ({
+    url:             routeUrl(r.path),
+    lastModified:    NOW,
+    changeFrequency: r.changeFrequency,
+    priority:        r.priority,
+  }))
 }
