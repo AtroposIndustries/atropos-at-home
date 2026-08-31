@@ -64,11 +64,11 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Do you work directly with a body corporate or strata manager rather than a single business owner?',
-    answer:   'Regularly. Base-building control decisions often sit with a body corporate, strata manager or head landlord rather than an individual tenant, and we scope the project and the handover documentation to whoever holds that responsibility.',
+    answer:   'That depends on the building. Base-building control decisions can sit with a body corporate, strata manager or head landlord rather than an individual tenant, and we scope the project and the handover documentation to whoever holds that responsibility.',
   },
 ]
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
-  ghostCta:   { label: 'View All Services',   href: '/commercial#services' },
+  ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },
 }

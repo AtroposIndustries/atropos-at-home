@@ -64,11 +64,11 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Can you retrofit an existing meeting room, or is this only for new fit-outs?',
-    answer:   'Both. A new fit-out lets us plan cabling and mounting points before the ceiling and walls close up, but we retrofit meeting rooms regularly — assessing the existing room, its acoustics and its cabling, and designing around what is already there.',
+    answer:   'Both. A new fit-out lets us plan cabling and mounting points before the ceiling and walls close up. A retrofit means assessing the existing room, its acoustics and its cabling, and designing around what is already there rather than assuming a blank slate.',
   },
 ]
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
-  ghostCta:   { label: 'View All Services',   href: '/commercial#services' },
+  ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },
 }
