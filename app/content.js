@@ -38,11 +38,11 @@ export const NAV = {
 }
 
 export const HERO = {
-  eyebrow:   'Smart Living · Premium AV · Home Theatre',
-  titleMain: ['Your home,', 'elevated.'],
-  titleSub:  'Beautifully integrated technology',
-  body:      'We bring the finest in smart home automation, distributed audio, and premium home theatre to architects, builders, and discerning homeowners across Tasmania and beyond.',
-  primaryCta: { label: 'Explore the Experience', href: '#offerings' },
+  eyebrow:   'Residential · Commercial · Hobart, Tasmania',
+  titleMain: ['Technology,', 'woven into the building.'],
+  titleSub:  'Automation, AV & networks for homes and businesses',
+  body:      'We design and install the automation, audio-visual and network systems built into a space from the studs out — for homeowners, business owners, builders and architects, from the plans stage or retrofitted after the fact. Twenty-five years of combined audiovisual and ICT experience across residential and commercial, accredited across every major control platform rather than tied to one.',
+  primaryCta: { label: 'Choose Your Path', href: '#offerings' },
 }
 
 export const EXPERIENCE_ITEMS = [
@@ -65,43 +65,19 @@ export const EXPERIENCE_ITEMS = [
 ]
 
 export const OFFERINGS = {
-  eyebrow: 'Our Services',
+  eyebrow: 'Two Sides, One Business',
   items: [
     {
-      number: '01',
-      name:   'Smart Home Automation',
-      desc:   'Complete integration of lighting, climate, blinds, security, and entertainment. Controlled with a gesture, voice, or schedule — tailored entirely to how you live.',
-      href:   '/smart-home',
+      number: 'Six Services',
+      name:   'Residential',
+      desc:   'Smart home automation, home theatre, whole-home audio, networking, acoustic treatment and ongoing support — for homeowners, builders and architects, from the plans stage or as a retrofit.',
+      href:   '/residential/',
     },
     {
-      number: '02',
-      name:   'Premium Home Theatre',
-      desc:   'From intimate 2-channel listening rooms to fully immersive Dolby Atmos cinema spaces. We design, acoustic-treat, and commission experiences that move you.',
-      href:   '/home-theatre',
-    },
-    {
-      number: '03',
-      name:   'Full-home Sound',
-      desc:   'Music that follows you through your home — from the kitchen to the pool deck. Multi-zone, multi-source, and brilliantly clear with brands like Bluesound, Sonance, and more.',
-      href:   '/audio',
-    },
-    {
-      number: '04',
-      name:   'Network & Connectivity',
-      desc:   'Rock-solid, invisible networking that underpins every system in your home. Wi-Fi that actually reaches everywhere, with the bandwidth to match.',
-      href:   '/network',
-    },
-    {
-      number: '05',
-      name:   'Acoustic Treatment',
-      desc:   'Purpose-designed acoustic panels, diffusers, and treatments that look as good as they perform — designed to complement, not fight, your interior.',
-      href:   '/acoustic',
-    },
-    {
-      number: '06',
-      name:   'Ongoing Support',
-      desc:   'Technology you can actually live with. Remote monitoring, software updates, and a team that answers the phone — long after installation day.',
-      href:   '/support',
+      number: 'Nine Services',
+      name:   'Commercial',
+      desc:   'Building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security and access, digital signage, acoustic treatment and managed services — for business owners, builders and architects, from the plans stage or as a retrofit.',
+      href:   '/commercial/',
     },
   ],
 }
@@ -114,6 +90,7 @@ export const TESTIMONIAL = {
 
 export const ABOUT = {
   eyebrow:  'Who We Are',
+  body:     'We\'re two mates who grew up loving both technology and music — and found that when you bring those worlds together thoughtfully, something extraordinary happens. Atropos exists for the homeowner, business owner, builder, or architect who won\'t settle for ordinary.',
   location: 'Hobart, Tasmania',
   cta:      { label: 'Our Story', href: '/about' },
 }
@@ -125,6 +102,7 @@ export const BRANDS = {
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
+  body:       'Whether it\'s a home theatre or a boardroom fit-out, begin with a conversation. We\'ll handle the rest.',
 }
 
 export const CONTACT_SERVICES = [

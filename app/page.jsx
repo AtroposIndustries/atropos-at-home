@@ -32,13 +32,11 @@ export default function HomePage() {
         ghostCta={HERO.ghostCta}
       />
 
-      <ExperienceStrip items={EXPERIENCE_ITEMS} />
-
       <section className="section-dark" id="offerings">
         <div className="section-intro" style={{ paddingBottom: 0 }}>
           <div className="section-label">{OFFERINGS.eyebrow}</div>
-          <h2 className="section-title-home" style={{ marginTop: '16px' }}>Technology that <em>disappears</em><br />into the home.</h2>
-          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, maxWidth: '640px', marginTop: '20px', marginBottom: '48px', fontWeight: 300 }}>We believe the best technology is invisible — seamlessly woven into the architecture, responding intuitively, and elevating every moment spent at home.</p>
+          <h2 className="section-title-home" style={{ marginTop: '16px' }}>Technology that <em>disappears</em><br />into the building.</h2>
+          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, maxWidth: '640px', marginTop: '20px', marginBottom: '48px', fontWeight: 300 }}>The best technology is invisible — woven into the architecture, responding intuitively, whether that&apos;s a living room or a boardroom.</p>
         </div>
         <div className="threads-list">
           {OFFERINGS.items.map((o) => (
@@ -54,10 +52,12 @@ export default function HomePage() {
         </div>
       </section>
 
+      <ExperienceStrip items={EXPERIENCE_ITEMS} />
+
       <AboutHome
         eyebrow={ABOUT.eyebrow}
         title={<>Tasmanian roots.<br /><em>Global standards.</em></>}
-        body="We're two mates who grew up loving both technology and music — and found that when you bring those worlds together thoughtfully, something extraordinary happens. Atropos exists for the homeowner, builder, or architect who won't settle for ordinary."
+        body={ABOUT.body}
         cta={ABOUT.cta}
         location={ABOUT.location}
         imgMain="/img/tasmania-1.jpg"
@@ -65,7 +65,7 @@ export default function HomePage() {
 
       <CtaHome
         title={<>Let&apos;s create something<br /><em>extraordinary.</em></>}
-        body="Begin with a conversation. We'll handle the rest."
+        body={CTA.body}
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
