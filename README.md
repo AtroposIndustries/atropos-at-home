@@ -1,6 +1,6 @@
-# Atropos at Home
+# Atropos
 
-The Atropos at Home website — a static Next.js 14 site hosted on GitHub Pages
+The Atropos website — a static Next.js 14 site hosted on GitHub Pages
 at [atropos.com.au](https://atropos.com.au).
 
 The site moved from `atroposathome.com.au` on 2026-08-24, when the business
@@ -38,13 +38,33 @@ pnpm build && npx serve out
 ## Structure
 
 ```
-app/          Routes. Page copy lives in the content.js beside each page.
-components/   UI library — layout/, sections/, ui/
-hooks/        useScrollReveal, useNavScroll
-lib/          Theme context, circuit pulses, Zoho form config
-styles/       base.css, home-theme.css, local.css, alt-theme.css
-public/       Images, llms.txt, CNAME, .nojekyll, zoho-thanks.html
+app/               Routes. Page copy lives in the content.js beside each page.
+  residential/     Landing page + six residential service pages
+  commercial/      Landing page + nine commercial service pages
+components/        UI library — layout/, sections/, ui/
+hooks/             useScrollReveal, useNavScroll
+lib/               Theme context, circuit pulses, Zoho form config, routes.js
+scripts/           Build-time and test-time guards (see below)
+styles/            base.css, home-theme.css, local.css, alt-theme.css
+public/            Images, llms.txt, CNAME, .nojekyll, zoho-thanks.html
 ```
+
+`lib/routes.js` is the single source of truth for every route on the site —
+its path, which vertical it belongs to (`none` / `residential` / `commercial`),
+whether it carries the contact form, and its sitemap metadata. `app/sitemap.js`
+and the Zoho Form Location URL list (`docs/LAUNCH.md`) are both derived from
+it rather than maintained separately, so they cannot drift from the page list
+without a test failing.
+
+`scripts/` holds the checks that keep the codebase honest about that:
+
+- `check-form-pages.mjs` — fails if a page renders `ContactForm` but its route
+  is missing from `lib/routes.js` (run as part of `pnpm test`).
+- `build-stubs.mjs` — generates the redirect stubs for retired URLs, run
+  automatically before `next build`.
+
+`lib/routes.test.mjs` adds the two-way check: every page on disk has a
+declared route, and every declared route has a page on disk.
 
 `components/` intentionally contains components no page currently renders. They
 are kept for an upcoming redesign — do not remove them as dead code.
