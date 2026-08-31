@@ -11,11 +11,15 @@ import { FORM_ROUTES } from '../lib/routes.js'
 
 const APP = 'app'
 
+// Next.js's default `pageExtensions` — a future page.js or page.tsx must not
+// silently bypass this guard the way a literal 'page.jsx' match would.
+const PAGE_FILE = /^page\.(js|jsx|ts|tsx)$/
+
 function pageFiles(dir, found = []) {
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry)
     if (statSync(full).isDirectory()) pageFiles(full, found)
-    else if (entry === 'page.jsx') found.push(full)
+    else if (PAGE_FILE.test(entry)) found.push(full)
   }
   return found
 }

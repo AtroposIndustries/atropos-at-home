@@ -72,7 +72,7 @@ export default function HomePage() {
 
       <ContactForm
         label="Book a Consultation"
-        title={<>Tell us about<br /><em>your home.</em></>}
+        title={<>Tell us about<br /><em>your project.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
         services={CONTACT_SERVICES}
       />
