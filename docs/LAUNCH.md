@@ -37,7 +37,7 @@ this site's form is built around. If the generated code does not post to
 3. `Lead Source` is a picklist — Zoho drops a submitted value that is not a
    configured option, silently, with the lead still arriving but unattributed.
    Setup → Modules and Fields → Leads → Lead Source → add the picklist value
-   `Atropos at Home - Contact Form` exactly.
+   `Atropos - Contact Form` exactly.
 4. In **Step 2, Specify Form Details**, set **Form location URL** to the
    **full URL of every page carrying the form** — this is validated per page,
    not per domain. See section 7 for the current list. Leaving it unrestricted
@@ -69,7 +69,7 @@ this site's form is built around. If the generated code does not post to
      matches our client-side validation exactly, Phone optional.
    - The field names came through readable, not as `LEADCF*` custom fields, so
      no mapping was needed.
-   - `Atropos at Home - Contact Form` was already present in the Lead Source
+   - `Atropos - Contact Form` was already present in the Lead Source
      picklist and pre-selected, so step 3 was already satisfied.
    - No captcha field was emitted, confirming step 6.
 
@@ -246,7 +246,7 @@ build satisfies it equally, being the same artefact served from localhost.
       *(Verified by curl 2026-08-23, along with `/llms.txt` and
       `/zoho-thanks.html`.)*
 - [ ] A real form submission creates a Lead in Zoho CRM.
-- [ ] The new Lead's Lead Source reads "Atropos at Home - Contact Form".
+- [ ] The new Lead's Lead Source reads "Atropos - Contact Form".
 - [ ] The internal notification email arrives.
 - [ ] The enquirer receives the acknowledgement.
 - [ ] Google Analytics (`G-8RGK41Y2L5`) records the visit.
@@ -368,7 +368,7 @@ property for the new domain — `atropos.com.au` already carries a
 
 ### `ZOHO_CONFIG.leadSource` still reads "Atropos at Home"
 
-`lib/zoho-form.js` sends `leadSource: 'Atropos at Home - Contact Form'` on
+`lib/zoho-form.js` sends `leadSource: 'Atropos - Contact Form'` on
 every submission — the one place in the codebase the retired brand name is
 deliberately still allowed to appear (see the top-level brand rule in this
 repo's task instructions). It is **not** simply a naming leftover to clean up:

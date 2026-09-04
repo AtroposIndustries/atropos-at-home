@@ -45,35 +45,6 @@ export const FEATURES = [
   },
 ]
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'Which conferencing platforms do you support?',
-    answer:   'We design rooms for Microsoft Teams, Zoom Rooms and Google Meet hardware, selecting the room compute and peripherals to suit whichever your organisation runs. If you use more than one, a room can be configured to switch between them.',
-  },
-  {
-    question: 'What happens if the room is an unusual shape, or has a lot of glass?',
-    answer:   'That is exactly what the design stage is for. Microphone pickup and camera framing are planned against the room\'s real geometry — sightlines, table shape, ceiling height, hard and soft surfaces — rather than a standard kit installed regardless of the room. A long, narrow room and a square boardroom need different coverage even at the same headcount.',
-  },
-  {
-    question: 'Where is the line between what you support and what our IT team supports?',
-    answer:   'We set that out in writing before installation, not after a fault. Broadly, we support the room hardware and the AV signal chain — cameras, microphones, displays, the room\'s audio and video coverage — while your IT team supports the network, user identity and conferencing licensing the room hardware sits on top of. Where a fault could be either, the boundary document says who is contacted first.',
-  },
-  {
-    question: 'Can the room booking panel integrate with our existing calendar system?',
-    answer:   'Yes, provided your organisation runs a calendar platform the panel can synchronise with, most commonly Microsoft 365 or Google Workspace. We configure this during installation so availability shown outside the room matches what is actually booked.',
-  },
-  {
-    question: 'Can you retrofit an existing meeting room, or is this only for new fit-outs?',
-    answer:   'Both. A new fit-out lets us plan cabling and mounting points before the ceiling and walls close up. A retrofit means assessing the existing room, its acoustics and its cabling, and designing around what is already there rather than assuming a blank slate.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },

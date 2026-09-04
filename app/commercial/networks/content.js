@@ -45,35 +45,6 @@ export const FEATURES = [
   },
 ]
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'How is a managed commercial network different from what you would install in a house?',
-    answer:   'A residential network is designed to be installed well and then left alone. A commercial network is designed to be watched: it is monitored continuously, patched on a schedule, covered by a response-time commitment, and segmented around business functions like point-of-sale and guest Wi-Fi rather than personal devices. The hardware can look similar; what happens after installation is the difference.',
-  },
-  {
-    question: 'What happens if the network goes down outside business hours?',
-    answer:   'Monitoring runs continuously regardless of trading hours, and the response commitment in your service level agreement applies whenever the fault is raised. What actually happens next — an alert, a remote fix, a site visit before opening — is scoped into that agreement so it is agreed in advance rather than negotiated during the outage.',
-  },
-  {
-    question: 'Can you keep our point-of-sale network separate from guest Wi-Fi?',
-    answer:   'Yes — this is one of the first things we design in. Guest access, IoT devices and point-of-sale or back-office systems sit on separate network segments, so a guest device or a compromised camera has no route to the systems that take payment or hold business data.',
-  },
-  {
-    question: 'Who owns the network configuration and the administrator credentials?',
-    answer:   'You do. The configuration, the segmentation design and the device inventory are documented, and administrator-level credentials are issued to your organisation in writing, so the network is not something only we can operate or hand over to a different provider.',
-  },
-  {
-    question: 'What response time can we expect if something goes wrong?',
-    answer:   'That is set out in the service level agreement scoped to your site before work begins — it depends on the criticality of what is affected and the level of cover you choose. It is a written commitment agreed up front, not a best-effort call whenever someone is available.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },

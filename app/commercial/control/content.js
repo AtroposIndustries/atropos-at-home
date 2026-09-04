@@ -45,35 +45,6 @@ export const FEATURES = [
   },
 ]
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'Can the system integrate with our existing building management system?',
-    answer:   'In most cases, yes — the approach depends on what protocol your BMS and mechanical services already speak. We assess the existing building services during design and integrate with them rather than duplicate them, so far as the installed equipment allows.',
-  },
-  {
-    question: 'Who owns the programming and the credentials once the project is finished?',
-    answer:   'You do. We document the programming logic, the network configuration and the device inventory, and hand over administrator-level credentials in writing at project close. If you later engage a different contractor, you are not locked out by us.',
-  },
-  {
-    question: 'Can different tenancies or floors be controlled independently?',
-    answer:   'Yes. Zoning is designed against your lease boundaries and floor plan, so each tenancy\'s schedule, lighting and climate can be managed on its own, without a flow-on effect to the level above or below.',
-  },
-  {
-    question: 'What happens to scheduling around public holidays or one-off events?',
-    answer:   'The schedule supports one-off overrides — an after-hours function, an extended trading day, a public holiday closure — without needing to reprogram the underlying weekly schedule.',
-  },
-  {
-    question: 'Do you work directly with a body corporate or strata manager rather than a single business owner?',
-    answer:   'That depends on the building. Base-building control decisions can sit with a body corporate, strata manager or head landlord rather than an individual tenant, and we scope the project and the handover documentation to whoever holds that responsibility.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },

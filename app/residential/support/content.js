@@ -72,35 +72,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'What is included in a support plan?',
-    answer:   'Our support plans include remote monitoring, software and firmware update management, phone and remote support, and priority scheduling for on-site visits. We tailor the scope to your system during onboarding.',
-  },
-  {
-    question: 'What are your response times?',
-    answer:   'Phone and remote support is available during business hours with same-day response. Priority on-site visits are typically scheduled within 24 to 48 hours. For critical issues affecting security or access systems, we escalate accordingly.',
-  },
-  {
-    question: 'Can you support a system you did not install?',
-    answer:   'Yes — with a caveat. We need to audit the system first to understand what is installed, how it is configured, and what documentation exists. Once we know the system, we can support it.',
-  },
-  {
-    question: 'What if I just want occasional help without a plan?',
-    answer:   'Casual support is available at our standard hourly rate. Support plan clients receive priority scheduling and are billed at the plan rate. For ongoing peace of mind, the plan usually works out significantly better value.',
-  },
-  {
-    question: 'How do software updates work?',
-    answer:   'We manage updates on a controlled cycle — reviewing release notes, testing on comparable systems where possible, and deploying to your home at an agreed time. We do not apply updates automatically without review, because updates occasionally introduce regressions.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },

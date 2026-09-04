@@ -77,35 +77,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'What control systems do you install?',
-    answer:   'Control4, RTI, Crestron and the other leading professional platforms — we specialise across all of them, and that is rather the point. Because we are not tied to any single system, we can choose on the merits of your project: the size and complexity of your home, how you want to live in it, and your budget. Where a home calls for something bespoke, we design custom interfaces for mobile, tablet, and web that fit the architecture rather than dictate it.',
-  },
-  {
-    question: 'Can you automate an existing home, or is it only for new builds?',
-    answer:   'Both. New builds give us the opportunity to pre-wire for the cleanest possible installation, but we retrofit smart home systems into existing homes regularly. We assess the existing infrastructure and design the best approach with minimal disruption.',
-  },
-  {
-    question: 'Does everything need to be the same brand?',
-    answer:   'No. Our control systems integrate products from multiple manufacturers — lighting from Lutron, climate from Daikin, security from a different brand entirely. We make them all work together seamlessly through a single interface.',
-  },
-  {
-    question: 'What happens if something stops working?',
-    answer:   'We offer ongoing support plans that include remote monitoring and phone support. Many issues can be diagnosed and resolved remotely. For anything requiring a site visit, we are local and respond quickly.',
-  },
-  {
-    question: 'Can the system be expanded later?',
-    answer:   'Yes. We design systems with future expansion in mind. Adding a new room, device, or integration is straightforward — especially if we completed the original pre-wire.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },

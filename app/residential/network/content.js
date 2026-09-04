@@ -77,35 +77,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'Why not just use consumer Wi-Fi routers?',
-    answer:   'Consumer routers are designed for simplicity, not performance. In a home with dozens of smart devices, multiple streams, and coverage demands across multiple levels and outdoor areas, enterprise-grade access points provide meaningfully better reliability, coverage, and control.',
-  },
-  {
-    question: 'What brands do you use?',
-    answer:   'We primarily use Ubiquiti UniFi for most residential projects — it offers outstanding performance and centralised management at a sensible price point. For larger or more demanding installations we also work with Ruckus and Cisco Meraki.',
-  },
-  {
-    question: 'Can you work with our existing cabling?',
-    answer:   'Often yes. We assess the existing cabling during our site survey. Older Cat5 cable is frequently reusable, and we design around what is there where it makes sense to do so.',
-  },
-  {
-    question: 'How do you handle smart home devices on the network?',
-    answer:   'Smart home devices — thermostats, cameras, voice assistants, automation controllers — are placed on dedicated network segments (VLANs) separate from your personal devices. This improves security and prevents smart home traffic from affecting your day-to-day connectivity.',
-  },
-  {
-    question: 'Can you upgrade an existing network?',
-    answer:   'Absolutely. Whether it is replacing consumer equipment with enterprise access points, adding coverage to a problem area, or restructuring the network to support a new smart home system — we assess what is there and recommend the right upgrade path.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },

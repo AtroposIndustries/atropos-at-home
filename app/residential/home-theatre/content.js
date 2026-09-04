@@ -77,35 +77,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'What is the difference between a media room and a dedicated home theatre?',
-    answer:   'A media room is a multipurpose space — comfortable for watching TV, but not optimised for cinema. A dedicated home theatre is a purpose-built room with controlled acoustics, optimised sight lines, and professional-grade equipment. Both are worthwhile, and the right choice depends on your space and budget.',
-  },
-  {
-    question: 'What screen size do I need?',
-    answer:   'Screen size is determined by viewing distance and the content you watch primarily. We calculate the optimal screen width for your seating arrangement during the design phase — it is more nuanced than simply "bigger is better".',
-  },
-  {
-    question: 'Do I need Dolby Atmos?',
-    answer:   'Dolby Atmos delivers a genuinely different experience for film — height channels create a three-dimensional soundstage that conventional surround cannot replicate. For a dedicated theatre, we recommend it. For a media room with ceiling constraints, there are excellent alternatives.',
-  },
-  {
-    question: 'Can an existing room be converted into a home theatre?',
-    answer:   'Yes. We assess the room\'s dimensions, existing construction, and any acoustic challenges before recommending an approach. Retrofitting a theatre is more involved than building into a new build, but excellent results are achievable.',
-  },
-  {
-    question: 'How long does a home theatre installation take?',
-    answer:   'A fully dedicated theatre typically takes two to four weeks from room-ready to calibration, depending on the complexity of the acoustic treatment and equipment involved. We provide a detailed timeline during the design phase.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },

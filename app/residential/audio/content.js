@@ -77,35 +77,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'What streaming services do you support?',
-    answer:   'Our systems support all major streaming services including Spotify, Apple Music, Tidal, Amazon Music, and internet radio. Local network music libraries (NAS drives) are also supported for those with existing collections.',
-  },
-  {
-    question: 'How many zones can I have?',
-    answer:   'There is no practical limit. Most homes run between four and twelve zones. Each zone has independent volume and source control. Zones can also be grouped together when you want the whole house playing in sync.',
-  },
-  {
-    question: 'Can I add audio to outdoor areas?',
-    answer:   'Absolutely. Outdoor audio is one of our most popular additions. We specify weatherproof speakers designed for the acoustic challenges of open space — covering alfresco areas, pool decks, and gardens without compromise.',
-  },
-  {
-    question: 'What brands do you work with?',
-    answer:   'For distributed audio we primarily use Bluesound Professional, Sonance, KEF, Bowers & Wilkins, and Sonos depending on the application and budget. We will recommend the right combination for your home.',
-  },
-  {
-    question: 'Can you integrate with my existing automation system?',
-    answer:   'Yes. Our audio systems integrate with Control4, Crestron, RTI, and most major automation platforms. If you already have a system, we work within it. If you are starting fresh, we design everything together.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },

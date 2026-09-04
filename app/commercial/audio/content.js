@@ -45,35 +45,6 @@ export const FEATURES = [
   },
 ]
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'How does paging interact with our fire alarm system?',
-    answer:   'On a correctly integrated system, a signal from the fire alarm panel takes priority automatically — background music is cut and the affected zones switch to evacuation paging without anyone needing to operate the system manually. The exact interface depends on your fire system and is designed against your fire contractor\'s documentation, not applied as a generic setting.',
-  },
-  {
-    question: 'Do we need a licence to play background music?',
-    answer:   'In most cases, yes — playing music to staff or customers in a commercial premises is treated differently to a personal streaming subscription and generally requires its own licence. We are not a licensing body and cannot advise on the specific fees or terms that apply to your business, but we design the system to work with whichever licensed service you choose and flag the requirement during design.',
-  },
-  {
-    question: 'Can different areas of our building play different things?',
-    answer:   'Yes. Each zone — a dining room, a foyer, a warehouse, a corridor — is controlled independently for volume and source. Zones can also be grouped for a single all-call announcement without merging their day-to-day music.',
-  },
-  {
-    question: 'Can we page to one area without disturbing the rest of the building?',
-    answer:   'Yes, provided the zoning was designed for it. We plan speaker and amplifier zoning against your actual floor plan and fire compartments specifically so a page to reception does not need to reach the warehouse, and vice versa.',
-  },
-  {
-    question: 'Who manages the system day to day?',
-    answer:   'Whoever you nominate — a facilities manager, front-of-house staff, or us under a support arrangement. The system is designed around one central point of control so scheduling changes and volume adjustments do not require a technician\'s visit for routine changes.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },

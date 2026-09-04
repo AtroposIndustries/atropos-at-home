@@ -77,35 +77,6 @@ export const PROCESS = {
   ],
 }
 
-// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
-// 2026-08-25 because several answers promised things the business cannot yet
-// deliver, and they were also being published as FAQPage structured data —
-// so an undeliverable promise could surface directly in a search result.
-// Rework the answers against what is actually deliverable before restoring
-// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
-export const FAQ_ITEMS = [
-  {
-    question: 'Is acoustic treatment just foam wedges?',
-    answer:   'No. Consumer foam products provide minimal low-frequency absorption and are acoustically and aesthetically inadequate for a serious listening room or home theatre. We specify purpose-built broadband absorbers, diffusers, and bass traps using materials that perform across the relevant frequency range.',
-  },
-  {
-    question: 'Can acoustic panels look good?',
-    answer:   'Yes — done properly, acoustic panels are an interior design element. We work in custom timbers, fabrics, and finishes and can produce panels that complement or intentionally contrast with the room. Many clients\' guests do not realise the panels are acoustic treatment at all.',
-  },
-  {
-    question: 'Do I need acoustic treatment if I already have carpet and soft furnishings?',
-    answer:   'Soft furnishings provide high-frequency absorption, which is a starting point — but they do not address the low-frequency modal problems that cause the most damage to sound quality. A proper treatment strategy addresses the full frequency range.',
-  },
-  {
-    question: 'Does acoustic treatment work for open-plan spaces?',
-    answer:   'Open-plan spaces present different challenges to dedicated rooms but treatment is still beneficial, particularly for listening positions. We assess what is achievable in your specific space and design accordingly.',
-  },
-  {
-    question: 'Can you treat a room that is already finished?',
-    answer:   'Yes. Most of our acoustic treatment work is in finished rooms. Surface-mounted panels, freestanding absorbers, and ceiling treatment can all be installed without significant construction work.',
-  },
-]
-
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },
