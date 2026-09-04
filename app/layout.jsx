@@ -3,7 +3,6 @@ import '@/styles/home-theme.css'
 import '@/styles/local.css'
 
 import { ThemeProvider }  from '@/lib/theme-context'
-import { CustomCursor }   from '@/components/ui/CustomCursor'
 
 import { SITE_URL } from '@/lib/site'
 import { OG_IMAGE } from '@/lib/seo'
@@ -90,8 +89,6 @@ const schemaHome = {
         'Lutron',
         'Acoustic Treatment',
         'Custom AV Integration',
-        'Structured Cabling',
-        'Access Control',
         'Digital Signage',
         'Managed Networks',
         'Conference Room AV',
@@ -117,8 +114,6 @@ const schemaHome = {
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-meeting-rooms` } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-audio`         } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-networks`      } },
-          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-cabling`       } },
-          { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-security`      } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-signage`       } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-acoustic`      } },
           { '@type': 'Offer', itemOffered: { '@id': `${SITE_URL}/#service-commercial-support`       } },
@@ -202,26 +197,8 @@ const schemaHome = {
       '@id':        `${SITE_URL}/#service-commercial-networks`,
       name:         'Managed Networks',
       provider:     { '@id': `${SITE_URL}/#business` },
-      description:  'Business networks designed, monitored, patched and covered by a service level agreement — built to stay up every hour the doors are open.',
+      description:  'Business networks designed, monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.',
       serviceType:  'Managed Network Services',
-      areaServed:   { '@type': 'State', name: 'Tasmania' },
-    },
-    {
-      '@type':      'Service',
-      '@id':        `${SITE_URL}/#service-commercial-cabling`,
-      name:         'Structured Cabling & Comms Rooms',
-      provider:     { '@id': `${SITE_URL}/#business` },
-      description:  'Structured cabling and comms room design and installation, sequenced with the builder from first fix through to test-and-certify.',
-      serviceType:  'Structured Cabling Installation',
-      areaServed:   { '@type': 'State', name: 'Tasmania' },
-    },
-    {
-      '@type':      'Service',
-      '@id':        `${SITE_URL}/#service-commercial-security`,
-      name:         'Security & Access',
-      provider:     { '@id': `${SITE_URL}/#business` },
-      description:  'CCTV, access control and intercom on one platform, with permissions and audit reporting that scale across sites, tenancies and staff turnover.',
-      serviceType:  'Security & Access Control Installation',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
     {
@@ -247,7 +224,7 @@ const schemaHome = {
       '@id':        `${SITE_URL}/#service-commercial-support`,
       name:         'Managed Services & Support',
       provider:     { '@id': `${SITE_URL}/#business` },
-      description:  'Contracted response times and proactive monitoring under a service level agreement, scoped to the uptime a business requires.',
+      description:  'Proactive monitoring and scheduled maintenance for the systems a business runs on, with response times scoped per site.',
       serviceType:  'Managed IT & AV Support',
       areaServed:   { '@type': 'State', name: 'Tasmania' },
     },
@@ -273,7 +250,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ThemeProvider brand="home">
-          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>

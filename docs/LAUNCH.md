@@ -305,7 +305,7 @@ note for whoever next has it open, not a task for this codebase.
 **Re-register the Form Location URLs in Zoho.** Validated per page, so every
 form-bearing page needs re-pointing. A missed page still creates the lead but
 never confirms it to the visitor, and nothing surfaces the failure. The dual-
-vertical rebrand took this list from eight entries to nineteen — residential
+vertical rebrand took this list from eight entries to seventeen — residential
 grew a landing page and six service pages, and commercial's landing page plus
 nine service pages are new entirely.
 
@@ -316,7 +316,7 @@ exactly how a missing entry stays invisible; regenerate it with:
 node -e "import('./lib/routes.js').then(m => m.REGISTERED_FORM_URLS.forEach(u => console.log(u)))"
 ```
 
-Current output (nineteen URLs):
+Current output (seventeen URLs):
 
 ```
 https://atropos.com.au/
@@ -333,8 +333,6 @@ https://atropos.com.au/commercial/control/
 https://atropos.com.au/commercial/meeting-rooms/
 https://atropos.com.au/commercial/audio/
 https://atropos.com.au/commercial/networks/
-https://atropos.com.au/commercial/cabling/
-https://atropos.com.au/commercial/security/
 https://atropos.com.au/commercial/signage/
 https://atropos.com.au/commercial/acoustic/
 https://atropos.com.au/commercial/support/

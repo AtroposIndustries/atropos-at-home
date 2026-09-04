@@ -3,45 +3,45 @@
 export const HERO = {
   label: 'Services',
   title: 'Network & Connectivity',
-  body:  'Rock-solid, invisible networking that underpins every system in your home. Wi-Fi that actually reaches everywhere, with the bandwidth to match.',
+  body:  'Networking that just works, underneath everything else in the house. Wi-Fi that actually reaches every room, with the bandwidth to back it up.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'The infrastructure everything else depends on.',
-  body:  'Every smart device, every streaming session, every security camera, and every voice command in your home runs on the network. A poor network means a poor smart home — regardless of how good the rest of the system is. We design and install residential networking infrastructure that is genuinely resilient, comprehensively covered, and built to handle whatever your home throws at it — today and for years to come.',
+  body:  'Every smart device, every stream, every camera and every voice command in your home runs on the network. Get the network wrong and it doesn\'t matter how good everything else is. We design and install residential networking that\'s genuinely resilient, covers the whole house, and handles whatever you throw at it, now and as your home grows.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Whole-home Wi-Fi',
-    desc:   'Ubiquiti and Ruckus enterprise-grade access points, placed and configured to eliminate dead zones and provide consistent coverage across every room and outdoor area.',
+    desc:   'Ubiquiti and Ruckus enterprise-grade access points, placed and configured to kill dead zones and cover every room, inside and out.',
   },
   {
     number: '02',
     title:  'Structured Cabling',
-    desc:   'A wired backbone for every device that can use one. Ethernet to televisions, automation controllers, NAS drives, and access points — reliability that Wi-Fi alone cannot guarantee.',
+    desc:   'A wired Ethernet backbone for anything that can use one — televisions, automation controllers, NAS drives, access points. Reliability that Wi-Fi alone can\'t promise.',
   },
   {
     number: '03',
     title:  'Smart Device Infrastructure',
-    desc:   'Dedicated VLANs for smart home devices, IoT equipment, and guest access — keeping your network segmented, manageable, and secure.',
+    desc:   'Dedicated VLANs for smart devices, IoT gear and guest access, so your network stays segmented, manageable and secure.',
   },
   {
     number: '04',
     title:  'Remote Monitoring',
-    desc:   'We can monitor your network remotely and receive alerts before issues affect your home. Most problems are diagnosed and resolved without a site visit.',
+    desc:   'We can monitor your network remotely and get an alert before an issue reaches you. Most problems get diagnosed and fixed without anyone setting foot on site.',
   },
   {
     number: '05',
     title:  'Network Security',
-    desc:   'Firewall configuration, guest network isolation, and DNS filtering to keep your home network secure without adding complexity to daily use.',
+    desc:   'Firewall configuration, guest network isolation and DNS filtering — security that doesn\'t get in the way of daily use.',
   },
   {
     number: '06',
     title:  'Future-ready Infrastructure',
-    desc:   'Conduit, patch panels, and switching capacity sized for where your home is going — not just where it is today. Expansion should be simple, not a rebuild.',
+    desc:   'Conduit, patch panels and switching capacity sized for where your home is going, not just where it is today. Expanding later should be simple, not a rebuild.',
   },
 ]
 
@@ -77,6 +77,12 @@ export const PROCESS = {
   ],
 }
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'Why not just use consumer Wi-Fi routers?',

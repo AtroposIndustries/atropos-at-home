@@ -3,45 +3,45 @@
 export const HERO = {
   label: 'Services',
   title: 'Ongoing Support',
-  body:  'Technology you can actually live with. Remote monitoring, software updates, and a team that answers the phone — long after installation day.',
+  body:  'Technology you can actually live with. Remote monitoring, software updates and a team that picks up the phone, long after installation day.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'A relationship, not a transaction.',
-  body:  'A smart home is a living system. Platforms update, devices change, and your lifestyle evolves. Our ongoing support plans mean you always have someone who knows your system intimately — ready to help when something changes, something needs adjusting, or you simply want to get more out of what you have. We do not hand over and disappear. We stay.',
+  body:  'A smart home is a living system. Platforms update, devices change, life moves on. Our support plans mean someone who actually knows your system is ready to help — when something changes, something needs adjusting, or you just want more out of what you already have. We don\'t hand over and disappear. We stay.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Remote Monitoring',
-    desc:   'We monitor your system\'s health in the background. Connectivity drops, device offline events, and software errors are caught and resolved before you notice them.',
+    desc:   'We monitor your system\'s health in the background, so connectivity drops, offline devices and software errors get caught before you notice them.',
   },
   {
     number: '02',
     title:  'Software & Firmware Updates',
-    desc:   'Control system software, device firmware, and streaming platform updates managed and deployed by our team — tested before they reach your home.',
+    desc:   'Control system software, device firmware and streaming platform updates, managed and tested by us before they ever reach your home.',
   },
   {
     number: '03',
     title:  'Phone & Remote Support',
-    desc:   'When something feels off or you want something changed, call us. We know your system personally and can diagnose and resolve most issues remotely within the hour.',
+    desc:   'When something feels off, or you just want something changed, call us. We know your system and can usually sort it out remotely.',
   },
   {
     number: '04',
     title:  'Priority On-site Response',
-    desc:   'For issues that cannot be resolved remotely, support clients receive priority scheduling for on-site visits from our Hobart-based team.',
+    desc:   'For anything that can\'t be sorted remotely, support clients get priority scheduling for an on-site visit from our Hobart-based team.',
   },
   {
     number: '05',
     title:  'System Adjustments',
-    desc:   'Your life changes. Your system should too. Scene adjustments, new schedules, renamed zones, added devices — small changes handled without fuss.',
+    desc:   'Your life changes, your system should too. Scene tweaks, new schedules, renamed zones, added devices — handled without fuss.',
   },
   {
     number: '06',
     title:  'Expansion Planning',
-    desc:   'When you are ready to add a new room, a new system, or a new capability, we plan it with full knowledge of your existing infrastructure — no surprises.',
+    desc:   'When you\'re ready to add a room, a system or a new capability, we plan it around what\'s already there. No surprises.',
   },
 ]
 
@@ -72,6 +72,12 @@ export const PROCESS = {
   ],
 }
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'What is included in a support plan?',

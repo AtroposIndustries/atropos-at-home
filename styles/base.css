@@ -116,7 +116,6 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   overflow-x: clip;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -125,38 +124,6 @@ img { display: block; max-width: 100%; }
 a { color: inherit; }
 
 
-/* ============================================================
-   3. CUSTOM CURSOR
-   ============================================================ */
-
-.cursor {
-  position: fixed;
-  width: 8px; height: 8px;
-  background-color: var(--ash);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(222,224,219,0.4);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99998;
-  transition: width var(--transition-base),
-              height var(--transition-base),
-              border-color var(--transition-base);
-  transform: translate(-50%, -50%);
-}
-
-@media (hover: none) {
-  .cursor, .cursor-ring { display: none; }
-  body { cursor: auto; }
-}
 
 
 /* ============================================================

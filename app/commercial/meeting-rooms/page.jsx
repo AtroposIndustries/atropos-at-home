@@ -2,11 +2,10 @@ import { Nav }         from '@/components/layout/Nav'
 import { Footer }      from '@/components/layout/Footer'
 import { PageHero }    from '@/components/sections/PageHero'
 import { CtaBand }     from '@/components/sections/Cta'
-import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
-import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { HERO, INTRO, FEATURES, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
@@ -28,23 +27,10 @@ export const metadata = {
   }),
 }
 
-const schemaFaq = {
-  '@context': 'https://schema.org',
-  '@type':    'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
-    '@type':        'Question',
-    name:           question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-}
 
 export default function MeetingRoomsPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
-      />
 
       <Nav
         brand="home"
@@ -85,12 +71,11 @@ export default function MeetingRoomsPage() {
 
       <CtaBand
         title={<>Ready for a room<br />that just <em>works?</em></>}
-        body="Tell us about your room and the platform your business runs. We will design the coverage."
+        body="Tell us about your room and the platform your business runs. We'll design the coverage."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
 
-      <FAQ items={FAQ_ITEMS} />
 
       <ContactForm
         label="Book a Consultation"

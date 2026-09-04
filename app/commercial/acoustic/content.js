@@ -3,48 +3,54 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Acoustic Treatment',
-  body:  'Speech intelligibility in a meeting room, speech privacy between one room and the next, and open-plan noise brought down to a level people can actually think in — specified alongside the architect\'s finishes, not bolted on after the fit-out is signed off.',
+  body:  'Speech intelligibility in a meeting room. Speech privacy between one room and the next. Open-plan noise brought down to a level people can actually think in. Specified alongside the architect\'s finishes, not bolted on after the fit-out\'s signed off.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'Acoustics that decide whether people can hear each other.',
-  body:  'A home theatre is treated so the room does not fight the front three channels. A commercial fit-out is treated so a meeting room does not turn a video call into a guessing game, so a conversation at one desk does not carry across an open floor to the desk beside it, and so a boardroom does not ring every time someone raises their voice. Open-plan offices trade walls for noise, and the difference between a floor that works and one that does not is usually the ceiling, the partition and the furniture absorbing what would otherwise reflect and build up. We assess the space early enough to influence the finishes schedule — ceiling tile, carpet, partition build-up — rather than being asked to fix a room after the fit-out is complete and the budget for treatment has already gone on paint.',
+  body:  'A home theatre is treated so the room doesn\'t fight the front three channels. A commercial fit-out has more jobs to do: stop a meeting room turning into a guessing game, and stop a boardroom ringing every time someone raises their voice.\n\nOpen-plan floors trade walls for noise, and the fix is usually the ceiling, the partition and furniture absorbing what would otherwise bounce around. We look at the space early enough to shape the finishes schedule, not called in once the fit-out\'s done and the budget\'s gone on paint.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Speech Intelligibility in Meeting & Board Rooms',
-    desc:   'Reverberation in a meeting room brought down to a level where speech stays clear and a conferencing microphone can pick up voices without smearing them into echo — the difference between a call where remote participants can follow the conversation and one where they keep asking people to repeat themselves.',
+    desc:   'Reverberation brought down to where speech stays clear and a conferencing mic doesn\'t smear voices into echo. The difference between a call people can follow, and one full of repeated questions.',
   },
   {
     number: '02',
     title:  'Speech Privacy Between Rooms & Workstations',
-    desc:   'Wall, ceiling and door build-up assessed for how much of a confidential conversation actually carries into the corridor or the desk next door — relevant wherever HR conversations, client calls or board discussions need to stay where they happen.',
+    desc:   'Wall, ceiling and door build-up assessed for how much of a confidential conversation carries into the corridor or the next desk. Useful wherever a conversation needs to stay put.',
   },
   {
     number: '03',
     title:  'Open-plan Noise Control',
-    desc:   'Ceiling absorption, partial screens and furniture placement used to bring down the reflected noise that builds up across an open floor, so a desk in the middle of the room is not fighting the conversation happening six desks away.',
+    desc:   'Ceiling absorption, partial screens and furniture placement bring down the reflected noise that builds up across an open floor, so a desk in the middle isn\'t fighting a conversation six desks away.',
   },
   {
     number: '04',
     title:  'Meeting Room Reverberation & Conferencing Audio',
-    desc:   'Reverberation addressed specifically around where microphones sit and where people speak, because a room can look and feel comfortable to sit in while still sounding poor on the far end of a video call — a problem invisible to anyone in the room.',
+    desc:   'Reverberation addressed around where microphones sit and people speak. A room can feel comfortable and still sound poor on a call, a problem nobody in the room notices.',
   },
   {
     number: '05',
     title:  'Coordination With the Architect\'s Finishes Schedule',
-    desc:   'Ceiling tile, carpet specification, partition build-up and joinery reviewed against the acoustic outcome the space needs, and raised with the architect while the finishes schedule can still be changed — not after the tender has been let on a hard ceiling and a polished floor.',
+    desc:   'Ceiling tile, carpet, partition build-up and joinery reviewed against what the space needs acoustically, and raised with the architect while the schedule can still change.',
   },
   {
     number: '06',
     title:  'Aesthetic Integration With the Fit-out',
-    desc:   'Acoustic panels and ceiling treatment specified in finishes and forms that sit inside the fit-out\'s material palette, so the treatment reads as part of the design rather than an obvious retrofit.',
+    desc:   'Acoustic panels and ceiling treatment specified in finishes that sit inside the fit-out\'s material palette, so the treatment reads as part of the design, not an obvious retrofit.',
   },
 ]
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'Why would an open-plan office need acoustic treatment if there are no walls to soundproof?',

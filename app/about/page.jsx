@@ -1,16 +1,15 @@
 export const metadata = {
   title:       'About Atropos | Hobart, Tasmania',
-  description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
+  description: 'Atropos believes the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
   keywords: [
     'Atropos Hobart',
     'AV integration company Tasmania',
     'residential & commercial AV specialists Hobart',
-    'Rafal Urban Brock Pinnington',
   ],
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/about`,
-    description: 'Atropos was founded by Rafal Urban and Brock Pinnington — two Tasmanians who believe the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
+    description: 'Atropos believes the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
   }),
 }
 
@@ -41,14 +40,14 @@ export default function AboutPage() {
 
       <PageHero
         title="About Us"
-        body="Where technology meets the art of living well."
+        body="We design and install the automation, AV and network systems built into Tasmanian homes and businesses."
         img="/img/hero-img.jpg"
       />
 
       <SectionIntro
         label="Our Story"
         title={<>Built on craft<br /><em>and conviction.</em></>}
-        body="Atropos was founded by two mates who grew up loving both technology and music — and discovered that when you bring those worlds together thoughtfully, something extraordinary happens. We exist for the homeowner, business owner, builder, or architect who won't settle for ordinary: people who understand that the finest technology should disappear into the space, respond intuitively, and elevate every moment spent within it."
+        body="Atropos was built on the idea that engineering rigour and a real feel for how a space sounds shouldn't be separate disciplines. Bring them together and you get systems that work properly and feel right."
         labelVariant="label"
       />
 
@@ -67,13 +66,10 @@ export default function AboutPage() {
           gap: '28px',
         }}>
           <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 300, letterSpacing: '0.04em' }}>
-            Raf has spent years building and refining his own personal studio — experimenting with acoustic treatment, tweaking speaker placement, and tuning listening environments from the inside out. Brock&apos;s love of music and AV runs just as deep; an avid guitar player who has poured the same obsessive attention into his own home systems that he brings to every client project. For both of us, this isn&apos;t just a profession. It&apos;s how we actually live.
+            Twenty-five years across ICT, AV control system design and cloud infrastructure — high-availability systems where downtime gets measured in revenue, and AV control for rooms that can&apos;t afford to fall over.
           </p>
           <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 300, letterSpacing: '0.04em' }}>
-            Between us, we carry twenty-five years of combined hands-on experience across ICT, AV control system design, and cloud infrastructure. Raf has engineered high-availability solutions at the scale of AWS, Stan, and Betfair — bringing a precision that borders on the intuitive to every system he designs. Brock has spent over a decade designing and programming AV control systems for environments where reliability isn&apos;t optional. We know these systems intimately: not just how to install them, but how they behave over years of real-world use.
-          </p>
-          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, fontWeight: 300, letterSpacing: '0.04em' }}>
-            That combination — genuine personal investment in the craft, paired with professional-grade technical depth — is what sets us apart. When an architect needs to know how a control system integrates with their design intent, when a builder asks what infrastructure needs to go in the walls before the plasterers arrive, or when a homeowner simply wants a system that responds intuitively and never lets them down, we speak every one of those languages. We exist to give discerning homeowners, business owners, architects, and builders a rock-solid technical partner who cares about the outcome as much as they do.
+            Engineering depth paired with real care for the craft. When an architect needs to know how a control system sits inside their design intent, when a builder asks what has to be in the walls before the plasterers arrive, or when a homeowner just wants something that works and never lets them down — we speak all three languages.
           </p>
         </div>
       </section>
@@ -87,7 +83,7 @@ export default function AboutPage() {
         stats={[
           { num: 'TAS', label: 'Based & Proud' },
           { num: 'AV',  label: 'Design & Install' },
-          { num: '25+', label: 'Years Combined' },
+          { num: '25+', label: 'Years' },
         ]}
         imgMain="/img/tasmania-1.jpg"
         imgSecondary="/img/river.jpg"

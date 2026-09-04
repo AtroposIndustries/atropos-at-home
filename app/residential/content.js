@@ -3,12 +3,12 @@
 export const HERO = {
   label: 'Residential',
   title: 'Your home, seamlessly considered.',
-  body:  'Atropos works across two sides of the same business: homes, and the offices, hospitality venues and function spaces the commercial side is built for. This is the residential side — smart home automation, home theatre, whole-home audio, networking and acoustic treatment for homeowners, builders and architects, usually specified from the plans stage but retrofitted into an existing home just as often. Twenty-five years of combined audiovisual and ICT experience, accredited across every major control platform rather than tied to one.',
+  body:  'Technology that disappears into the home, planned with your builder and architect from the drawings or retrofitted into a house you already live in. Designed so that the better it works, the less you think about it.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Six services. One coordinated home.',
+  title: 'One coordinated home.',
 }
 
 export const SERVICES = [

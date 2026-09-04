@@ -3,45 +3,45 @@
 export const HERO = {
   label: 'Services',
   title: 'Premium Home Theatre',
-  body:  'From intimate two-channel listening rooms to fully immersive Dolby Atmos cinema spaces — designed, acoustic-treated, and commissioned to move you.',
+  body:  'From an intimate two-channel listening room to a full Dolby Atmos cinema — designed, treated and commissioned to move you.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'Cinema. In your home. Without compromise.',
-  body:  'A great home theatre is not defined by the size of the screen or the number of speakers. It is defined by the experience — the moment the room disappears and you are simply somewhere else. We design that experience from first principles: acoustics, sight lines, equipment, and calibration all considered together. The result is a space that performs at the very edge of what home cinema can deliver.',
+  body:  'A great home theatre isn\'t about screen size or speaker count. It\'s about the moment the room disappears and you\'re simply somewhere else. We design for that from first principles — acoustics, sight lines, equipment and calibration, all considered together, so the finished room performs right at the edge of what home cinema can do.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Room Design & Sight Lines',
-    desc:   'Optimal seating positions, screen sizing, and projection throw calculated precisely for your room dimensions — before a single piece of equipment is ordered.',
+    desc:   'Seating position, screen size and projection throw, worked out for your room\'s exact dimensions — before anything is ordered.',
   },
   {
     number: '02',
     title:  'Projection & Display',
-    desc:   '4K laser projection for dedicated theatres, premium OLED or direct-view LED for media rooms. Brands include Epson, Sony, and Samsung — selected for your specific space.',
+    desc:   '4K laser projection for a dedicated theatre, OLED or direct-view LED for a media room. Epson, Sony and Samsung, matched to your space.',
   },
   {
     number: '03',
     title:  'Immersive Surround Sound',
-    desc:   'Dolby Atmos and DTS:X object-based audio with ceiling, wall, and floor channels positioned and calibrated for a soundstage that places you inside the content.',
+    desc:   'Dolby Atmos and DTS:X, with ceiling, wall and floor channels positioned and calibrated so the soundstage puts you inside the film, not in front of it.',
   },
   {
     number: '04',
     title:  'Acoustic Treatment',
-    desc:   'First reflection control, bass trapping, and diffusion designed specifically for your room geometry — panels that look like part of the interior, not an afterthought.',
+    desc:   'First reflection control, bass trapping and diffusion, designed for your room\'s geometry. Panels that read as part of the interior, not bolted on afterwards.',
   },
   {
     number: '05',
     title:  'Theatre Lighting & Seating',
-    desc:   'Scene-based LED lighting with automated pre-show and post-show sequences. Seating layout and specification for maximum comfort and optimal viewing angles.',
+    desc:   'Scene-based LED lighting that dims itself before the film starts and lifts again after. Seating laid out for comfort and a clean sightline to the screen.',
   },
   {
     number: '06',
     title:  'Professional Calibration',
-    desc:   'ISF and THX-informed display calibration. Audyssey, Dirac, or manual room correction for audio. Your system is measured, not guessed.',
+    desc:   'ISF and THX-informed display calibration, Audyssey, Dirac or manual room correction for audio. Your system gets measured, not guessed.',
   },
 ]
 
@@ -77,6 +77,12 @@ export const PROCESS = {
   ],
 }
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'What is the difference between a media room and a dedicated home theatre?',

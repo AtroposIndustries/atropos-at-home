@@ -3,45 +3,45 @@
 export const HERO = {
   label: 'Services',
   title: 'Acoustic Treatment',
-  body:  'Purpose-designed panels, diffusers, and bass treatment that look as good as they perform — designed to complement your interior, not fight it.',
+  body:  'Panels, diffusers and bass treatment that look as good as they perform — designed to sit with your interior, not fight it.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Sound that the room does not fight.',
-  body:  'Every room has an acoustic signature. Left untreated, that signature works against your audio system — smearing transients, building up bass in corners, and creating reflections that blur the soundstage. Acoustic treatment addresses these problems at the source. We analyse your room, design a treatment strategy, and specify materials that perform precisely and integrate beautifully into your interior. The result is a room where the system sounds the way it was designed to.',
+  title: 'Sound that the room doesn\'t fight.',
+  body:  'Every room has an acoustic signature, and left untreated it works against your system — bass building up in corners, reflections blurring the soundstage. We measure your room, design a treatment strategy, and specify materials that perform properly and still look like they belong. The result is a room where the system finally sounds the way it was meant to.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Room Acoustic Analysis',
-    desc:   'Measurement of your room\'s frequency response, decay times, and reflection patterns — giving us the data to design treatment that addresses real problems, not hypothetical ones.',
+    desc:   'We measure your room\'s frequency response, decay times and reflection patterns, so treatment addresses real problems, not guessed-at ones.',
   },
   {
     number: '02',
     title:  'First Reflection Control',
-    desc:   'Absorption at the primary reflection points on walls and ceiling to reduce comb filtering and bring clarity and stereo imaging into focus.',
+    desc:   'Absorption at the primary reflection points on walls and ceiling, cutting comb filtering and bringing stereo imaging back into focus.',
   },
   {
     number: '03',
     title:  'Bass Trapping',
-    desc:   'Corner-loaded broadband absorbers to tame low-frequency room modes — the single biggest acoustic problem in most dedicated listening and theatre rooms.',
+    desc:   'Corner-loaded broadband absorbers that tame low-frequency room modes, usually the biggest acoustic problem in a dedicated listening or theatre room.',
   },
   {
     number: '04',
     title:  'Diffusion Design',
-    desc:   'Rear-wall and ceiling diffusers that scatter reflections rather than absorbing them — preserving room energy and naturalness while eliminating harmful flutter echo.',
+    desc:   'Rear-wall and ceiling diffusers that scatter reflections instead of absorbing them, keeping the room\'s energy and naturalness while killing flutter echo.',
   },
   {
     number: '05',
     title:  'Aesthetic Integration',
-    desc:   'Panels in custom fabrics, timbers, and finishes — designed with your interior architect or stylist so the acoustic treatment enhances the room rather than defining it.',
+    desc:   'Panels in custom fabrics, timbers and finishes, designed with your architect or stylist so the treatment enhances the room instead of dominating it.',
   },
   {
     number: '06',
     title:  'Post-treatment Calibration',
-    desc:   'Once the room is treated, your audio system is re-measured and re-calibrated in its improved acoustic environment — ensuring the treatment is fully realised.',
+    desc:   'Once the room\'s treated, we re-measure and re-calibrate your system in its improved acoustic environment, so the treatment actually pays off.',
   },
 ]
 
@@ -77,6 +77,12 @@ export const PROCESS = {
   ],
 }
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'Is acoustic treatment just foam wedges?',

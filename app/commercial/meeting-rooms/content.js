@@ -3,48 +3,54 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Meeting & Conference Rooms',
-  body:  'One-touch video conferencing that works the moment someone walks in — camera and microphone coverage designed against the room, not dropped in after the furniture is fixed.',
+  body:  'One-touch video conferencing that works the moment someone walks in. Camera and microphone coverage designed against the room, not dropped in once the furniture\'s in place.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'The far end hears the room, not the table.',
-  body:  'A meeting room lives or dies on the first thirty seconds — whether the call connects when someone presses join, and whether the person dialling in can actually follow what is said. We plan camera and microphone coverage against the room\'s real geometry — its shape, its glass, its hard surfaces — specify for whichever conferencing platform your organisation runs, and hand over a room booking panel and a join experience nobody needs training to operate.',
+  body:  'A meeting room lives or dies in the first thirty seconds. Does the call connect when someone hits join? Can the person dialling in actually follow what\'s said?\n\nWe plan camera and microphone coverage against the room\'s real shape, its glass, its hard surfaces. We build for whichever conferencing platform your organisation runs, and hand over a booking panel and a join experience nobody needs training for.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Teams, Zoom & Google Meet Compatibility',
-    desc:   'Rooms designed to run whichever conferencing platform your organisation standardises on — and reconfigured, not rebuilt, if that standard changes later.',
+    desc:   'Rooms designed to run whichever conferencing platform your organisation standardises on, and reconfigured, not rebuilt, if that standard changes later.',
   },
   {
     number: '02',
     title:  'One-touch Join',
-    desc:   'A calendar invite and a single button on the room panel start the call — no cable to hunt for under the table, no second app to open, no dial-in number to read out.',
+    desc:   'A calendar invite and one button on the room panel start the call. No cable to hunt for under the table, no second app, no dial-in number to read out.',
   },
   {
     number: '03',
     title:  'Coverage Planned to the Room',
-    desc:   'Microphone pickup and camera framing planned against the room\'s actual shape, table layout and ceiling height, so a speaker at either end of the table is heard as clearly as one sitting closest to the microphone.',
+    desc:   'Microphone pickup and camera framing planned against the room\'s shape and ceiling height, so a speaker at the far end is heard as clearly as one next to the mic.',
   },
   {
     number: '04',
     title:  'Room Booking Panel Integration',
-    desc:   'An outside-the-door panel synced to your calendar system shows real-time availability and lets someone book or extend a meeting on the spot, so a room double-booked on paper is visible before anyone walks in and interrupts.',
+    desc:   'A panel outside the door syncs to your calendar and shows real-time availability. Book or extend a meeting on the spot, so a double-booking is caught before anyone walks in.',
   },
   {
     number: '05',
     title:  'Content Sharing & Display',
-    desc:   'Wireless and wired presentation from any laptop, with display and audio routing configured so the room in front of you and the people dialling in see and hear the same thing at the same time.',
+    desc:   'Wireless and wired presentation from any laptop. Display and audio routed so the room in front of you and the people dialling in see and hear the same thing.',
   },
   {
     number: '06',
     title:  'A Defined AV/IT Support Boundary',
-    desc:   'A written line between what we support — room hardware, the AV signal chain, camera and microphone coverage — and what your IT team supports, agreed before installation so a fault is not passed back and forth after handover.',
+    desc:   'A written line between what we support (room hardware and the AV signal chain) and what your IT team supports, agreed before installation so a fault doesn\'t bounce between the two teams after handover.',
   },
 ]
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'Which conferencing platforms do you support?',

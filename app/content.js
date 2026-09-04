@@ -23,8 +23,6 @@ export const NAV = {
         { label: 'Meeting & Conference Rooms', href: '/commercial/meeting-rooms', desc: 'Video conferencing & room booking' },
         { label: 'Distributed Audio & Paging', href: '/commercial/audio',       desc: 'Zoned audio, paging & override' },
         { label: 'Managed Networks',         href: '/commercial/networks',      desc: 'Monitored, supported, under SLA' },
-        { label: 'Structured Cabling',       href: '/commercial/cabling',       desc: 'Comms rooms, racks & patching' },
-        { label: 'Security & Access',        href: '/commercial/security',      desc: 'CCTV, access control & intercom' },
         { label: 'Digital Signage',          href: '/commercial/signage',       desc: 'Screens, scheduling & wayfinding' },
         { label: 'Acoustic Treatment',       href: '/commercial/acoustic',      desc: 'Speech intelligibility & privacy' },
         { label: 'Managed Services',         href: '/commercial/support',       desc: 'Contracted response & monitoring' },
@@ -41,7 +39,7 @@ export const HERO = {
   eyebrow:   'Residential · Commercial · Hobart, Tasmania',
   titleMain: ['Technology,', 'woven into the building.'],
   titleSub:  'Automation, AV & networks for homes and businesses',
-  body:      'We design and install the automation, audio-visual and network systems built into a space from the studs out — for homeowners, business owners, builders and architects, from the plans stage or retrofitted after the fact. Twenty-five years of combined audiovisual and ICT experience across residential and commercial, accredited across every major control platform rather than tied to one.',
+  body:      'We design and install the automation, AV and network systems that get built into a space from the studs out. Homes and businesses, new builds and retrofits, usually working alongside your builder or architect from the drawings on. Twenty-five years across audiovisual and ICT, accredited on every major control platform rather than locked to one.',
   primaryCta: { label: 'Choose Your Path', href: '#offerings' },
 }
 
@@ -65,18 +63,18 @@ export const EXPERIENCE_ITEMS = [
 ]
 
 export const OFFERINGS = {
-  eyebrow: 'Two Sides, One Business',
+  eyebrow: 'What We Do',
   items: [
     {
-      number: 'Six Services',
+      number: '01',
       name:   'Residential',
-      desc:   'Smart home automation, home theatre, whole-home audio, networking, acoustic treatment and ongoing support — for homeowners, builders and architects, from the plans stage or as a retrofit.',
+      desc:   'Automation, home theatre, audio, networks and acoustics for homes, with builders and architects, from the plans or as a retrofit.',
       href:   '/residential/',
     },
     {
-      number: 'Nine Services',
+      number: '02',
       name:   'Commercial',
-      desc:   'Building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security and access, digital signage, acoustic treatment and managed services — for business owners, builders and architects, from the plans stage or as a retrofit.',
+      desc:   'Control, conference AV, audio, managed networks, security and signage for workplaces and venues, with contracted support behind it.',
       href:   '/commercial/',
     },
   ],
@@ -90,7 +88,7 @@ export const TESTIMONIAL = {
 
 export const ABOUT = {
   eyebrow:  'Who We Are',
-  body:     'We\'re two mates who grew up loving both technology and music — and found that when you bring those worlds together thoughtfully, something extraordinary happens. Atropos exists for the homeowner, business owner, builder, or architect who won\'t settle for ordinary.',
+  body:     'Atropos exists for people who want the technology in a building properly considered, not simply installed — homeowners, business owners, builders and architects who won\'t settle for ordinary.',
   location: 'Hobart, Tasmania',
   cta:      { label: 'Our Story', href: '/about' },
 }
@@ -137,8 +135,6 @@ export const FOOTER = {
         { label: 'Meeting & Conference Rooms', href: '/commercial/meeting-rooms' },
         { label: 'Distributed Audio & Paging', href: '/commercial/audio' },
         { label: 'Managed Networks',           href: '/commercial/networks' },
-        { label: 'Structured Cabling',         href: '/commercial/cabling' },
-        { label: 'Security & Access',          href: '/commercial/security' },
         { label: 'Digital Signage',            href: '/commercial/signage' },
         { label: 'Acoustic Treatment',         href: '/commercial/acoustic' },
         { label: 'Managed Services',           href: '/commercial/support' },

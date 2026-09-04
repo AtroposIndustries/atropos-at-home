@@ -3,48 +3,54 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Digital Signage & Wayfinding',
-  body:  'Screens specified for the brightness and duty cycle the space actually demands, content scheduled and updated by whoever should be updating it, and wayfinding kept current across an entire site — managed remotely, not walked to floor by floor.',
+  body:  'Screens specified for the brightness and duty cycle the space actually demands. Content scheduled and updated by whoever should be updating it. Wayfinding kept current across the whole site, managed remotely, not walked to floor by floor.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'A screen that runs open to close is a different brief to a television.',
-  body:  'A domestic television is watched for a few hours a day and dims itself the rest of the time. A reception screen, a directory board or a menu display runs from open to close, often facing a window or a lobby full of ambient light, and is still expected to look right at four in the afternoon in December. We specify panels rated for the brightness and duty cycle the location actually demands, build a content and scheduling structure around who is meant to update what, and integrate wayfinding so a directory reflects the building as it stands today rather than the day it was printed. Everything is then managed from one place, across as many screens and sites as the estate runs to.',
+  body:  'A domestic television is watched a few hours a day, then dims itself for the rest. A reception screen or directory board runs open to close, often facing a window full of ambient light, and still has to look right come four in the afternoon.\n\nWe specify panels rated for the brightness and duty cycle the space demands, and build scheduling around who\'s meant to update what. Wayfinding stays part of the same system, so a directory reflects the building as it is today, not the day it was printed.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Screen Selection for Brightness & Duty Cycle',
-    desc:   'Panels specified against the ambient light and the hours a screen actually runs, so a reception display does not dim itself into a smear at midday or burn in from showing the same static slide for a year — the failure mode of a domestic television pressed into commercial service.',
+    desc:   'Panels specified against the ambient light and the hours a screen runs, so a display doesn\'t dim into a smear at midday, or burn in from the same slide for a year.',
   },
   {
     number: '02',
     title:  'Content Scheduling & Playlists',
-    desc:   'Content organised into playlists and day-parts — a lobby screen showing one thing at 8am and another at lunch, a meeting-room panel switching to a booking display the moment the room is reserved — built to the schedule the business actually runs on.',
+    desc:   'Content organised into playlists and day-parts: a lobby screen showing one thing at 8am and another at lunch, a meeting-room panel switching to a booking display the moment the room\'s reserved.',
   },
   {
     number: '03',
     title:  'Content Ownership & Update Workflow',
-    desc:   'Who is meant to update the signage — a marketing team, front-of-house staff, a single administrator — decided at design stage and built into the content permissions, rather than worked out after handover when nobody can find the login.',
+    desc:   'Who updates the signage (marketing, front-of-house, a single administrator) gets decided at design stage and built into the permissions, not worked out after handover when nobody can find the login.',
   },
   {
     number: '04',
     title:  'Wayfinding & Directory Integration',
-    desc:   'Building directories and wayfinding boards run from the same content platform as the rest of the signage, so a tenancy change or a floor re-fit updates the directory centrally instead of waiting on a new printed board.',
+    desc:   'Building directories and wayfinding boards run from the same content platform as the rest of the signage. A tenancy change updates the directory centrally, instead of waiting on a new printed board.',
   },
   {
     number: '05',
     title:  'Remote Management of a Distributed Estate',
-    desc:   'Every screen across every site reachable from one dashboard — content pushed, screen status checked, a frozen unit rebooted remotely — so a fault is fixed without a technician visiting the building to find a screen simply switched off at the wall.',
+    desc:   'Every screen across every site reachable from one dashboard: content pushed, status checked, a frozen unit rebooted remotely. No need to drive out and find a screen switched off at the wall.',
   },
   {
     number: '06',
     title:  'Mounting, Power & Data Coordination',
-    desc:   'Screen positions, power and data points coordinated with the builder or shopfitter before walls and joinery close up, so a screen is not left stranded waiting on a power point that was never roughed in where the design called for it.',
+    desc:   'Screen positions, power and data points coordinated with the builder or shopfitter before walls and joinery close up. No screen left stranded waiting on a power point that was never roughed in.',
   },
 ]
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'Who is responsible for updating the content once the screens are installed?',

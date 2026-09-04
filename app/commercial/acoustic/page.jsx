@@ -2,11 +2,10 @@ import { Nav }         from '@/components/layout/Nav'
 import { Footer }      from '@/components/layout/Footer'
 import { PageHero }    from '@/components/sections/PageHero'
 import { CtaBand }     from '@/components/sections/Cta'
-import { FAQ }         from '@/components/sections/PageSections'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
-import { HERO, INTRO, FEATURES, FAQ_ITEMS, CTA } from './content'
+import { HERO, INTRO, FEATURES, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
@@ -28,23 +27,10 @@ export const metadata = {
   }),
 }
 
-const schemaFaq = {
-  '@context': 'https://schema.org',
-  '@type':    'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
-    '@type':        'Question',
-    name:           question,
-    acceptedAnswer: { '@type': 'Answer', text: answer },
-  })),
-}
 
 export default function AcousticPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }}
-      />
 
       <Nav
         brand="home"
@@ -85,12 +71,11 @@ export default function AcousticPage() {
 
       <CtaBand
         title={<>Ready for a room that<br />sounds as good as it <em>looks?</em></>}
-        body="Tell us about your space and how it's used. We will assess what the fit-out needs."
+        body="Tell us about your space and how it's used. We'll assess what the fit-out needs."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
 
-      <FAQ items={FAQ_ITEMS} />
 
       <ContactForm
         label="Book a Consultation"

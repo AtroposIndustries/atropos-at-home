@@ -3,45 +3,45 @@
 export const HERO = {
   label: 'Services',
   title: 'Smart Home Automation',
-  body:  'Whole-home intelligence designed around how you live. Lighting, climate, security, and entertainment — unified and effortless.',
+  body:  'Lighting, climate, security and entertainment, working as one system — so you don\'t have to think about any of it.',
 }
 
 export const INTRO = {
   label: 'What We Do',
   title: 'Your home, responding to you.',
-  body:  'Smart home automation is not about gadgets. It is about removing friction from daily life and replacing it with intuition. When you walk into a room, the lights adjust. When you leave for the day, the house knows. When you arrive home, everything is exactly as you like it. We design systems powerful enough to do everything you imagine, and simple enough that you never have to think about them.',
+  body:  'Automation isn\'t about gadgets. It\'s about a house that gets on with it. Walk into a room and the lights are already right. Head out and everything settles down behind you. Come home and it\'s how you like it. Powerful enough to do what you imagine. Simple enough that you forget it\'s there.',
 }
 
 export const FEATURES = [
   {
     number: '01',
     title:  'Lighting Design & Control',
-    desc:   'Scene-based lighting across every room. Circadian rhythms, ambiance presets, and automated schedules — all responding to how you use each space throughout the day.',
+    desc:   'Lighting that changes with the room and the hour. Warm and low of an evening, bright when you\'re cooking, off when you\'ve gone to bed and forgotten.',
   },
   {
     number: '02',
     title:  'Climate & Comfort',
-    desc:   'Intelligent HVAC integration that learns your preferences, responds to occupancy, and keeps every room at the perfect temperature without manual adjustment.',
+    desc:   'HVAC that learns your habits and responds to occupancy, so each room sits at the right temperature without you touching a dial.',
   },
   {
     number: '03',
     title:  'Security & Access',
-    desc:   'Integrated surveillance, smart locks, video doorbells, and alarm systems — all visible from a single interface, with automated routines for arrival, departure, and sleep.',
+    desc:   'Cameras, smart locks, video doorbells and alarms, all from one interface. Routines that lock up, arm the alarm and settle the house for the night.',
   },
   {
     number: '04',
     title:  'Motorised Blinds & Shading',
-    desc:   'Automated shading that responds to time of day, sun position, and temperature — protecting your interiors, managing heat gain, and setting the perfect atmosphere.',
+    desc:   'Blinds that track the sun. Down when the afternoon glare hits the lounge, up again once it\'s passed, protecting furniture and keeping rooms comfortable.',
   },
   {
     number: '05',
     title:  'Unified Control',
-    desc:   'One intuitive interface for everything. We specialise across Control4, RTI, Crestron and the other major platforms — breadth that lets us choose the right system for your home rather than the one we happen to be tied to. Where a project calls for it, we design custom interfaces for mobile, tablet, and web.',
+    desc:   'One interface for everything, not the platform we happen to sell. We work across Control4, RTI, Crestron and the rest, and build custom mobile, tablet and web interfaces where a project calls for it.',
   },
   {
     number: '06',
     title:  'Scenes & Automation',
-    desc:   '"Movie Night", "Good Morning", "Away" — one touch activates a choreography of lighting, climate, blinds, and AV perfectly tuned for the moment.',
+    desc:   '"Movie Night." "Good Morning." "Away." One touch, and lighting, climate, blinds and AV all move together, tuned for the moment.',
   },
 ]
 
@@ -77,6 +77,12 @@ export const PROCESS = {
   ],
 }
 
+// FAQ_ITEMS is retained but NOT rendered. The FAQ sections were pulled on
+// 2026-08-25 because several answers promised things the business cannot yet
+// deliver, and they were also being published as FAQPage structured data —
+// so an undeliverable promise could surface directly in a search result.
+// Rework the answers against what is actually deliverable before restoring
+// the <FAQ> block and its schemaFaq JSON-LD in the matching page.jsx.
 export const FAQ_ITEMS = [
   {
     question: 'What control systems do you install?',

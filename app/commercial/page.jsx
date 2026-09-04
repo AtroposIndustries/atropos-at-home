@@ -12,19 +12,17 @@ import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial AV, Control & Managed Networks Tasmania',
-  description: 'Building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security, signage and managed support for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
+  description: 'Building and room control, conference room AV, distributed audio and paging, managed networks, signage and managed support for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
   keywords: [
     'commercial AV integrator Hobart',
     'managed network provider Tasmania',
     'office automation Hobart',
     'conference room AV Tasmania',
-    'structured cabling Hobart',
-    'commercial security integrator Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial`,
-    description: 'Building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security, signage and managed support for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
+    description: 'Building and room control, conference room AV, distributed audio and paging, managed networks, signage and managed support for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
   }),
 }
 

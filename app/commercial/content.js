@@ -3,12 +3,12 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Systems your business can depend on.',
-  body:  'Atropos works across two sides of the same business: homes, and the offices, hospitality venues and function spaces this side is built for. This is the commercial side — building and room control, conference room AV, distributed audio and paging, managed networks, structured cabling, security and access, digital signage, acoustic treatment, and managed support, scoped from the plans stage on a new fit-out, or retrofitted into an existing premises. Twenty-five years of combined audiovisual and ICT experience, accredited across every major control platform rather than tied to one, backed by contracted response times rather than a call when something breaks.',
+  body:  'Coordinated from the drawings on a new fit-out, or fitted into premises already in use. We learn how your people use the space before specifying anything, and we\'re still the ones who know the system a year later.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Nine services. One point of accountability.',
+  title: 'Technology your team never has to think about.',
 }
 
 export const SERVICES = [
@@ -33,20 +33,8 @@ export const SERVICES = [
   {
     number: '04',
     name:   'Managed Networks',
-    desc:   'Networks monitored, patched and covered by a service level agreement — maintained on an ongoing basis, not installed once and left to run itself.',
+    desc:   'Networks monitored and patched on a schedule instead of whenever someone remembers, segmented so a compromised device can\'t reach the rest of the business.',
     href:   '/commercial/networks',
-  },
-  {
-    number: '05',
-    name:   'Structured Cabling & Comms Rooms',
-    desc:   'Structured cabling and comms room design sequenced with your builder from first fix through to test-and-certify — ahead of the plasterers, not after.',
-    href:   '/commercial/cabling',
-  },
-  {
-    number: '06',
-    name:   'Security & Access',
-    desc:   'CCTV, access control and intercom on one platform, with permissions and audit reporting that scale across sites, tenancies and staff turnover.',
-    href:   '/commercial/security',
   },
   {
     number: '07',
@@ -63,7 +51,7 @@ export const SERVICES = [
   {
     number: '09',
     name:   'Managed Services & Support',
-    desc:   'Contracted response times and proactive monitoring under an SLA — support scoped to the uptime your business requires, not a call when something breaks.',
+    desc:   'Proactive monitoring for the systems your business runs on, scoped around how you actually use them — not a call when something breaks.',
     href:   '/commercial/support',
   },
 ]
