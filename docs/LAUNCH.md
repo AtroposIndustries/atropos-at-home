@@ -302,43 +302,47 @@ Re-point every stub in `atroposathome-redirect` straight at the corresponding
 `/residential/*` URL. **That repository is out of scope here** — this is a
 note for whoever next has it open, not a task for this codebase.
 
-**Re-register the Form Location URLs in Zoho.** Validated per page, so every
-form-bearing page needs re-pointing. A missed page still creates the lead but
-never confirms it to the visitor, and nothing surfaces the failure. The dual-
-vertical rebrand took this list from eight entries to seventeen — residential
-grew a landing page and six service pages, and commercial's landing page plus
-nine service pages are new entirely.
+**The Form Location URL list is a wildcard.** Zoho validates the submitting
+page's URL against this list, and a page that is not covered still creates the
+lead while never confirming it to the visitor — the response is cross-origin
+and unreadable, so the form shows its success panel either way. Nothing
+surfaces the failure.
 
-The list below is **generated, not hand-maintained.** Hand-maintaining it is
-exactly how a missing entry stays invisible; regenerate it with:
+The entry is:
+
+```
+https://atropos.com.au/*
+```
+
+**Why a wildcard, and why this is worth knowing.** The list was originally
+maintained per page. The dual-vertical rebrand took it from eight entries to
+seventeen, and Zoho refuses more than a limited number — so the per-page
+approach ran out of room. Zoho's own release notes mention `*` as the mechanism
+that *preceded* the multi-URL list, and do not say whether it still works.
+It does: verified on 2026-09-04 by submitting from `/commercial/signage/`, a
+page never individually registered, and confirming both that the lead arrived
+and that the visitor saw the inline confirmation rather than the fifteen-second
+stall message.
+
+That distinction is the test. A fast success panel means Zoho redirected the
+hidden iframe, so the URL was accepted. The stall message after roughly fifteen
+seconds means it was not. Checking the CRM alone proves nothing, because the
+lead arrives either way.
+
+**Consequences for this repository.** `REGISTERED_FORM_URLS` in `lib/routes.js`
+and the `scripts/check-form-pages.mjs` build guard were both built to keep a
+per-page list honest. They are now belt-and-braces rather than load-bearing:
+adding a page no longer requires a Zoho change. They are kept because they cost
+nothing and because a future Zoho change could reinstate the per-page
+requirement — but a failing guard is no longer an emergency.
+
+To regenerate the per-page list, if it is ever needed again:
 
 ```bash
 node -e "import('./lib/routes.js').then(m => m.REGISTERED_FORM_URLS.forEach(u => console.log(u)))"
 ```
 
-Current output (seventeen URLs):
-
-```
-https://atropos.com.au/
-https://atropos.com.au/about/
-https://atropos.com.au/residential/
-https://atropos.com.au/residential/smart-home/
-https://atropos.com.au/residential/home-theatre/
-https://atropos.com.au/residential/audio/
-https://atropos.com.au/residential/network/
-https://atropos.com.au/residential/acoustic/
-https://atropos.com.au/residential/support/
-https://atropos.com.au/commercial/
-https://atropos.com.au/commercial/control/
-https://atropos.com.au/commercial/meeting-rooms/
-https://atropos.com.au/commercial/audio/
-https://atropos.com.au/commercial/networks/
-https://atropos.com.au/commercial/signage/
-https://atropos.com.au/commercial/acoustic/
-https://atropos.com.au/commercial/support/
-```
-
-`/review/` carries no form and is not needed here.
+`/review/` carries no form and never needs registering.
 
 ### What is and is not machine-checked
 
@@ -350,28 +354,55 @@ renders `ContactForm` but its route is missing from `lib/routes.js`
 or a declared route has no page. Between them, the codebase cannot drift from
 its own list.
 
-**Nothing in this repository can verify the Zoho side.** Zoho validates the
-submitting page's URL per page against the Form Location URL list above, and
-that list lives entirely inside Zoho's own configuration — no test, build
-step or CI check here can read it back. If a page is missing from that list
-in Zoho, the form still creates the lead (the POST succeeds), but the visitor
-never sees the success panel, and nothing anywhere signals the mismatch: not
-the browser console, not the build, not a monitoring alert. A human must
-manually confirm, after any change to the list above, that Zoho's configured
-Form Location URLs match it exactly.
+**Nothing in this repository can verify the Zoho side.** The Form Location
+URL setting lives entirely inside Zoho's own configuration — no test, build
+step or CI check here can read it back. If the wildcard were ever removed or
+narrowed, forms would keep creating leads (the POST succeeds) while visitors
+stopped seeing the success panel, and nothing anywhere would signal it: not
+the browser console, not the build, not a monitoring alert.
 
-**Also outstanding:** Action on Submission → `https://atropos.com.au/zoho-thanks.html`;
-the welcome email template's logo `src` and footer links; the GA4 data stream
-URL (keep measurement ID `G-8RGK41Y2L5` for continuity); a Search Console
-property for the new domain — `atropos.com.au` already carries a
-`google-site-verification` TXT, so it may already be verified.
+While the wildcard holds, adding a page needs no Zoho change at all. That is
+the point of using one. The thing to protect is the wildcard entry itself —
+if someone replaces it with specific URLs, every page not named goes quietly
+half-broken.
 
-### `ZOHO_CONFIG.leadSource` still reads "Atropos at Home"
+**The test for whether it still works** is a real submission from a page that
+is not individually listed, checking that the success panel appears within a
+second or two rather than the fifteen-second "taking longer than expected"
+fallback. Confirming the lead reached the CRM proves nothing on its own: the
+lead arrives either way, and the visitor's experience is the half that
+breaks.
 
-`lib/zoho-form.js` sends `leadSource: 'Atropos - Contact Form'` on
-every submission — the one place in the codebase the retired brand name is
-deliberately still allowed to appear (see the top-level brand rule in this
-repo's task instructions). It is **not** simply a naming leftover to clean up:
+**Done since:** Action on Submission points at
+`https://atropos.com.au/zoho-thanks.html`; the welcome email template carries
+the base Atropos wordmark and the new domain in its links; the Lead Source
+picklist value is `Atropos - Contact Form` and the code sends it.
+
+**Still outstanding:**
+
+- **`NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME` has never been set.** `/review/`
+  therefore falls back to `href="#"` (`app/review/page.jsx`), so the button
+  that sends a customer to leave a Google review goes nowhere. That page is
+  not linked from anywhere on the site by design — it is a direct-link tool
+  sent to a customer after a job — so the broken button is invisible until
+  someone uses it. Set it as an Actions repository variable and redeploy. The
+  `_HOME` suffix is a relic of the two-brand era and could be renamed.
+- **The review wizard writes residential-only copy.** It generates phrases
+  like "the smart home system they designed" and "premium technology for
+  their home". A commercial client asked for a review would be handed a
+  paragraph about their house.
+- **GA4 data stream URL** still names the old domain. Cosmetic — the tag
+  fires regardless; keep measurement ID `G-8RGK41Y2L5` for continuity.
+- **Search Console** property for `atropos.com.au` and a sitemap submission.
+  The domain already carries a `google-site-verification` TXT, so it should
+  verify immediately.
+
+### `ZOHO_CONFIG.leadSource` and the Zoho picklist
+
+`lib/zoho-form.js` sends `leadSource: 'Atropos - Contact Form'` on every
+submission. It was the last string on the site still reading "Atropos at Home",
+and it outlived the rest of the rebrand by design. The constraint that held it
+there still applies to any future change:
 
 - `Lead Source` is a Zoho picklist. Zoho **silently drops** a submitted value
   that is not a configured option — the lead still arrives, just unattributed,
@@ -382,9 +413,9 @@ repo's task instructions). It is **not** simply a naming leftover to clean up:
   Modules and Fields → Leads → Lead Source), confirm it is selectable, **then**
   change the string in `lib/zoho-form.js` to match it exactly, then re-register
   nothing (this does not touch Form Location URLs).
-- Until that Zoho-side step happens, leave the string as-is. Every form-bearing
-  page's rendered source carries the old brand name in this one field, and that
-  is the correct, intentional state until someone completes the Zoho side.
+- This was done on 2026-09-04: the picklist gained `Atropos - Contact Form`
+  first, then the code followed. Verified by a live submission whose Lead
+  Source read back correctly rather than arriving blank.
 
 ## Outstanding, outside this project
 
