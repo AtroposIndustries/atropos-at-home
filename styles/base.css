@@ -305,6 +305,38 @@ nav.scrolled {
 }
 
 /* CTA button — styled per theme */
+.nav-phone {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+}
+.nav-phone:hover { color: var(--text-primary); }
+
+/* Phone and CTA travel together as one unit. Without this the phone is a
+   fourth flex child of a space-between nav, which pushes the links off
+   centre and strands the number mid-gap. */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* In the mobile drawer, above the CTA. */
+.nav-drawer-phone {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--text-md);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+.nav-drawer-phone:hover { color: var(--text-primary); }
+
 .nav-cta {
   font-family: var(--font-body);
   font-weight: 300;
@@ -1825,6 +1857,22 @@ nav.scrolled {
 }
 .contact-title em { font-style: normal; color: var(--text-secondary); display: block; }
 
+.contact-phone {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-top: 16px;
+  letter-spacing: 0.04em;
+}
+.contact-phone a {
+  color: var(--accent, var(--text-primary));
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+.contact-phone a:hover { opacity: 0.75; }
+
 .contact-intro {
   font-size: var(--text-md);
   font-weight: 300;
@@ -2443,6 +2491,13 @@ footer {
   nav { padding: 24px var(--section-pad-h); }
   .nav-links, .nav-cta { display: none; }
   .nav-toggle { display: flex; }
+  /* The phone deliberately stays. On a handset, tapping it is the highest-
+     intent action on the page — hiding it with the CTA would be backwards. */
+  /* The CTA is hidden here, so .nav-actions holds only the phone. Under
+     space-between that leaves it stranded mid-nav; push it across so it sits
+     beside the hamburger, the way it sits beside the CTA on desktop. */
+  .nav-phone   { font-size: var(--text-xs); }
+  .nav-actions { gap: 0; margin-left: auto; margin-right: 18px; }
   .nav-drawer  { display: flex; }
   .nav-logo img { height: 28px; }
 

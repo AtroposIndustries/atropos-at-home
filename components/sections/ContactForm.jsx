@@ -5,6 +5,7 @@ import { useTheme } from '../../lib/theme-context'
 import { SectionLabel } from '../ui/SectionLabel'
 import { Button } from '../ui/Button'
 import { initCircuitPulses } from '../../lib/circuit-pulses'
+import { PHONE_DISPLAY, PHONE_TEL } from '../../lib/site.js'
 import {
   ZOHO_CONFIG,
   ZOHO_FIELD_NAMES,
@@ -148,6 +149,10 @@ export function ContactForm({
           <SectionLabel style={{ marginBottom: '20px' }}>{label}</SectionLabel>
           <h2 className="contact-title">{titleEl}</h2>
           <p className="contact-intro">{intro}</p>
+          <p className="contact-phone">
+            Or call us on{' '}
+            <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
+          </p>
         </div>
 
         <form

@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useNavScroll } from '../../hooks/useNavScroll'
+import { PHONE_DISPLAY, PHONE_TEL } from '../../lib/site.js'
 
 /**
  * Nav
@@ -63,6 +64,14 @@ export function Nav({ brand = 'home', logo, links = [], ctaLabel, ctaHref = '#co
             </a>
           )
         )}
+        <a
+          href={`tel:${PHONE_TEL}`}
+          onClick={closeDrawer}
+          className="nav-drawer-phone"
+        >
+          {PHONE_DISPLAY}
+        </a>
+
         {ctaLabel && (
           <a
             href={ctaHref}
@@ -120,11 +129,17 @@ export function Nav({ brand = 'home', logo, links = [], ctaLabel, ctaHref = '#co
           )}
         </ul>
 
-        {ctaLabel && (
-          <a href={ctaHref} className="nav-cta">
-            {ctaLabel}
+        <div className="nav-actions">
+          <a href={`tel:${PHONE_TEL}`} className="nav-phone">
+            {PHONE_DISPLAY}
           </a>
-        )}
+
+          {ctaLabel && (
+            <a href={ctaHref} className="nav-cta">
+              {ctaLabel}
+            </a>
+          )}
+        </div>
 
         <button
           className={`nav-toggle${drawerOpen ? ' open' : ''}`}

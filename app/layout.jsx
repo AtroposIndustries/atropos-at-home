@@ -4,7 +4,7 @@ import '@/styles/local.css'
 
 import { ThemeProvider }  from '@/lib/theme-context'
 
-import { SITE_URL } from '@/lib/site'
+import { SITE_URL, PHONE_TEL } from '@/lib/site'
 import { OG_IMAGE } from '@/lib/seo'
 
 export const metadata = {
@@ -78,7 +78,8 @@ const schemaHome = {
         { '@type': 'City',  name: 'Hobart' },
         { '@type': 'City',  name: 'Launceston' },
       ],
-      email:  'hello@atropos.com.au',
+      email:     'hello@atropos.com.au',
+      telephone: PHONE_TEL,
       knowsAbout: [
         'Smart Home Automation',
         'Home Theatre',
