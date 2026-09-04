@@ -380,22 +380,13 @@ picklist value is `Atropos - Contact Form` and the code sends it.
 
 **Still outstanding:**
 
-- **`NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME` has never been set.** `/review/`
-  therefore falls back to `href="#"` (`app/review/page.jsx`), so the button
-  that sends a customer to leave a Google review goes nowhere. That page is
-  not linked from anywhere on the site by design — it is a direct-link tool
-  sent to a customer after a job — so the broken button is invisible until
-  someone uses it. Set it as an Actions repository variable and redeploy. The
-  `_HOME` suffix is a relic of the two-brand era and could be renamed.
-- **The review wizard writes residential-only copy.** It generates phrases
-  like "the smart home system they designed" and "premium technology for
-  their home". A commercial client asked for a review would be handed a
-  paragraph about their house.
 - **GA4 data stream URL** still names the old domain. Cosmetic — the tag
   fires regardless; keep measurement ID `G-8RGK41Y2L5` for continuity.
-- **Search Console** property for `atropos.com.au` and a sitemap submission.
-  The domain already carries a `google-site-verification` TXT, so it should
-  verify immediately.
+- **GA4 data stream URL** still names the old domain. Cosmetic — the tag
+  fires regardless; keep measurement ID `G-8RGK41Y2L5` for continuity.
+
+Search Console is done — the property is verified and the sitemap submitted
+(2026-09-04).
 
 ### `ZOHO_CONFIG.leadSource` and the Zoho picklist
 
@@ -416,6 +407,50 @@ there still applies to any future change:
 - This was done on 2026-09-04: the picklist gained `Atropos - Contact Form`
   first, then the code followed. Verified by a live submission whose Lead
   Source read back correctly rather than arriving blank.
+
+## 8. `/review/` is parked, not abandoned
+
+Decided 2026-09-04. **Do not delete this page, and do not try to fix it without
+the gating item below.**
+
+Nothing on the site links to `/review/` — not the nav, not the footer, not any
+page. Only the sitemap. It is a direct-link tool: the URL is sent to a customer
+after a job, the wizard helps them draft review text, and a button posts it to
+Google.
+
+**The gating item is access, not code.** That button is inert because
+`NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME` has never been set, so
+`app/review/page.jsx` falls back to `href="#"`. The Google review link is held
+by a former business partner and is being sought. Until it arrives, no code
+change makes the page work.
+
+Because the page is invisible from the site, its brokenness only surfaces when
+someone actually sends the link — which is precisely how this gets rediscovered
+the hard way.
+
+### Two things people get wrong about it
+
+**It does not use an LLM.** That is a reasonable assumption from the outside and
+it is wrong. `buildReview()` in `components/sections/ReviewWizard.jsx` picks an
+opening, some middle sentences and a closing from four hardcoded arrays keyed on
+the star rating, and joins them. No network calls, no API keys, no environment
+variables. It never depended on anything the business has since lost, and it
+works today exactly as well as the day it was written.
+
+**Its copy is residential-only.** Every array is named `HOME_*` — the same
+two-brand relic as the `_HOME` suffix on the environment variable. The generated
+text says things like "the smart home system they designed" and "premium
+technology for their home", so a commercial client asked for a review would be
+handed a paragraph about their house.
+
+### To revive it, in order
+
+1. Obtain the Google review URL.
+2. Set it as an Actions repository variable and redeploy.
+3. Decide whether to add a parallel set of commercial arrays plus a
+   project-type toggle. `buildReview()` already takes openings, sentences and
+   closings as parameters, so a second set drops in without restructuring —
+   whoever wrote it anticipated this.
 
 ## Outstanding, outside this project
 
