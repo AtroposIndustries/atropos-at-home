@@ -452,6 +452,29 @@ handed a paragraph about their house.
    closings as parameters, so a second set drops in without restructuring —
    whoever wrote it anticipated this.
 
+## 9. The 2026-09-08 service consolidation
+
+Thirteen services became seven — three residential, four commercial — to
+match the competitor benchmark the business chose to replicate. Full reasoning,
+the mapping of what folded into what, and the four decisions behind it:
+`docs/specs/2026-09-08-service-consolidation-design.md`.
+
+Twelve routes now, eleven with the contact form. Seven old URLs have redirect
+stubs from `scripts/build-stubs.mjs`; the three first-generation stubs that
+pointed at pages removed here were re-pointed so they do not chain.
+
+**Nothing to do in Zoho** — the Form Location URL wildcard covers new and
+removed pages alike.
+
+### Outstanding after merge
+
+- ~~Re-point three stubs in `atroposathome-redirect`~~ — **done 2026-09-08**,
+  ahead of merge, since the destinations already existed. `audio` and
+  `acoustic` now go straight to `/residential/home-theatre/`; `support` to
+  `/residential/`.
+- **Resubmit the sitemap in Search Console** so the seven removed URLs drop
+  out of Google's queue sooner than they otherwise would.
+
 ## Outstanding, outside this project
 
 `atropos.com.au` has an A record to `34.50.153.87`, a Google Cloud IP that no

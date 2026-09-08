@@ -39,8 +39,8 @@ pnpm build && npx serve out
 
 ```
 app/               Routes. Page copy lives in the content.js beside each page.
-  residential/     Landing page + six residential service pages
-  commercial/      Landing page + nine commercial service pages
+  residential/     Landing page + three residential service pages
+  commercial/      Landing page + four commercial service pages
 components/        UI library — layout/, sections/, ui/
 hooks/             useScrollReveal, useNavScroll
 lib/               Theme context, circuit pulses, Zoho form config, routes.js

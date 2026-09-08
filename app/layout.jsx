@@ -93,7 +93,7 @@ const schemaHome = {
         'Acoustic Treatment',
         'Custom AV Integration',
         'Digital Signage',
-        'Managed Networks',
+        'Networking & Wi-Fi',
         'Conference Room AV',
         'Building Automation',
       ],
