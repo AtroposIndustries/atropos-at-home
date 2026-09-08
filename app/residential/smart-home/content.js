@@ -3,7 +3,7 @@
 export const HERO = {
   label: 'Services',
   title: 'Smart Home Automation',
-  body:  'Lighting, climate, security and entertainment, working as one system — so you don\'t have to think about any of it.',
+  body:  'Lighting, climate, blinds and entertainment, working as one system — so you don\'t have to think about any of it.',
 }
 
 export const INTRO = {
@@ -25,8 +25,8 @@ export const FEATURES = [
   },
   {
     number: '03',
-    title:  'Security & Access',
-    desc:   'Cameras, smart locks, video doorbells and alarms, all from one interface. Routines that lock up, arm the alarm and settle the house for the night.',
+    title:  'Security Integration',
+    desc:   'Cameras, locks and alarm stay with your existing security provider. We bring them onto the same interface as the rest of the house, so arming the alarm can lock the doors and drop the blinds too.',
   },
   {
     number: '04',
@@ -43,39 +43,12 @@ export const FEATURES = [
     title:  'Scenes & Automation',
     desc:   '"Movie Night." "Good Morning." "Away." One touch, and lighting, climate, blinds and AV all move together, tuned for the moment.',
   },
+  {
+    number: '07',
+    title:  'Aftercare',
+    desc:   'A smart home changes as your life does. We check in remotely, keep software and firmware current, and answer the phone when something needs tweaking. Anything hands-on gets a visit, anywhere in Tasmania.',
+  },
 ]
-
-export const PROCESS = {
-  label: 'How We Work',
-  title: 'Precision, from brief to handover.',
-  steps: [
-    {
-      num:   '01',
-      title: 'Discovery',
-      desc:  'We learn how you live — your routines, your preferences, your wish list. This conversation shapes every decision that follows.',
-    },
-    {
-      num:   '02',
-      title: 'Design & Specification',
-      desc:  'A detailed system design with zone maps, equipment schedules, and programming logic. You see exactly what you are getting before we touch a wall.',
-    },
-    {
-      num:   '03',
-      title: 'Pre-wire & Rough-in',
-      desc:  'We work alongside your builder to ensure every cable, conduit, and backbox is placed precisely where the finished system demands.',
-    },
-    {
-      num:   '04',
-      title: 'Installation & Programming',
-      desc:  'Every device is installed, configured, and programmed to your specification. We test every scene, every routine, every integration before you see it.',
-    },
-    {
-      num:   '05',
-      title: 'Handover & Training',
-      desc:  'A relaxed walkthrough of your system so you feel completely confident. Documentation provided. Our team on call whenever you need us.',
-    },
-  ],
-}
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },

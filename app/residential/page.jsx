@@ -12,19 +12,19 @@ import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Residential Smart Home, AV & Automation Tasmania',
-  description: 'Smart home automation, home theatre, whole-home audio, networking, acoustic treatment and ongoing support for homeowners, builders and architects across Tasmania. Accredited across every major control platform. Hobart-based.',
+  description: 'Smart home automation, home theatre with whole-home audio and acoustic treatment, and home networking and Wi-Fi for homeowners, builders and architects across Tasmania. Accredited across every major control platform. Hobart-based.',
   keywords: [
     'smart home installer Hobart',
     'home automation Tasmania',
-    'residential AV integrator',
     'home theatre installer Hobart',
     'whole home audio Tasmania',
-    'smart home company Hobart',
+    'acoustic treatment Tasmania',
+    'home wifi installation Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential`,
-    description: 'Smart home automation, home theatre, whole-home audio, networking, acoustic treatment and ongoing support for homeowners, builders and architects across Tasmania. Accredited across every major control platform. Hobart-based.',
+    description: 'Smart home automation, home theatre with whole-home audio and acoustic treatment, and home networking and Wi-Fi for homeowners, builders and architects across Tasmania. Accredited across every major control platform. Hobart-based.',
   }),
 }
 

@@ -10,20 +10,20 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Premium Home Theatre Design & Installation Tasmania',
-  description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
+  title:       'Home Theatre, Whole-home Audio & Acoustic Treatment Tasmania',
+  description: 'Home theatre design and installation — dedicated cinemas and media rooms, whole-home audio, acoustic treatment, Dolby Atmos surround sound and professional calibration. Hobart, Tasmania.',
   keywords: [
     'home theatre Hobart',
     'Dolby Atmos installation Tasmania',
     'home cinema design Hobart',
-    'projector room design',
-    'acoustic cinema treatment',
+    'whole home audio Tasmania',
+    'acoustic treatment Tasmania',
     'home theatre installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/home-theatre` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/home-theatre`,
-    description: 'Bespoke home theatre design and installation — acoustic treatment, Dolby Atmos surround sound, 4K laser projection, and professional calibration. Hobart, Tasmania.',
+    description: 'Home theatre design and installation — dedicated cinemas and media rooms, whole-home audio, acoustic treatment, Dolby Atmos surround sound and professional calibration. Hobart, Tasmania.',
   }),
 }
 

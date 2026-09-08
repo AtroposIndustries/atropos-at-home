@@ -1,8 +1,8 @@
-// ── Network & Connectivity — Page Content ───────────────────
+// ── Network & Wi-Fi — Page Content ──────────────────────────
 
 export const HERO = {
   label: 'Services',
-  title: 'Network & Connectivity',
+  title: 'Network & Wi-Fi',
   body:  'Networking that just works, underneath everything else in the house. Wi-Fi that actually reaches every room, with the bandwidth to back it up.',
 }
 
@@ -31,7 +31,7 @@ export const FEATURES = [
   {
     number: '04',
     title:  'Remote Monitoring',
-    desc:   'We can monitor your network remotely and get an alert before an issue reaches you. Most problems get diagnosed and fixed without anyone setting foot on site.',
+    desc:   'We can monitor your network remotely, so a dropped connection or a failing access point gets flagged before you notice it yourself.',
   },
   {
     number: '05',
@@ -43,39 +43,12 @@ export const FEATURES = [
     title:  'Future-ready Infrastructure',
     desc:   'Conduit, patch panels and switching capacity sized for where your home is going, not just where it is today. Expanding later should be simple, not a rebuild.',
   },
+  {
+    number: '07',
+    title:  'Aftercare',
+    desc:   'Handover isn\'t the finish line. We keep watch on the gear, push updates as they\'re released, and pick up the phone when something\'s off. Anything hands-on gets a visit, anywhere in Tasmania.',
+  },
 ]
-
-export const PROCESS = {
-  label: 'How We Work',
-  title: 'Built right from the ground up.',
-  steps: [
-    {
-      num:   '01',
-      title: 'Site Assessment',
-      desc:  'We survey your home — floor plans, construction type, device inventory, and internet connection — to understand exactly what the network needs to support.',
-    },
-    {
-      num:   '02',
-      title: 'Network Design',
-      desc:  'Access point placement, switching architecture, and VLAN structure designed for your home\'s layout and your device ecosystem.',
-    },
-    {
-      num:   '03',
-      title: 'Infrastructure Installation',
-      desc:  'Cabling, patch panels, and switching equipment installed with your builder during construction — or retrofit with minimal disruption to an existing home.',
-    },
-    {
-      num:   '04',
-      title: 'Configuration & Testing',
-      desc:  'Every access point configured, every VLAN established, every device connected and tested. Coverage is measured, not assumed.',
-    },
-    {
-      num:   '05',
-      title: 'Handover & Documentation',
-      desc:  'Full network documentation provided. Your credentials, your layout, your configuration — clearly documented and yours to keep.',
-    },
-  ],
-}
 
 export const CTA = {
   primaryCta: { label: 'Book a Consultation', href: '#contact' },
