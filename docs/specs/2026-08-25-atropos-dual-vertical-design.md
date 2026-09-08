@@ -1,3 +1,10 @@
+> **Superseded in part, 2026-09-08.** The service list and route table below
+> describe the site as built on 2026-08-25: thirteen services across twenty
+> routes. That was collapsed to seven services and twelve routes by
+> `2026-09-08-service-consolidation-design.md`, which records what folded into
+> what and why. The nav split, the `/residential/*` and `/commercial/*` URL
+> scheme, `lib/routes.js` as source of truth and the two CI guards all stand.
+
 # Atropos — dual-vertical rebrand
 
 **Date:** 2026-08-25
