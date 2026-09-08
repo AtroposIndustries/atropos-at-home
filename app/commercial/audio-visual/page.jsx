@@ -10,24 +10,25 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Smart Home Ongoing Support & Maintenance Tasmania',
-  description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
+  title:       'Commercial Audio Visual Tasmania | Atropos',
+  description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
   keywords: [
-    'smart home support Tasmania',
-    'home automation maintenance',
-    'AV system support Hobart',
-    'smart home monitoring Tasmania',
-    'Control4 support Tasmania',
+    'commercial building automation Hobart',
+    'BMS integration Tasmania',
+    'multi-tenant lighting control',
+    'occupancy sensing commercial',
+    'building control system Hobart',
+    'commercial automation Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/residential/support` },
+  alternates: { canonical: `${SITE_URL}/commercial/audio-visual` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/residential/support`,
-    description: 'Remote monitoring, software updates, and responsive support for smart home systems in Tasmania. A team that stays with you long after installation. Atropos, Hobart.',
+    url:         `${SITE_URL}/commercial/audio-visual`,
+    description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
   }),
 }
 
 
-export default function SupportPage() {
+export default function AudioVisualPage() {
   return (
     <>
 
@@ -69,8 +70,8 @@ export default function SupportPage() {
       </section>
 
       <CtaBand
-        title={<>Want a team that<br /><em>stays with you?</em></>}
-        body="Ask us about our support plans. We look after your system so you can simply enjoy it."
+        title={<>Ready for control that scales<br />across every <em>floor?</em></>}
+        body="Tell us about your building and how it's tenanted. We'll scope the zoning."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
@@ -78,7 +79,7 @@ export default function SupportPage() {
 
       <ContactForm
         label="Book a Consultation"
-        title={<>Tell us about<br /><em>your home.</em></>}
+        title={<>Tell us about<br /><em>your business.</em></>}
         services={CONTACT_SERVICES}
       />
 

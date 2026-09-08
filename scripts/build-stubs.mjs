@@ -13,10 +13,18 @@ import { SITE_URL } from '../lib/site.js'
 const MOVED = {
   'smart-home':   '/residential/smart-home',
   'home-theatre': '/residential/home-theatre',
-  'audio':        '/residential/audio',
+  'audio':        '/residential/home-theatre',
   'network':      '/residential/network',
-  'acoustic':     '/residential/acoustic',
-  'support':      '/residential/support',
+  'acoustic':     '/residential/home-theatre',
+  'support':      '/residential',
+  // 2026-09-08 consolidation: seven pages folded into three.
+  'residential/audio':        '/residential/home-theatre',
+  'residential/acoustic':     '/residential/home-theatre',
+  'residential/support':      '/residential',
+  'commercial/meeting-rooms': '/commercial/audio-visual',
+  'commercial/audio':         '/commercial/audio-visual',
+  'commercial/signage':       '/commercial/audio-visual',
+  'commercial/acoustic':      '/commercial/audio-visual',
 }
 
 const page = (to) => `<!doctype html>

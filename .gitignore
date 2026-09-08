@@ -16,3 +16,10 @@ out
 /public/network/
 /public/acoustic/
 /public/support/
+/public/residential/audio/
+/public/residential/acoustic/
+/public/residential/support/
+/public/commercial/meeting-rooms/
+/public/commercial/audio/
+/public/commercial/signage/
+/public/commercial/acoustic/

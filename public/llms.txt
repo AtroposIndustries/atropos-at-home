@@ -8,20 +8,15 @@ Atropos designs and installs integrated technology across residential and commer
 
 ### Residential
 - Smart Home Automation: Whole-home integration of lighting, climate, security, blinds, and entertainment. Specialists across RTI, Control4, Crestron and other major platforms rather than tied to any one of them, with custom mobile, tablet and web interfaces where a project calls for it. New builds and retrofits.
-- Premium Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration.
+- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration.
 - Distributed Audio / Full-home Sound: Multi-room audio with Bluesound, Sonance, KEF, and Bowers & Wilkins. Outdoor audio included.
-- Network & Connectivity: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
-- Acoustic Treatment: Purpose-built broadband absorbers, diffusers, and bass traps for home theatres and listening rooms.
-- Ongoing Support & Maintenance: Remote monitoring, update management, and priority on-site support.
+- Network & Wi-Fi: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
 
 ### Commercial
-- Building & Room Control: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
-- Meeting & Conference Rooms: One-touch video conferencing, room booking integration and cross-platform compatibility — Teams, Zoom and Google Meet.
-- Distributed Audio & Paging: Zoned background music and all-call paging with emergency override, licensed for commercial premises.
-- Managed Networks: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
-- Digital Signage & Wayfinding: Wayfinding, menu boards and building information on a centrally managed CMS.
-- Acoustic Treatment: Speech intelligibility and privacy engineered for open-plan offices, boardrooms and clinical spaces.
-- Managed Services & Support: Proactive monitoring and scheduled maintenance, with response times scoped per site.
+- Audio Visual: Meeting rooms and conferencing, zoned audio and paging, digital signage and displays for workplaces and venues.
+- Automation & Smart Lighting: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
+- Networking & Wi-Fi: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
+- Managed Services: Proactive monitoring and scheduled maintenance, with response times scoped per site.
 
 ## Service Area
 All of Tasmania — Hobart, Launceston, Devonport, Burnie and everywhere between. Based in Hobart.
@@ -33,17 +28,11 @@ Website: https://atropos.com.au/
 ## Links
 - Residential: https://atropos.com.au/residential/
 - Smart Home Automation: https://atropos.com.au/residential/smart-home/
-- Premium Home Theatre: https://atropos.com.au/residential/home-theatre/
-- Full-home Sound: https://atropos.com.au/residential/audio/
-- Network & Connectivity: https://atropos.com.au/residential/network/
-- Acoustic Treatment (Residential): https://atropos.com.au/residential/acoustic/
-- Ongoing Support: https://atropos.com.au/residential/support/
+- Home Theatre: https://atropos.com.au/residential/home-theatre/
+- Network & Wi-Fi: https://atropos.com.au/residential/network/
 - Commercial: https://atropos.com.au/commercial/
-- Building & Room Control: https://atropos.com.au/commercial/control/
-- Meeting & Conference Rooms: https://atropos.com.au/commercial/meeting-rooms/
-- Distributed Audio & Paging: https://atropos.com.au/commercial/audio/
-- Managed Networks: https://atropos.com.au/commercial/networks/
-- Digital Signage & Wayfinding: https://atropos.com.au/commercial/signage/
-- Acoustic Treatment (Commercial): https://atropos.com.au/commercial/acoustic/
-- Managed Services & Support: https://atropos.com.au/commercial/support/
+- Audio Visual: https://atropos.com.au/commercial/audio-visual/
+- Automation & Smart Lighting: https://atropos.com.au/commercial/control/
+- Networking & Wi-Fi: https://atropos.com.au/commercial/networks/
+- Managed Services: https://atropos.com.au/commercial/support/
 - About: https://atropos.com.au/about/

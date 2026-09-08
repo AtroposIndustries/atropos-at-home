@@ -15,38 +15,20 @@ export const SERVICES = [
   {
     number: '01',
     name:   'Smart Home Automation',
-    desc:   'Lighting, climate, blinds, security and entertainment unified into one system — controlled by gesture, voice, schedule, or a single app.',
+    desc:   'Lighting, climate, blinds and entertainment working as one system, built around how you actually live.',
     href:   '/residential/smart-home',
   },
   {
     number: '02',
-    name:   'Premium Home Theatre',
-    desc:   'From an intimate two-channel listening room to a fully immersive Dolby Atmos cinema — designed, acoustically treated and calibrated as one project.',
+    name:   'Home Theatre',
+    desc:   'Dedicated cinemas and media rooms, whole-home sound, and the acoustic treatment that makes both sound right.',
     href:   '/residential/home-theatre',
   },
   {
     number: '03',
-    name:   'Full-home Sound',
-    desc:   'Multi-zone, multi-source audio that follows you from the kitchen to the pool deck, with brands like Bluesound, Sonance and Bowers & Wilkins.',
-    href:   '/residential/audio',
-  },
-  {
-    number: '04',
-    name:   'Network & Connectivity',
-    desc:   'Enterprise-grade Wi-Fi and structured cabling installed once and built to keep working — the infrastructure every other system in your home depends on.',
+    name:   'Network & Wi-Fi',
+    desc:   'Coverage in every room and cabling in the walls before they close up. Installed once, built to keep working.',
     href:   '/residential/network',
-  },
-  {
-    number: '05',
-    name:   'Acoustic Treatment',
-    desc:   'Panels, diffusers and room treatment engineered for how a space sounds, finished to complement how it looks.',
-    href:   '/residential/acoustic',
-  },
-  {
-    number: '06',
-    name:   'Ongoing Support',
-    desc:   'Remote monitoring, software updates and a team that answers the phone when something needs attention — no contract required.',
-    href:   '/residential/support',
   },
 ]
 
