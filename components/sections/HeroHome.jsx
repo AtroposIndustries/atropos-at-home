@@ -18,9 +18,9 @@ import { initCircuitPulses } from '../../lib/circuit-pulses'
  *   ghostCta    — { label, href }
  */
 export function HeroHome({
-  eyebrow    = 'Smart Living · Premium AV · Home Theatre',
-  titleMain  = ['Your home,', 'elevated.'],
-  titleSub   = 'Beautifully integrated technology',
+  eyebrow    = '',
+  titleMain  = [],
+  titleSub   = '',
   body,
   primaryCta = { label: 'Explore the Experience', href: '#offerings' },
   ghostCta   = null,
@@ -55,7 +55,7 @@ export function HeroHome({
       <div className="hero-glow" aria-hidden="true" />
 
       <div className="hero-content">
-        <div className="hero-eyebrow">{eyebrow}</div>
+        {eyebrow && <div className="hero-eyebrow">{eyebrow}</div>}
 
         <h1 className="hero-title-home">
           {titleMain.map((line, i) =>
@@ -65,7 +65,7 @@ export function HeroHome({
           )}
         </h1>
 
-        <div className="hero-title-sub">{titleSub}</div>
+        {titleSub && <div className="hero-title-sub">{titleSub}</div>}
 
         {body && <p className="hero-body">{body}</p>}
 

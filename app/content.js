@@ -30,10 +30,8 @@ export const NAV = {
 }
 
 export const HERO = {
-  eyebrow:   'Residential · Commercial · Across Tasmania',
-  titleMain: ['Technology,', 'woven into the building.'],
-  titleSub:  'Automation, AV & networks for homes and businesses',
-  body:      'We design and install the automation, AV and network systems that get built into a space from the studs out. Homes and businesses, new builds and retrofits, usually working alongside your builder or architect from the drawings on. Twenty-five years across audiovisual and ICT, accredited on every major control platform rather than locked to one.',
+  titleMain: ['Integrated technology for', 'Tasmanian homes and businesses.'],
+  titleSub:  'Automation, home theatre, audiovisual, network and Wi-Fi — designed, installed and supported by one Tasmanian team.',
   primaryCta: { label: 'Choose Your Path', href: '#offerings' },
 }
 
