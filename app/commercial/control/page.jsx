@@ -10,20 +10,20 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Building & Room Control Tasmania',
-  description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
+  title:       'Commercial Automation & Smart Lighting Tasmania',
+  description: 'Lighting scenes, occupancy-driven scheduling and climate control across floors and tenancies, integrated with the security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
   keywords: [
-    'commercial building automation Hobart',
-    'BMS integration Tasmania',
-    'multi-tenant lighting control',
+    'commercial lighting control Hobart',
+    'smart lighting Tasmania business',
     'occupancy sensing commercial',
-    'building control system Hobart',
-    'commercial automation Tasmania',
+    'multi-tenant automation Hobart',
+    'building automation Tasmania',
+    'commercial climate control Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/control` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/control`,
-    description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
+    description: 'Lighting scenes, occupancy-driven scheduling and climate control across floors and tenancies, integrated with the security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
   }),
 }
 
@@ -70,7 +70,7 @@ export default function ControlPage() {
       </section>
 
       <CtaBand
-        title={<>Ready for control that scales<br />across every <em>floor?</em></>}
+        title={<>Ready for lighting and climate<br />that scale across every <em>floor?</em></>}
         body="Tell us about your building and how it's tenanted. We'll scope the zoning."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}

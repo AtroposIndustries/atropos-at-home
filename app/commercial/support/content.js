@@ -1,8 +1,8 @@
-// ── Managed Services & Support — Page Content ──────────────
+// ── Managed Services — Page Content ─────────────────────────
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Managed Services & Support',
+  title: 'Managed Services',
   body:  'A contracted relationship, not a call when something breaks. Remote monitoring, scheduled preventative maintenance, an asset register that tracks what\'s installed and when it\'s due for renewal, and a response commitment agreed in writing before anything goes wrong.',
 }
 
@@ -21,7 +21,7 @@ export const FEATURES = [
   {
     number: '02',
     title:  'Scheduled Preventative Maintenance',
-    desc:   'Site visits booked on a recurring schedule to check firmware, clean and inspect equipment, and review system logs for early warning signs. Not the only visits being the ones after a breakdown.',
+    desc:   'Site visits booked on a recurring schedule — checking firmware, cleaning and inspecting equipment, reviewing logs for early warning signs. Not just the visits that happen after something breaks.',
   },
   {
     number: '03',
@@ -40,8 +40,8 @@ export const FEATURES = [
   },
   {
     number: '06',
-    title:  'Multi-site Reporting',
-    desc:   'Support activity, asset status and outstanding items reviewable across every site a business operates, instead of tracked location by location with nothing to compare against.',
+    title:  'Aftercare',
+    desc:   'This whole page is the aftercare — monitoring, maintenance and a response commitment folded into one agreement, reported back to you across every site you run.',
   },
 ]
 

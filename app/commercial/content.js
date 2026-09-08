@@ -27,13 +27,13 @@ export const SERVICES = [
   {
     number: '03',
     name:   'Networking & Wi-Fi',
-    desc:   'Segmented, monitored and patched on a schedule, so a guest phone or a dodgy device cannot reach the systems your business runs on.',
+    desc:   'Segmented, monitored and patched on a schedule, so a guest phone or a dodgy device can\'t reach the systems your business runs on.',
     href:   '/commercial/networks',
   },
   {
     number: '04',
     name:   'Managed Services',
-    desc:   'Proactive monitoring, scheduled maintenance and a response time agreed before anything breaks.',
+    desc:   'Proactive monitoring, scheduled maintenance and a response commitment agreed before anything breaks.',
     href:   '/commercial/support',
   },
 ]

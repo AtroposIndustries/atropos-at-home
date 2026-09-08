@@ -1,47 +1,47 @@
-// ── Building & Room Control — Page Content ─────────────────
+// ── Automation & Smart Lighting — Page Content ──────────────
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Building & Room Control',
-  body:  'Scheduling and occupancy-driven automation across floors and tenancies. Lighting, climate and AV governed as one system, documented and handed over as something you own.',
+  title: 'Automation & Smart Lighting',
+  body:  'Lighting that shifts with the time of day, climate and blinds that follow occupancy, and one interface your staff can drive without a manual. Built to scale across a floor, a tenancy, or the whole building.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Control that scales past one office.',
-  body:  'A house answers to one household\'s routine. A commercial building answers to a lease schedule, a roster of casual staff, and a base-building contract that already governs half of what the control system wants to touch.\n\nWe design scheduling and occupancy sensing around those constraints. We integrate with the mechanical and access-control services already in the building instead of duplicating them, and hand over documentation and credentials that belong to your organisation, not to us.',
+  title: 'Control your staff will actually use.',
+  body:  'A house answers to one household\'s routine. A commercial building answers to a lease, a roster of casual staff, and whatever base-building contract already governs half of what the system wants to touch.\n\nWe build scenes and schedules around that — lighting, climate and blinds responding to occupancy and trading hours, not a fixed timer nobody\'s touched since daylight saving. Security stays with whoever you already use; we integrate with it, not replace it.',
 }
 
 export const FEATURES = [
   {
     number: '01',
-    title:  'Scheduling by Occupancy & Hours',
-    desc:   'Lighting, climate and AV follow trading hours and bookings, not a fixed timer that leaves a floor lit at eleven because nobody adjusted it for daylight saving.',
+    title:  'Scenes & Scheduling by Hours',
+    desc:   'Lighting, climate and blinds follow trading hours and bookings, not a fixed timer that leaves a floor lit at eleven because nobody adjusted it for daylight saving.',
   },
   {
     number: '02',
     title:  'Occupancy-driven Automation',
-    desc:   'Sensors bring a room down to standby when it empties, and back up before the next booking starts. Nothing left running overnight, and nothing cold when someone turns up unannounced.',
+    desc:   'Sensors bring a room down to standby when it empties, then back up before the next booking starts. Nothing left running overnight, nothing cold when someone turns up unannounced.',
   },
   {
     number: '03',
-    title:  'Multi-tenant & Multi-zone Separation',
-    desc:   'Zone boundaries mapped to lease boundaries, not to whatever\'s convenient to wire. One tenancy\'s after-hours event doesn\'t override another\'s schedule two floors up.',
+    title:  'Multi-zone & Multi-tenant Separation',
+    desc:   'Zone boundaries mapped to lease boundaries, not whatever\'s convenient to wire. One tenancy\'s after-hours event doesn\'t override another\'s schedule two floors up.',
   },
   {
     number: '04',
-    title:  'Base-building Services Integration',
-    desc:   'The control system talks to the mechanical services, building management and access control already installed, not a second thermostat quietly drifting out of step with the first.',
+    title:  'Integration With What\'s Already There',
+    desc:   'The system talks to the mechanical services and building management already installed, and to whatever security provider you already use — we integrate with it, we don\'t supply it.',
   },
   {
     number: '05',
-    title:  'Facilities-level Management',
-    desc:   'One interface for the facilities team to review and adjust every floor and tenancy, instead of walking the building to check what\'s running where.',
+    title:  'One Interface for Facilities',
+    desc:   'One dashboard for the facilities team to check and adjust every floor and tenancy, instead of walking the building to see what\'s running where.',
   },
   {
     number: '06',
-    title:  'Handover Documentation & Credential Ownership',
-    desc:   'Full documentation of the programming, network configuration and device inventory at project close, with administrator credentials issued in writing. The system stays yours to operate or hand to someone else.',
+    title:  'Aftercare',
+    desc:   'Full documentation and admin credentials handed over in your name at handover. After that, the system\'s monitored, serviced on a schedule, and a response commitment is agreed for your site, not a figure quoted upfront.',
   },
 ]
 

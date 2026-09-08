@@ -10,20 +10,20 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Audio Visual Tasmania | Atropos',
-  description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
+  title:       'Commercial Audio Visual Tasmania',
+  description: 'Meeting room AV, zoned audio and paging, digital signage and the acoustics behind clear speech — designed as one system for offices, hospitality, retail, education and healthcare. Hobart, Tasmania.',
   keywords: [
-    'commercial building automation Hobart',
-    'BMS integration Tasmania',
-    'multi-tenant lighting control',
-    'occupancy sensing commercial',
-    'building control system Hobart',
-    'commercial automation Tasmania',
+    'commercial AV installation Hobart',
+    'meeting room AV Tasmania',
+    'conference room technology Hobart',
+    'digital signage Tasmania',
+    'commercial audio paging Hobart',
+    'business AV integrator Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/audio-visual` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/audio-visual`,
-    description: 'Scheduling, occupancy-driven automation and multi-tenant zoning integrated with the building services you already have — documented and handed over with administrator credentials in your name. Hobart, Tasmania.',
+    description: 'Meeting room AV, zoned audio and paging, digital signage and the acoustics behind clear speech — designed as one system for offices, hospitality, retail, education and healthcare. Hobart, Tasmania.',
   }),
 }
 
@@ -70,8 +70,8 @@ export default function AudioVisualPage() {
       </section>
 
       <CtaBand
-        title={<>Ready for control that scales<br />across every <em>floor?</em></>}
-        body="Tell us about your building and how it's tenanted. We'll scope the zoning."
+        title={<>Ready for AV that just works<br />when someone hits <em>join?</em></>}
+        body="Tell us about your space and how it's used. We'll scope the system."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

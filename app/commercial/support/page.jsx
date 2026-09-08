@@ -10,8 +10,8 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Managed Services & IT/AV Support Tasmania',
-  description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a written response commitment agreed before anything breaks. Hobart, Tasmania.',
+  title:       'Commercial Managed Services Tasmania',
+  description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a response commitment agreed before anything breaks. Hobart, Tasmania.',
   keywords: [
     'managed services Hobart',
     'commercial AV support Tasmania',
@@ -23,7 +23,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/commercial/support` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/support`,
-    description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a written response commitment agreed before anything breaks. Hobart, Tasmania.',
+    description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a response commitment agreed before anything breaks. Hobart, Tasmania.',
   }),
 }
 

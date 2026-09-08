@@ -8,8 +8,7 @@ Atropos designs and installs integrated technology across residential and commer
 
 ### Residential
 - Smart Home Automation: Whole-home integration of lighting, climate, security, blinds, and entertainment. Specialists across RTI, Control4, Crestron and other major platforms rather than tied to any one of them, with custom mobile, tablet and web interfaces where a project calls for it. New builds and retrofits.
-- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration.
-- Distributed Audio / Full-home Sound: Multi-room audio with Bluesound, Sonance, KEF, and Bowers & Wilkins. Outdoor audio included.
+- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration. Also whole-home and multi-room audio (Bluesound, Sonance, KEF, Bowers & Wilkins) and acoustic treatment.
 - Network & Wi-Fi: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
 
 ### Commercial

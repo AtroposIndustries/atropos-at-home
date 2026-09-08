@@ -10,20 +10,20 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Managed Networks Tasmania',
-  description: 'Business networks monitored, patched and segmented under an agreed service level — guest, IoT and point-of-sale traffic kept apart, with documented failover and response times. Hobart, Tasmania.',
+  title:       'Commercial Networking & Wi-Fi Tasmania',
+  description: 'Business networks monitored, patched on a schedule and segmented — guest, IoT and point-of-sale traffic kept apart, with documented failover and a response commitment agreed for your site. Hobart, Tasmania.',
   keywords: [
     'managed network services Hobart',
     'business network monitoring Tasmania',
-    'network SLA Hobart',
     'network segmentation commercial',
     'business Wi-Fi Tasmania',
     'commercial network support Hobart',
+    'guest network security Hobart',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/networks` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/networks`,
-    description: 'Business networks monitored, patched and segmented under an agreed service level — guest, IoT and point-of-sale traffic kept apart, with documented failover and response times. Hobart, Tasmania.',
+    description: 'Business networks monitored, patched on a schedule and segmented — guest, IoT and point-of-sale traffic kept apart, with documented failover and a response commitment agreed for your site. Hobart, Tasmania.',
   }),
 }
 

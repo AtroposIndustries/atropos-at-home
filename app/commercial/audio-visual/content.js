@@ -1,51 +1,47 @@
-// SCAFFOLD — copied from control/ to keep the build green. Every string in
-// this file is to be rewritten for Audio Visual, which absorbs the former
-// Meeting & Conference Rooms, Distributed Audio & Paging and Digital Signage
-// pages plus a short acoustics section. See docs/specs/2026-09-08.
-// ── Building & Room Control — Page Content ─────────────────
+// ── Audio Visual — Page Content ─────────────────────────────
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Building & Room Control',
-  body:  'Scheduling and occupancy-driven automation across floors and tenancies. Lighting, climate and AV governed as one system, documented and handed over as something you own.',
+  title: 'Audio Visual',
+  body:  'Offices, hospitality venues, retail floors, schools, healthcare and function spaces all run on the same handful of problems: a meeting that has to join itself, paging that cuts through, a screen that\'s simple to update. We treat all of it as one system, not a pile of separate boxes.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Control that scales past one office.',
-  body:  'A house answers to one household\'s routine. A commercial building answers to a lease schedule, a roster of casual staff, and a base-building contract that already governs half of what the control system wants to touch.\n\nWe design scheduling and occupancy sensing around those constraints. We integrate with the mechanical and access-control services already in the building instead of duplicating them, and hand over documentation and credentials that belong to your organisation, not to us.',
+  title: 'One system, whichever room you\'re in.',
+  body:  'A boardroom, a shop floor and a hospital ward want completely different things from AV — until you boil it down to what actually matters: does it turn on, can people hear each other, and can whoever\'s meant to update it actually do that without calling us first.\n\nWe plan camera and mic coverage against the room\'s real shape, paging that cuts through when it counts, and signage built around whoever runs it day to day. All specified early enough to sit inside the build, not squeezed in once the walls are up.',
 }
 
 export const FEATURES = [
   {
     number: '01',
-    title:  'Scheduling by Occupancy & Hours',
-    desc:   'Lighting, climate and AV follow trading hours and bookings, not a fixed timer that leaves a floor lit at eleven because nobody adjusted it for daylight saving.',
+    title:  'Meeting Rooms & Conferencing',
+    desc:   'Built for whichever platform your organisation runs — Teams, Zoom, Meet — with camera and mic coverage planned against the room\'s actual shape and glass. Walk in, hit one button, join.',
   },
   {
     number: '02',
-    title:  'Occupancy-driven Automation',
-    desc:   'Sensors bring a room down to standby when it empties, and back up before the next booking starts. Nothing left running overnight, and nothing cold when someone turns up unannounced.',
+    title:  'Zoned Audio & Paging',
+    desc:   'Background music zoned by area, with all-call paging and an emergency override that cuts through whatever\'s playing. Licensing for music played to customers sits between you and the rights holder, not us.',
   },
   {
     number: '03',
-    title:  'Multi-tenant & Multi-zone Separation',
-    desc:   'Zone boundaries mapped to lease boundaries, not to whatever\'s convenient to wire. One tenancy\'s after-hours event doesn\'t override another\'s schedule two floors up.',
+    title:  'Digital Signage & Displays',
+    desc:   'Screens picked for the brightness and hours a space demands, video walls built the same way. Content scheduled by day-part, with updates going to whoever\'s meant to handle them — not whoever finds the login.',
   },
   {
     number: '04',
-    title:  'Base-building Services Integration',
-    desc:   'The control system talks to the mechanical services, building management and access control already installed, not a second thermostat quietly drifting out of step with the first.',
+    title:  'Coordinated With Your Build',
+    desc:   'Power, data and screen positions coordinated with your builder before walls and joinery close up. A clear line between what we support and what your IT team does, agreed before installation.',
   },
   {
     number: '05',
-    title:  'Facilities-level Management',
-    desc:   'One interface for the facilities team to review and adjust every floor and tenancy, instead of walking the building to check what\'s running where.',
+    title:  'Acoustics',
+    desc:   'Reverberation brought down so a conferencing mic doesn\'t smear voices into echo, and speech stays clear enough that nobody\'s asking someone to repeat themselves.',
   },
   {
     number: '06',
-    title:  'Handover Documentation & Credential Ownership',
-    desc:   'Full documentation of the programming, network configuration and device inventory at project close, with administrator credentials issued in writing. The system stays yours to operate or hand to someone else.',
+    title:  'Aftercare',
+    desc:   'Systems monitored after handover, maintenance booked on a schedule, and a response commitment agreed for your site — not a figure promised before we know what\'s installed.',
   },
 ]
 
