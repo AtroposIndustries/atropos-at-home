@@ -31,7 +31,7 @@ export const FEATURES = [
   {
     number: '04',
     title:  'Priority On-site Response',
-    desc:   'For anything that can\'t be sorted remotely, support clients get priority scheduling for an on-site visit from our Hobart-based team.',
+    desc:   'For anything that can\'t be sorted remotely, support clients get priority scheduling for an on-site visit, anywhere in Tasmania.',
   },
   {
     number: '05',

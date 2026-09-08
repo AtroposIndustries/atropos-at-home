@@ -36,7 +36,7 @@ export const NAV = {
 }
 
 export const HERO = {
-  eyebrow:   'Residential · Commercial · Hobart, Tasmania',
+  eyebrow:   'Residential · Commercial · Across Tasmania',
   titleMain: ['Technology,', 'woven into the building.'],
   titleSub:  'Automation, AV & networks for homes and businesses',
   body:      'We design and install the automation, AV and network systems that get built into a space from the studs out. Homes and businesses, new builds and retrofits, usually working alongside your builder or architect from the drawings on. Twenty-five years across audiovisual and ICT, accredited on every major control platform rather than locked to one.',
@@ -89,7 +89,7 @@ export const TESTIMONIAL = {
 export const ABOUT = {
   eyebrow:  'Who We Are',
   body:     'Atropos exists for people who want the technology in a building properly considered, not simply installed — homeowners, business owners, builders and architects who won\'t settle for ordinary.',
-  location: 'Hobart, Tasmania',
+  location: 'Hobart · Servicing all of Tasmania',
   cta:      { label: 'Our Story', href: '/about' },
 }
 
@@ -115,7 +115,7 @@ export const CONTACT_SERVICES = [
 
 export const FOOTER = {
   tagline:  '"Technology that lives quietly in the background, and beautifully in the foreground."',
-  location: 'Hobart, Tasmania',
+  location: 'Hobart · Servicing all of Tasmania',
   columns: [
     {
       heading: 'Residential Services',

@@ -77,6 +77,8 @@ const schemaHome = {
         { '@type': 'State', name: 'Tasmania' },
         { '@type': 'City',  name: 'Hobart' },
         { '@type': 'City',  name: 'Launceston' },
+        { '@type': 'City',  name: 'Devonport' },
+        { '@type': 'City',  name: 'Burnie' },
       ],
       email:     'hello@atropos.com.au',
       telephone: PHONE_TEL,
