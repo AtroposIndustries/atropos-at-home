@@ -30,7 +30,7 @@ export const NAV = {
 }
 
 export const HERO = {
-  titleMain: ['Integrated technology for', 'Tasmanian homes and businesses.'],
+  titleMain: ['Integrated technology for Tasmanian homes and businesses.'],
   titleSub:  'Automation, home theatre, audiovisual, network and Wi-Fi — designed, installed and supported by one Tasmanian team.',
   primaryCta: { label: 'Choose Your Path', href: '#offerings' },
 }
