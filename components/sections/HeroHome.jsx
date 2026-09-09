@@ -11,7 +11,7 @@ import { initCircuitPulses } from '../../lib/circuit-pulses'
  *
  * Props:
  *   eyebrow     — small label above the title
- *   titleMain   — main title (first line), last word wrapped in <em>
+ *   titleMain   — main title lines; rendered plain, no accent word
  *   titleSub    — subtitle line in condensed caps
  *   body        — paragraph text
  *   primaryCta  — { label, href }
@@ -58,18 +58,9 @@ export function HeroHome({
         {eyebrow && <div className="hero-eyebrow">{eyebrow}</div>}
 
         <h1 className="hero-title-home">
-          {titleMain.map((line, i) => {
-            if (i !== titleMain.length - 1) return <span key={i}>{line}<br /></span>
-            // Only the final word carries the accent — a whole italic line reads
-            // as a different heading, and a single string must be able to flow.
-            const words = line.trim().split(' ')
-            const tail  = words.pop()
-            return (
-              <span key={i}>
-                {words.join(' ')}{words.length ? ' ' : ''}<em>{tail}</em>
-              </span>
-            )
-          })}
+          {titleMain.map((line, i) =>
+            <span key={i}>{line}{i < titleMain.length - 1 && <br />}</span>
+          )}
         </h1>
 
         {titleSub && <div className="hero-title-sub">{titleSub}</div>}

@@ -137,12 +137,11 @@ nav.scrolled {
   font-size: clamp(38px, 4.6vw, 66px);
   line-height: 1.08;
   max-width: 1000px;
-  color: var(--ash);
+  color: var(--gold-light);
   margin-bottom: 12px;
   opacity: 0;
   animation: slideUp 0.9s ease 0.35s forwards;
 }
-.hero-title-home em { font-style: italic; color: var(--gold-light); }
 
 .hero-title-sub {
   font-family: var(--font-body);
