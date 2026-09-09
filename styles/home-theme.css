@@ -134,8 +134,9 @@ nav.scrolled {
 .hero-title-home {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: calc(var(--text-3xl) * 0.82);
+  font-size: clamp(38px, 4.6vw, 66px);
   line-height: 1.08;
+  max-width: 1000px;
   color: var(--ash);
   margin-bottom: 12px;
   opacity: 0;
@@ -285,7 +286,8 @@ nav.scrolled {
 
 /* ── Mobile — hero adjustments ───────────────────────────── */
 @media (max-width: 640px) {
-  .hero-title-home { font-size: clamp(44px, 13vw, 72px); }
+  /* Nine words, not five: 13vw ran the sentence to five lines on a 390px screen. */
+  .hero-title-home { font-size: clamp(34px, 9.5vw, 40px); }
   .hero-body       { font-size: var(--text-sm); }
   .hero-ctas       { flex-direction: column; align-items: flex-start; gap: 20px; }
 }

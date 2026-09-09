@@ -617,7 +617,7 @@ nav.scrolled {
   position: relative;
   z-index: 3;
   padding: 0 var(--section-pad-h) 90px;
-  max-width: 900px;
+  max-width: 1120px;
 }
 
 .hero-label {
