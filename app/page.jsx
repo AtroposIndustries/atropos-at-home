@@ -43,6 +43,7 @@ export default function HomePage() {
       <HeroHome
         eyebrow={HERO.eyebrow}
         titleMain={HERO.titleMain}
+        titleAccent={HERO.titleAccent}
         titleSub={HERO.titleSub}
         body={HERO.body}
         primaryCta={HERO.primaryCta}

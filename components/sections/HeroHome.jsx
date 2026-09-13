@@ -11,7 +11,8 @@ import { initCircuitPulses } from '../../lib/circuit-pulses'
  *
  * Props:
  *   eyebrow     — small label above the title
- *   titleMain   — main title lines; rendered plain, no accent word
+ *   titleMain   — main title, one string; wraps naturally
+ *   titleAccent — a word or phrase inside titleMain, rendered in gold italic
  *   titleSub    — subtitle line in condensed caps
  *   body        — paragraph text
  *   primaryCta  — { label, href }
@@ -19,7 +20,8 @@ import { initCircuitPulses } from '../../lib/circuit-pulses'
  */
 export function HeroHome({
   eyebrow    = '',
-  titleMain  = [],
+  titleMain   = '',
+  titleAccent = '',
   titleSub   = '',
   body,
   primaryCta = { label: 'Explore the Experience', href: '#offerings' },
@@ -58,9 +60,12 @@ export function HeroHome({
         {eyebrow && <div className="hero-eyebrow">{eyebrow}</div>}
 
         <h1 className="hero-title-home">
-          {titleMain.map((line, i) =>
-            <span key={i}>{line}{i < titleMain.length - 1 && <br />}</span>
-          )}
+          {titleAccent && titleMain.includes(titleAccent)
+            ? (() => {
+                const [before, after] = titleMain.split(titleAccent)
+                return <>{before}<em>{titleAccent}</em>{after}</>
+              })()
+            : titleMain}
         </h1>
 
         {titleSub && <div className="hero-title-sub">{titleSub}</div>}
