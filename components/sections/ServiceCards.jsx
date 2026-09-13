@@ -22,7 +22,7 @@ export function ServiceCards({ label, title, services = [] }) {
         <h2 className="section-title">{title}</h2>
       </div>
 
-      <div className="services-grid">
+      <div className="services-grid" data-count={services.length}>
         {services.map((svc) => (
           <div key={svc.number} className="service-card reveal">
             {svc.img && (
