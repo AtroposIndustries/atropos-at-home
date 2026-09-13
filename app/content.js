@@ -25,14 +25,14 @@ export const NAV = {
     },
     { label: 'About', href: '/about' },
   ],
-  ctaLabel: 'Book a Consultation',
+  ctaLabel: 'Get in touch',
   ctaHref:  '#contact',
 }
 
 export const HERO = {
   titleMain:   'Smart technology that disappears into the space.',
   titleAccent: 'disappears',
-  titleSub:  'Automation, home theatre, audiovisual, network and Wi-Fi — designed, installed and supported by one Tasmanian team.',
+  titleSub:  'Smart Home, audio visual, home theatre, network and Wi-Fi designed around the way you live and work.',
   primaryCta: { label: 'Choose Your Path', href: '#offerings' },
 }
 
