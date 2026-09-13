@@ -16,7 +16,7 @@ export const FEATURES = [
   {
     number: '01',
     title:  'Continuous Monitoring & Alerting',
-    desc:   'Switches, access points, firewalls and internet links watched around the clock. An alert fires the moment one drops or starts to degrade — not when the till stops taking payments.',
+    desc:   'Switches, access points, firewalls and internet links monitored, with an alert the moment one drops or starts to degrade — not when the till stops taking payments.',
   },
   {
     number: '02',

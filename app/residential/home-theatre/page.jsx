@@ -10,20 +10,20 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Home Theatre, Whole-home Audio & Acoustic Treatment Tasmania',
-  description: 'Home theatre design and installation — dedicated cinemas and media rooms, whole-home audio, acoustic treatment, Dolby Atmos surround sound and professional calibration. Hobart, Tasmania.',
+  title:       'Home Theatre, Media Rooms & Acoustic Treatment Tasmania',
+  description: 'Home theatre design and installation — dedicated cinemas, media rooms and living spaces, Dolby Atmos surround sound, projection and displays, acoustic treatment, one-touch control and professional calibration. Hobart and all of Tasmania.',
   keywords: [
     'home theatre Hobart',
+    'home cinema installer Tasmania',
+    'media room installation Hobart',
     'Dolby Atmos installation Tasmania',
-    'home cinema design Hobart',
-    'whole home audio Tasmania',
+    'home theatre design Hobart',
     'acoustic treatment Tasmania',
-    'home theatre installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/home-theatre` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/home-theatre`,
-    description: 'Home theatre design and installation — dedicated cinemas and media rooms, whole-home audio, acoustic treatment, Dolby Atmos surround sound and professional calibration. Hobart, Tasmania.',
+    description: 'Home theatre design and installation — dedicated cinemas, media rooms and living spaces, Dolby Atmos surround sound, projection and displays, acoustic treatment, one-touch control and professional calibration. Hobart and all of Tasmania.',
   }),
 }
 
@@ -70,8 +70,8 @@ export default function HomeTheatrePage() {
       </section>
 
       <CtaBand
-        title={<>Ready to build your<br /><em>perfect cinema?</em></>}
-        body="Tell us about your room and your vision. We'll handle everything from there."
+        title={<>Start with the room.<br /><em>We&apos;ll design the rest.</em></>}
+        body="Tell us about the space and what you want from it. We'll take it from there."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
