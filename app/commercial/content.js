@@ -33,7 +33,7 @@ export const SERVICES = [
   {
     number: '04',
     name:   'Managed Services',
-    desc:   'Proactive monitoring, scheduled maintenance and a response commitment agreed before anything breaks.',
+    desc:   'Managed IT, ad hoc IT support, Microsoft 365 and Google Workspace, and the systems we installed monitored and maintained. One agreement, one number.',
     href:   '/commercial/support',
   },
   {

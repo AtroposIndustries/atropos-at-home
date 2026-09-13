@@ -67,7 +67,7 @@ export const OFFERINGS = {
     {
       number: '02',
       name:   'Commercial',
-      desc:   'Meeting rooms and unified communications, digital signage and audio visual, networks, automation and managed services for workplaces and venues.',
+      desc:   'Meeting rooms and unified communications, digital signage and audio visual, networks, automation, managed IT and support for workplaces and venues.',
       href:   '/commercial/',
     },
   ],

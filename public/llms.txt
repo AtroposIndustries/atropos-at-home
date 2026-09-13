@@ -16,7 +16,7 @@ Atropos designs and installs integrated technology across residential and commer
 - Unified Communications: Microsoft Teams and Zoom meeting rooms, video conferencing, hybrid and BYOD spaces, room booking, and integration with the telephony platform a business already runs.
 - Digital Signage & Audio Visual: Signage and displays, video walls, content scheduling, zoned audio and paging for workplaces and venues.
 - Network & Wi-Fi: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
-- Managed Services: Proactive monitoring and scheduled maintenance, with response times scoped per site.
+- Managed Services & IT Support: Managed IT (helpdesk, patching, Microsoft 365 and Google Workspace licensing and administration, backups, device management), ad hoc IT support with no contract, and monitoring and scheduled maintenance for the AV, network and control systems Atropos installs.
 - Automation: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
 
 ## Service Area
@@ -36,6 +36,6 @@ Website: https://atropos.com.au/
 - Unified Communications: https://atropos.com.au/commercial/unified-communications/
 - Digital Signage & Audio Visual: https://atropos.com.au/commercial/signage-audio-visual/
 - Network & Wi-Fi: https://atropos.com.au/commercial/networks/
-- Managed Services: https://atropos.com.au/commercial/support/
+- Managed Services & IT Support: https://atropos.com.au/commercial/support/
 - Automation: https://atropos.com.au/commercial/automation/
 - About: https://atropos.com.au/about/

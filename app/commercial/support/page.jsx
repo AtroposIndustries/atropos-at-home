@@ -10,20 +10,21 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Managed Services Tasmania',
-  description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a response commitment agreed before anything breaks. Hobart, Tasmania.',
+  title:       'Managed IT Services & IT Support Tasmania',
+  description: 'Managed IT, ad hoc IT support and systems support for Tasmanian businesses — Microsoft 365 and Google Workspace licensing and admin, backups, device management, and the meeting rooms, network and control systems we installed kept running. Hobart, Launceston and statewide.',
   keywords: [
-    'managed services Hobart',
+    'IT support Hobart',
+    'managed IT services Tasmania',
+    'IT support Launceston',
+    'Microsoft 365 support Hobart',
+    'small business IT support Tasmania',
+    'outsourced IT Tasmania',
     'commercial AV support Tasmania',
-    'preventative maintenance AV',
-    'IT asset lifecycle management',
-    'managed support agreement Hobart',
-    'commercial support contract Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/support` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/support`,
-    description: 'A contracted support relationship — remote monitoring, scheduled preventative maintenance, an asset register with lifecycle planning, and a response commitment agreed before anything breaks. Hobart, Tasmania.',
+    description: 'Managed IT, ad hoc IT support and systems support for Tasmanian businesses — Microsoft 365 and Google Workspace licensing and admin, backups, device management, and the meeting rooms, network and control systems we installed kept running. Hobart, Launceston and statewide.',
   }),
 }
 
@@ -70,8 +71,8 @@ export default function SupportPage() {
       </section>
 
       <CtaBand
-        title={<>Ready for support<br />built as a <em>contract?</em></>}
-        body="Tell us about your site and what's already installed. We'll scope the agreement."
+        title={<>One number for<br /><em>everything in the building.</em></>}
+        body="Tell us what you run and what's giving you grief. We'll scope the agreement — or just send someone."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />
