@@ -10,25 +10,25 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Audio Visual Tasmania',
-  description: 'Meeting room AV, zoned audio and paging, digital signage and the acoustics behind clear speech — designed as one system for offices, hospitality, retail, education and healthcare. Hobart, Tasmania.',
+  title:       'Digital Signage & Audio Visual Tasmania',
+  description: 'Digital signage, video walls and content scheduling, zoned audio and paging, and the acoustics behind clear speech — designed as one system for retail, hospitality, education, healthcare and function venues. Hobart, Tasmania.',
   keywords: [
-    'commercial AV installation Hobart',
-    'meeting room AV Tasmania',
-    'conference room technology Hobart',
     'digital signage Tasmania',
+    'digital signage installation Hobart',
+    'video wall installation Hobart',
     'commercial audio paging Hobart',
+    'commercial AV installation Hobart',
     'business AV integrator Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/signage-audio-visual` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/signage-audio-visual`,
-    description: 'Meeting room AV, zoned audio and paging, digital signage and the acoustics behind clear speech — designed as one system for offices, hospitality, retail, education and healthcare. Hobart, Tasmania.',
+    description: 'Digital signage, video walls and content scheduling, zoned audio and paging, and the acoustics behind clear speech — designed as one system for retail, hospitality, education, healthcare and function venues. Hobart, Tasmania.',
   }),
 }
 
 
-export default function AudioVisualPage() {
+export default function SignageAudioVisualPage() {
   return (
     <>
 
@@ -70,8 +70,8 @@ export default function AudioVisualPage() {
       </section>
 
       <CtaBand
-        title={<>Ready for AV that just works<br />when someone hits <em>join?</em></>}
-        body="Tell us about your space and how it's used. We'll scope the system."
+        title={<>Screens that stay current,<br />sound that <em>carries.</em></>}
+        body="Tell us about your space and who'll be running it day to day. We'll scope the system."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

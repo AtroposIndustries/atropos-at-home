@@ -1,8 +1,8 @@
-// ── Networking & Wi-Fi — Page Content ───────────────────────
+// ── Network & Wi-Fi — Page Content ───────────────────────
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Networking & Wi-Fi',
+  title: 'Network & Wi-Fi',
   body:  'A business network carries EFTPOS, cloud accounting, phones and security cameras. It\'s expected to be up every hour the doors are open. We design, monitor, patch and segment it — not install it once and hope.',
 }
 

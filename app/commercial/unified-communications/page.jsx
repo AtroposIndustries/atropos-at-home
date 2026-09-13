@@ -18,6 +18,7 @@ export const metadata = {
     'video conferencing installation Hobart',
     'unified communications Tasmania',
     'Zoom Rooms Hobart',
+    'hybrid meeting room Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/commercial/unified-communications` },
   openGraph: pageOpenGraph({
@@ -70,7 +71,7 @@ export default function UnifiedCommunicationsPage() {
 
       <CtaBand
         title={<>Meetings that start<br /><em>on time.</em></>}
-        body="Tell us how your teams meet today. We'll design rooms that get out of their way."
+        body="Tell us how your people meet today, and across which sites. We'll scope the rooms."
         primaryCta={CTA.primaryCta}
         ghostCta={CTA.ghostCta}
       />

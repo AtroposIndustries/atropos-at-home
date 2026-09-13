@@ -1,9 +1,9 @@
-// ── Automation & Smart Lighting — Page Content ──────────────
+// ── Automation — Page Content ───────────────────────────────
 
 export const HERO = {
   label: 'Commercial',
-  title: 'Automation & Smart Lighting',
-  body:  'Lighting that shifts with the time of day, climate and blinds that follow occupancy, and one interface your staff can drive without a manual. Built to scale across a floor, a tenancy, or the whole building.',
+  title: 'Automation',
+  body:  'Lighting, climate and blinds that follow occupancy and trading hours, and one interface your staff can drive without a manual. Built to scale across a floor, a tenancy, or the whole building.',
 }
 
 export const INTRO = {

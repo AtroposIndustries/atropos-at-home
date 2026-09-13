@@ -17,6 +17,7 @@ export const metadata = {
     'whole home audio Tasmania',
     'outdoor speakers Hobart',
     'TV installation Hobart',
+    'in-ceiling speakers Hobart',
     'home audio visual installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/audio-visual` },

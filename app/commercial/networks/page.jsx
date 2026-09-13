@@ -10,7 +10,7 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Networking & Wi-Fi Tasmania',
+  title:       'Commercial Network & Wi-Fi Tasmania',
   description: 'Business networks monitored, patched on a schedule and segmented — guest, IoT and point-of-sale traffic kept apart, with documented failover and a response commitment agreed for your site. Hobart, Tasmania.',
   keywords: [
     'managed network services Hobart',

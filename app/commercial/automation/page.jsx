@@ -10,11 +10,11 @@ import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'Commercial Automation & Smart Lighting Tasmania',
-  description: 'Lighting scenes, occupancy-driven scheduling and climate control across floors and tenancies, integrated with the security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
+  title:       'Commercial Automation Tasmania',
+  description: 'Lighting, climate and blind control that follows occupancy and trading hours across floors and tenancies, integrated with the building services and security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
   keywords: [
+    'commercial automation Hobart',
     'commercial lighting control Hobart',
-    'smart lighting Tasmania business',
     'occupancy sensing commercial',
     'multi-tenant automation Hobart',
     'building automation Tasmania',
@@ -23,7 +23,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/commercial/automation` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial/automation`,
-    description: 'Lighting scenes, occupancy-driven scheduling and climate control across floors and tenancies, integrated with the security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
+    description: 'Lighting, climate and blind control that follows occupancy and trading hours across floors and tenancies, integrated with the building services and security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
   }),
 }
 
