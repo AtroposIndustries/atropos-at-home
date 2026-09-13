@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="section-intro" style={{ paddingBottom: 0 }}>
           <div className="section-label">{OFFERINGS.eyebrow}</div>
           <h2 className="section-title-home" style={{ marginTop: '16px' }}>Technology that <em>disappears</em><br />into the building.</h2>
-          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, maxWidth: '640px', marginTop: '20px', marginBottom: '48px', fontWeight: 300 }}>The best technology is invisible — woven into the architecture, responding intuitively, whether that&apos;s a living room or a boardroom.</p>
+          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, maxWidth: '640px', marginTop: '20px', marginBottom: '48px', fontWeight: 300 }}>Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania. From home theatre and multi-room audio visual to meeting rooms, digital signage, automation and Wi-Fi, we build systems that are simple to use, reliable, and still working properly years from now.</p>
         </div>
         <div className="threads-list">
           {OFFERINGS.items.map((o) => (
