@@ -92,7 +92,7 @@ export const BRANDS = {
 }
 
 export const CTA = {
-  primaryCta: { label: 'Book a Consultation', href: '#contact' },
+  primaryCta: { label: 'Get in touch', href: '#contact' },
   body:       'Whether it\'s a home theatre or a boardroom fit-out, begin with a conversation. We\'ll handle the rest.',
 }
 

@@ -78,7 +78,7 @@ export default function ControlPage() {
 
 
       <ContactForm
-        label="Book a Consultation"
+        label="Get in touch"
         title={<>Tell us about<br /><em>your business.</em></>}
         services={CONTACT_SERVICES}
       />

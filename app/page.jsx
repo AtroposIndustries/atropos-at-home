@@ -89,7 +89,7 @@ export default function HomePage() {
       />
 
       <ContactForm
-        label="Book a Consultation"
+        label="Get in touch"
         title={<>Tell us about<br /><em>your project.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
         services={CONTACT_SERVICES}

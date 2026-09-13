@@ -79,7 +79,7 @@ export default function SmartHomePage() {
 
 
       <ContactForm
-        label="Book a Consultation"
+        label="Get in touch"
         title={<>Tell us about<br /><em>your home.</em></>}
         services={CONTACT_SERVICES}
       />

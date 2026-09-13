@@ -56,6 +56,6 @@ export const FEATURES = [
 ]
 
 export const CTA = {
-  primaryCta: { label: 'Book a Consultation', href: '#contact' },
+  primaryCta: { label: 'Get in touch', href: '#contact' },
   ghostCta:   { label: 'View All Services',   href: '/residential/#services' },
 }
