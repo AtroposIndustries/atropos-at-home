@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-08
 **Branch:** `restructure-services`
-**Status:** approved, implementing
+**Status:** implemented on `restructure-services`; service list, route table, nav content and stub map superseded by `2026-09-13-nav-and-offerings-design.md`
 **Supersedes in part:** `2026-08-25-atropos-dual-vertical-design.md` (its service
 list and route table; its nav, URL scheme and testing approach stand)
 
