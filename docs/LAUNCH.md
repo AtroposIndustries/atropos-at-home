@@ -475,6 +475,29 @@ removed pages alike.
 - **Resubmit the sitemap in Search Console** so the seven removed URLs drop
   out of Google's queue sooner than they otherwise would.
 
+## 10. The 2026-09-13 navigation and offerings rework
+
+Dropdowns are plain labels now — no sub-lines, no "All … services" rows —
+because most visitors are on phones and hover does not exist there. The
+offering became four residential and five commercial services in a fixed
+order, with two pages new (residential Audio Visual, commercial Unified
+Communications) and two renamed with their URLs (`signage-audio-visual/`,
+`automation/`). Reasoning and the full mapping:
+`docs/specs/2026-09-13-nav-and-offerings-design.md`.
+
+Fourteen routes, thirteen with the contact form. Nine redirect stubs cover
+the two renamed URLs and every earlier stub was re-pointed so none chains.
+
+**Nothing to do in Zoho** — wildcard Form Location URL.
+
+### Outstanding after merge
+
+- **Re-point `/audio/` in `atroposathome-redirect`** from
+  `/residential/home-theatre/` to `/residential/audio-visual/` — its
+  destination does not exist until this branch is on `main`.
+- **Resubmit the sitemap in Search Console** so the two renamed URLs are
+  picked up and the old ones drop out.
+
 ## Outstanding, outside this project
 
 `atropos.com.au` has an A record to `34.50.153.87`, a Google Cloud IP that no
