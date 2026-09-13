@@ -22,7 +22,7 @@ import { PullQuote }    from '@/components/sections/PageSections'
 import { ContactForm }  from '@/components/sections/ContactForm'
 
 import {
-  NAV, CONTACT_SERVICES, FOOTER,
+  NAV, FOOTER,
 } from '../content'
 import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
@@ -98,7 +98,6 @@ export default function AboutPage() {
         label="Get in touch"
         title={<>Tell us about<br /><em>your project.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
-        services={CONTACT_SERVICES}
       />
 
       <Footer

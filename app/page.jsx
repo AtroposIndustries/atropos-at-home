@@ -9,7 +9,7 @@ import { ContactForm }     from '@/components/sections/ContactForm'
 import {
   NAV, HERO, EXPERIENCE_ITEMS, OFFERINGS,
   ABOUT,
-  CTA, CONTACT_SERVICES, FOOTER,
+  CTA, FOOTER,
 } from './content'
 
 export const metadata = {
@@ -92,7 +92,6 @@ export default function HomePage() {
         label="Get in touch"
         title={<>Tell us about<br /><em>your project.</em></>}
         intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
-        services={CONTACT_SERVICES}
       />
 
       <Footer

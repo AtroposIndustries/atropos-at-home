@@ -27,9 +27,6 @@ const SUBMIT_TIMEOUT_MS = 15000
  *   label    — eyebrow label
  *   title    — JSX headline (use <em> for emphasis)
  *   intro    — supporting paragraph
- *   services — currently unused; no <select> exists to render it into. All
- *              nine pages still pass it. Retained for an upcoming redesign —
- *              do not remove it as dead code.
  *
  * Submits natively to Zoho CRM's Web-to-Lead endpoint, into a hidden iframe.
  * The site is statically hosted with no server to proxy through, and Zoho's
@@ -40,7 +37,6 @@ export function ContactForm({
   label   = 'Get in Touch',
   title,
   intro   = "Tell us about your project and we'll be in touch within one business day.",
-  services = [],
 }) {
   const brand = useTheme()
   const isHome = brand === 'home'

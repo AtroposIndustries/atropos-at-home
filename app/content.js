@@ -96,16 +96,6 @@ export const CTA = {
   body:       'Whether it\'s a home theatre or a boardroom fit-out, begin with a conversation. We\'ll handle the rest.',
 }
 
-export const CONTACT_SERVICES = [
-  { value: 'smart-home',   label: 'Smart Home Automation' },
-  { value: 'theatre',      label: 'Home Theatre' },
-  { value: 'audio',        label: 'Distributed Audio' },
-  { value: 'network',      label: 'Network & Connectivity' },
-  { value: 'acoustic',     label: 'Acoustic Treatment' },
-  { value: 'consultation', label: 'Design Consultation' },
-  { value: 'other',        label: 'Something else' },
-]
-
 export const FOOTER = {
   tagline:  '"Technology that lives quietly in the background, and beautifully in the foreground."',
   location: 'Hobart · Servicing all of Tasmania',

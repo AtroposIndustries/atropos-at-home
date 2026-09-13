@@ -4,7 +4,7 @@ import { PageHero }    from '@/components/sections/PageHero'
 import { CtaBand }     from '@/components/sections/Cta'
 import { ContactForm } from '@/components/sections/ContactForm'
 
-import { NAV, CONTACT_SERVICES, FOOTER } from '../../content'
+import { NAV, FOOTER } from '../../content'
 import { HERO, INTRO, FEATURES, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
@@ -81,7 +81,6 @@ export default function SmartHomePage() {
       <ContactForm
         label="Get in touch"
         title={<>Tell us about<br /><em>your home.</em></>}
-        services={CONTACT_SERVICES}
       />
 
       <Footer
