@@ -3,13 +3,13 @@
 export const HERO = {
   label: 'Services',
   title: 'Home Theatre',
-  body:  'Dedicated cinemas, media rooms, whole-home sound and the acoustic treatment behind both — designed, treated and commissioned to actually move you.',
+  body:  'Dedicated cinemas and media rooms, and the acoustic treatment that makes them work — designed, treated and calibrated to actually move you.',
 }
 
 export const INTRO = {
   label: 'What We Do',
-  title: 'Every room, sounding the way it should.',
-  body:  'A great home theatre isn\'t about screen size or speaker count. It\'s about the moment the room disappears and you\'re somewhere else. We design for that from first principles — acoustics, sight lines, equipment and calibration, considered together. The same thinking carries the sound through the rest of the house, and into the acoustic work that makes it hold up.',
+  title: 'When the room disappears.',
+  body:  'A great home theatre isn\'t about screen size or speaker count. It\'s about the moment the room disappears and you\'re somewhere else. We design for that from first principles — acoustics, sight lines, equipment and calibration, considered together. Dedicated cinema or family media room, the space gets measured and treated before anything goes on the wall, so what you paid for is what you actually hear.',
 }
 
 export const FEATURES = [
@@ -30,26 +30,21 @@ export const FEATURES = [
   },
   {
     number: '04',
-    title:  'Whole-home Sound',
-    desc:   'Music that follows you round the house, kitchen to pool deck. Different rooms playing different things, all from one app, streamed through Sonos or Bluesound and tied into the rest of your automation.',
-  },
-  {
-    number: '05',
     title:  'Acoustic Treatment',
     desc:   'Every room has an acoustic signature. Left alone, bass builds up in corners and reflections blur the picture. We measure first, then treat properly — panels and diffusers built to disappear into the room, not sit on top of it.',
   },
   {
-    number: '06',
+    number: '05',
     title:  'Theatre Lighting & Seating',
     desc:   'Scene-based LED lighting that dims itself before the film starts and lifts again after. Seating laid out for comfort and a clean line of sight to the screen.',
   },
   {
-    number: '07',
+    number: '06',
     title:  'Professional Calibration',
     desc:   'Display calibration and room correction — Dirac, Audyssey, or measured by hand. Your system gets tuned properly, not guessed at.',
   },
   {
-    number: '08',
+    number: '07',
     title:  'Aftercare',
     desc:   'Handover isn\'t the end of it. We keep an eye on the system remotely, push software and firmware updates as they land, and answer the phone when something needs sorting. Anything that needs a look in person, we come to you, anywhere in Tasmania.',
   },
