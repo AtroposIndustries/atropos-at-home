@@ -13,18 +13,22 @@ import { SITE_URL } from '../lib/site.js'
 const MOVED = {
   'smart-home':   '/residential/smart-home',
   'home-theatre': '/residential/home-theatre',
-  'audio':        '/residential/home-theatre',
+  'audio':        '/residential/audio-visual',
   'network':      '/residential/network',
   'acoustic':     '/residential/home-theatre',
   'support':      '/residential',
-  // 2026-09-08 consolidation: seven pages folded into three.
-  'residential/audio':        '/residential/home-theatre',
+  // 2026-09-08 consolidation: seven pages folded into three. Destinations
+  // re-pointed 2026-09-13 so none of these is a two-hop chain.
+  'residential/audio':        '/residential/audio-visual',
   'residential/acoustic':     '/residential/home-theatre',
   'residential/support':      '/residential',
-  'commercial/meeting-rooms': '/commercial/audio-visual',
-  'commercial/audio':         '/commercial/audio-visual',
-  'commercial/signage':       '/commercial/audio-visual',
-  'commercial/acoustic':      '/commercial/audio-visual',
+  'commercial/meeting-rooms': '/commercial/unified-communications',
+  'commercial/audio':         '/commercial/signage-audio-visual',
+  'commercial/signage':       '/commercial/signage-audio-visual',
+  'commercial/acoustic':      '/commercial/signage-audio-visual',
+  // 2026-09-13 rework: two pages renamed, URLs followed the labels.
+  'commercial/audio-visual':  '/commercial/signage-audio-visual',
+  'commercial/control':       '/commercial/automation',
 }
 
 const page = (to) => `<!doctype html>

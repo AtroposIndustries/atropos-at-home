@@ -296,14 +296,6 @@ nav.scrolled {
 }
 .nav-dropdown-item:hover .nav-dropdown-label { color: var(--accent); }
 
-.nav-dropdown-desc {
-  font-size: var(--text-xs);
-  letter-spacing: 0.03em;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  opacity: 0.65;
-}
-
 /* CTA button — styled per theme */
 .nav-phone {
   font-family: var(--font-body);

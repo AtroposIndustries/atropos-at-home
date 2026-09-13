@@ -14,21 +14,27 @@ export const INTRO = {
 export const SERVICES = [
   {
     number: '01',
-    name:   'Smart Home Automation',
-    desc:   'Lighting, climate, blinds and entertainment working as one system, built around how you actually live.',
-    href:   '/residential/smart-home',
+    name:   'Home Theatre',
+    desc:   'Dedicated cinemas and media rooms, and the acoustic treatment that makes them sound right.',
+    href:   '/residential/home-theatre',
   },
   {
     number: '02',
-    name:   'Home Theatre',
-    desc:   'Dedicated cinemas and media rooms, whole-home sound, and the acoustic treatment that makes both sound right.',
-    href:   '/residential/home-theatre',
+    name:   'Audio Visual',
+    desc:   'Music in every room, screens where you actually watch them, sound outside, all on one app.',
+    href:   '/residential/audio-visual',
   },
   {
     number: '03',
     name:   'Network & Wi-Fi',
     desc:   'Coverage in every room and cabling in the walls before they close up. Installed once, built to keep working.',
     href:   '/residential/network',
+  },
+  {
+    number: '04',
+    name:   'Smart Home Automation',
+    desc:   'Lighting, climate, blinds and entertainment working as one system, built around how you actually live.',
+    href:   '/residential/smart-home',
   },
 ]
 

@@ -20,9 +20,9 @@ export const metadata = {
     'building automation Tasmania',
     'commercial climate control Hobart',
   ],
-  alternates: { canonical: `${SITE_URL}/commercial/control` },
+  alternates: { canonical: `${SITE_URL}/commercial/automation` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/commercial/control`,
+    url:         `${SITE_URL}/commercial/automation`,
     description: 'Lighting scenes, occupancy-driven scheduling and climate control across floors and tenancies, integrated with the security provider you already use — documented and handed over in your name. Hobart, Tasmania.',
   }),
 }

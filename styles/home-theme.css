@@ -84,10 +84,6 @@ nav.scrolled {
   letter-spacing: 0.03em;
   font-size: 16px;
 }
-.nav-dropdown-desc {
-  text-transform: none;
-}
-
 /* ── Buttons ─────────────────────────────────────────────── */
 .btn-warm {
   color: var(--warm-dark);

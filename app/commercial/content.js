@@ -14,19 +14,19 @@ export const INTRO = {
 export const SERVICES = [
   {
     number: '01',
-    name:   'Audio Visual',
-    desc:   'Meeting rooms and conferencing, zoned audio and paging, digital signage and displays, designed as one system.',
-    href:   '/commercial/audio-visual',
+    name:   'Unified Communications',
+    desc:   'Teams and Zoom rooms, video conferencing and hybrid spaces that work with the phone system you already have.',
+    href:   '/commercial/unified-communications',
   },
   {
     number: '02',
-    name:   'Automation & Smart Lighting',
-    desc:   'Scenes, schedules and occupancy-driven control across lighting, climate and blinds, on one interface your staff will use.',
-    href:   '/commercial/control',
+    name:   'Digital Signage & Audio Visual',
+    desc:   'Signage and displays, video walls, zoned audio and paging, designed as one system.',
+    href:   '/commercial/signage-audio-visual',
   },
   {
     number: '03',
-    name:   'Networking & Wi-Fi',
+    name:   'Network & Wi-Fi',
     desc:   'Segmented, monitored and patched on a schedule, so a guest phone or a dodgy device can\'t reach the systems your business runs on.',
     href:   '/commercial/networks',
   },
@@ -35,6 +35,12 @@ export const SERVICES = [
     name:   'Managed Services',
     desc:   'Proactive monitoring, scheduled maintenance and a response commitment agreed before anything breaks.',
     href:   '/commercial/support',
+  },
+  {
+    number: '05',
+    name:   'Automation',
+    desc:   'Scenes, schedules and occupancy-driven control across lighting, climate and blinds, on one interface your staff will use.',
+    href:   '/commercial/automation',
   },
 ]
 

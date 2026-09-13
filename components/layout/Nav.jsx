@@ -11,7 +11,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../../lib/site.js'
  *   brand     — 'tech' | 'home'
  *   logo      — img src string or JSX element
  *   links     — array of { label, href }
- *               or { label, children: [{ label, href, desc? }] } for dropdowns
+ *               or { label, children: [{ label, href }] } for dropdowns
  *   ctaLabel  — CTA button text
  *   ctaHref   — CTA button href
  */
@@ -116,7 +116,6 @@ export function Nav({ brand = 'home', logo, links = [], ctaLabel, ctaHref = '#co
                   {link.children.map((child) => (
                     <a key={child.href} href={child.href} className="nav-dropdown-item" role="menuitem">
                       <span className="nav-dropdown-label">{child.label}</span>
-                      {child.desc && <span className="nav-dropdown-desc">{child.desc}</span>}
                     </a>
                   ))}
                 </div>

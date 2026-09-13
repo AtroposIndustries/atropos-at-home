@@ -20,9 +20,9 @@ export const metadata = {
     'commercial audio paging Hobart',
     'business AV integrator Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/commercial/audio-visual` },
+  alternates: { canonical: `${SITE_URL}/commercial/signage-audio-visual` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/commercial/audio-visual`,
+    url:         `${SITE_URL}/commercial/signage-audio-visual`,
     description: 'Meeting room AV, zoned audio and paging, digital signage and the acoustics behind clear speech — designed as one system for offices, hospitality, retail, education and healthcare. Hobart, Tasmania.',
   }),
 }

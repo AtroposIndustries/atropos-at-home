@@ -2,20 +2,22 @@
 > Integrated technology for Tasmanian homes and businesses — Hobart, Tasmania, Australia
 
 ## About
-Atropos designs and installs integrated technology across residential and commercial projects in Tasmania: control and automation, home theatre and meeting spaces, distributed audio, networks, digital signage, and acoustic treatment. We work with homeowners, business owners, builders and architects. Parent company: Atropos Industries Pty Ltd, Hobart, TAS 7000.
+Atropos designs and installs integrated technology across residential and commercial projects in Tasmania: home theatre, multi-room audio visual, unified communications and meeting rooms, digital signage, networks and Wi-Fi, automation, and managed services. We work with homeowners, business owners, builders and architects. Parent company: Atropos Industries Pty Ltd, Hobart, TAS 7000.
 
 ## Services
 
 ### Residential
-- Smart Home Automation: Whole-home integration of lighting, climate, security, blinds, and entertainment. Specialists across RTI, Control4, Crestron and other major platforms rather than tied to any one of them, with custom mobile, tablet and web interfaces where a project calls for it. New builds and retrofits.
-- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration. Also whole-home and multi-room audio (Bluesound, Sonance, KEF, Bowers & Wilkins) and acoustic treatment.
+- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration for dedicated cinemas and media rooms.
+- Audio Visual: Multi-room audio (Bluesound, Sonance, KEF, Bowers & Wilkins), living-area displays, outdoor sound and screens, and streaming sources on one control surface.
 - Network & Wi-Fi: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
+- Smart Home Automation: Whole-home integration of lighting, climate, blinds and entertainment, integrating with the security provider a client already has. Specialists across RTI, Control4, Crestron and other major platforms rather than tied to any one of them, with custom mobile, tablet and web interfaces where a project calls for it. New builds and retrofits.
 
 ### Commercial
-- Audio Visual: Meeting rooms and conferencing, zoned audio and paging, digital signage and displays for workplaces and venues.
-- Automation & Smart Lighting: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
-- Networking & Wi-Fi: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
+- Unified Communications: Microsoft Teams and Zoom meeting rooms, video conferencing, hybrid and BYOD spaces, room booking, and integration with the telephony platform a business already runs.
+- Digital Signage & Audio Visual: Signage and displays, video walls, content scheduling, zoned audio and paging for workplaces and venues.
+- Network & Wi-Fi: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
 - Managed Services: Proactive monitoring and scheduled maintenance, with response times scoped per site.
+- Automation: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
 
 ## Service Area
 All of Tasmania — Hobart, Launceston, Devonport, Burnie and everywhere between. Based in Hobart.
@@ -26,12 +28,14 @@ Website: https://atropos.com.au/
 
 ## Links
 - Residential: https://atropos.com.au/residential/
-- Smart Home Automation: https://atropos.com.au/residential/smart-home/
 - Home Theatre: https://atropos.com.au/residential/home-theatre/
+- Audio Visual: https://atropos.com.au/residential/audio-visual/
 - Network & Wi-Fi: https://atropos.com.au/residential/network/
+- Smart Home Automation: https://atropos.com.au/residential/smart-home/
 - Commercial: https://atropos.com.au/commercial/
-- Audio Visual: https://atropos.com.au/commercial/audio-visual/
-- Automation & Smart Lighting: https://atropos.com.au/commercial/control/
-- Networking & Wi-Fi: https://atropos.com.au/commercial/networks/
+- Unified Communications: https://atropos.com.au/commercial/unified-communications/
+- Digital Signage & Audio Visual: https://atropos.com.au/commercial/signage-audio-visual/
+- Network & Wi-Fi: https://atropos.com.au/commercial/networks/
 - Managed Services: https://atropos.com.au/commercial/support/
+- Automation: https://atropos.com.au/commercial/automation/
 - About: https://atropos.com.au/about/
