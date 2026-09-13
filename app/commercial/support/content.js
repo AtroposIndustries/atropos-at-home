@@ -16,7 +16,7 @@ export const FEATURES = [
   {
     number: '01',
     title:  'Remote Monitoring',
-    desc:   'We keep an eye on your control systems, network gear and AV endpoints, so a meeting room that's gone down gets noticed before anyone walks into it.',
+    desc:   'We keep an eye on your control systems, network gear and AV endpoints, so a meeting room that\'s gone down gets noticed before anyone walks into it.',
   },
   {
     number: '02',
