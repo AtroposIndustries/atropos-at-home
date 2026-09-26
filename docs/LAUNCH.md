@@ -495,8 +495,7 @@ the two renamed URLs and every earlier stub was re-pointed so none chains.
 - **Re-point `/audio/` in `atroposathome-redirect`** from
   `/residential/home-theatre/` to `/residential/audio-visual/` — its
   destination does not exist until this branch is on `main`.
-- **Resubmit the sitemap in Search Console** so the two renamed URLs are
-  picked up and the old ones drop out.
+- ~~Resubmit the sitemap in Search Console~~ — **done 2026-09-26**.
 
 ## 11. The 2026-09-26 "Field Notes" redesign
 
