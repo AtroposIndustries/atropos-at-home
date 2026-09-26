@@ -511,9 +511,8 @@ Shipped to `main` together with §10's branch.
 
 ### Outstanding after merge
 
-- **Send one real test enquiry** from the live site and confirm it arrives in
-  Zoho. The form's markup changed; its submit logic did not, and it was only
-  tested for validation locally.
+- ~~Send one real test enquiry from the live site~~ — **done 2026-09-26**: a
+  live enquiry arrived in Zoho after the redesign shipped.
 - Real photography for the service pages, and a verified testimonial — spec,
   Outstanding.
 
