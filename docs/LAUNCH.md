@@ -498,6 +498,25 @@ the two renamed URLs and every earlier stub was re-pointed so none chains.
 - **Resubmit the sitemap in Search Console** so the two renamed URLs are
   picked up and the old ones drop out.
 
+## 11. The 2026-09-26 "Field Notes" redesign
+
+A visual redesign across every page: one stylesheet
+(`styles/field-notes.css`), new header, phone menu, footer and contact
+layout. Copy and routes are unchanged, so the sitemap, redirect stubs and
+Zoho setup are untouched. Reasoning: `docs/specs/2026-09-26-field-notes-redesign.md`.
+
+Shipped to `main` together with §10's branch.
+
+**Nothing to do in Zoho** — same routes, same form fields, same submit path.
+
+### Outstanding after merge
+
+- **Send one real test enquiry** from the live site and confirm it arrives in
+  Zoho. The form's markup changed; its submit logic did not, and it was only
+  tested for validation locally.
+- Real photography for the service pages, and a verified testimonial — spec,
+  Outstanding.
+
 ## Outstanding, outside this project
 
 `atropos.com.au` has an A record to `34.50.153.87`, a Google Cloud IP that no

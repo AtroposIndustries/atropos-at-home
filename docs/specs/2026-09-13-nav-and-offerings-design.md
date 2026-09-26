@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-13
 **Branch:** `restructure-services`
-**Status:** implemented on `restructure-services`, awaiting merge
+**Status:** implemented; shipped to `main` 2026-09-26
 **Supersedes in part:** `2026-09-08-service-consolidation-design.md` (its service
 list, route table, nav content and stub map; its decisions 2, 4 and 5 stand)
 

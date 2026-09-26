@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-26
 **Branch:** `redesign-field-notes`, cut from `restructure-services`
-**Status:** implemented on `redesign-field-notes`, awaiting review
+**Status:** implemented; shipped to `main` 2026-09-26
 **Design source:** the canvas "Atropos Redesign Directions", direction A
 (homepage desktop and phone, phone menu, Home Theatre desktop and phone)
 
