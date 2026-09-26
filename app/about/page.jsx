@@ -34,8 +34,9 @@ export default function AboutPage() {
           cta={{ label: 'Get in touch', href: '#contact' }}
         />
 
-        <figure className="wrap figure">
-          <img src="/img/tasmania-1.jpg" alt="Forested hills above a river valley under low cloud, Tasmania" width="1080" height="790" />
+        {/* Illustrative, not an Atropos job's drawings. */}
+        <figure className="wrap figure page-header__figure">
+          <img src="/img/plans.webp" alt="Floor plans on a timber desk, marked up with speaker, data and lighting positions" width="1536" height="1024" />
         </figure>
 
         <section className="section">

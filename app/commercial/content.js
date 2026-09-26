@@ -3,6 +3,14 @@
 export const HERO = {
   label: 'Commercial',
   title: 'Systems your business can depend on.',
+  // Illustrative, not an Atropos job — keep the alt text descriptive and never
+  // caption it as a project. Replace with a real photo when there is one.
+  image: {
+    src:    '/img/commercial.webp',
+    alt:    'A meeting room in a converted sandstone building, with a wall display, a video bar and a touch panel on the table',
+    width:  1536,
+    height: 1024,
+  },
   body:  'Coordinated from the drawings on a new fit-out, or fitted into premises already in use. We learn how your people use the space before specifying anything, and we\'re still the ones who know the system a year later.',
 }
 

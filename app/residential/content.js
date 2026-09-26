@@ -3,6 +3,14 @@
 export const HERO = {
   label: 'Residential',
   title: 'Your home, seamlessly considered.',
+  // Illustrative, not an Atropos job — keep the alt text descriptive and never
+  // caption it as a project. Replace with a real photo when there is one.
+  image: {
+    src:    '/img/residential.webp',
+    alt:    'An open-plan living room and kitchen at dusk, with a television set into timber joinery and a view over misty hills',
+    width:  1536,
+    height: 1024,
+  },
   body:  'Technology that disappears into the home, planned with your builder and architect from the drawings or retrofitted into a house you already live in. Designed so that the better it works, the less you think about it.',
 }
 

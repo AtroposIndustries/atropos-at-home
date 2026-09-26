@@ -31,7 +31,7 @@ export default function CommercialPage() {
       <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />
 
       <main id="main">
-        <PageHeader title={HERO.title} body={HERO.body} cta={CTA.primaryCta} />
+        <PageHeader title={HERO.title} body={HERO.body} cta={CTA.primaryCta} image={HERO.image} />
 
         <section className="section" id="services">
           <div className="wrap">
