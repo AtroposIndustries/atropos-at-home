@@ -13,25 +13,21 @@ export const INTRO = {
 
 export const SERVICES = [
   {
-    number: '01',
     name:   'Home Theatre',
     desc:   'Dedicated cinemas and media rooms, and the acoustic treatment that makes them sound right.',
     href:   '/residential/home-theatre',
   },
   {
-    number: '02',
     name:   'Audio Visual',
     desc:   'Music in every room, screens where you actually watch them, sound outside, all on one app.',
     href:   '/residential/audio-visual',
   },
   {
-    number: '03',
     name:   'Network & Wi-Fi',
     desc:   'Coverage in every room and cabling in the walls before they close up. Installed once, built to keep working.',
     href:   '/residential/network',
   },
   {
-    number: '04',
     name:   'Smart Home Automation',
     desc:   'Lighting, climate, blinds and entertainment working as one system, built around how you actually live.',
     href:   '/residential/smart-home',
@@ -39,6 +35,8 @@ export const SERVICES = [
 ]
 
 export const CTA = {
-  primaryCta: { label: 'Get in touch',       href: '#contact' },
-  ghostCta:   { label: 'View Commercial Services',  href: '/commercial' },
+  title:      'Ready for a home built around you?',
+  body:       'Tell us about your home and how you want to live in it. We will design the rest.',
+  primaryCta: { label: 'Get in touch', href: '#contact' },
+  otherLink:  { label: 'View commercial services', href: '/commercial' },
 }

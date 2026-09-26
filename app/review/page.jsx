@@ -1,3 +1,5 @@
+import '@/styles/review.css'
+
 import { Nav }          from '@/components/layout/Nav'
 import { Footer }       from '@/components/layout/Footer'
 import { ReviewWizard } from '@/components/sections/ReviewWizard'
@@ -23,15 +25,9 @@ const GOOGLE_REVIEW_URL = process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL_HOME || '#'
 export default function ReviewPage() {
   return (
     <>
-      <Nav
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        links={NAV.links}
-        ctaLabel={NAV.ctaLabel}
-        ctaHref={NAV.ctaHref}
-      />
+      <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref="/#contact" />
 
-      <div style={{ paddingTop: '120px' }}>
+      <main id="main" className="review-page">
         <div className="review-intro">
           <p className="review-intro-label">Share Your Experience</p>
           <h1 className="review-intro-title">Leave us a<br /><em>review.</em></h1>
@@ -44,16 +40,9 @@ export default function ReviewPage() {
         <div className="review-wizard-wrap">
           <ReviewWizard googleReviewUrl={GOOGLE_REVIEW_URL} />
         </div>
-      </div>
+      </main>
 
-      <Footer
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        tagline={FOOTER.tagline}
-        location={FOOTER.location}
-        columns={FOOTER.columns}
-        copyright={FOOTER.copyright}
-      />
+      <Footer tagline={FOOTER.tagline} columns={FOOTER.columns} copyright={FOOTER.copyright} />
     </>
   )
 }

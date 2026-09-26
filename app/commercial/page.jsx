@@ -1,13 +1,12 @@
-import { Nav }           from '@/components/layout/Nav'
-import { Footer }        from '@/components/layout/Footer'
-import { PageHero }      from '@/components/sections/PageHero'
-import { ServiceCards }  from '@/components/sections/ServiceCards'
-import { CtaBand }       from '@/components/sections/Cta'
-import { ContactForm }   from '@/components/sections/ContactForm'
+import { Nav }         from '@/components/layout/Nav'
+import { Footer }      from '@/components/layout/Footer'
+import { PageHeader }  from '@/components/sections/PageHeader'
+import { LinkList }    from '@/components/sections/LinkList'
+import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, FOOTER } from '../content'
-import { HERO, INTRO, SERVICES, CTA }    from './content'
-import { SITE_URL }      from '@/lib/site'
+import { HERO, INTRO, SERVICES, CTA } from './content'
+import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
@@ -29,42 +28,27 @@ export const metadata = {
 export default function CommercialPage() {
   return (
     <>
-      <Nav
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        links={NAV.links}
-        ctaLabel={NAV.ctaLabel}
-        ctaHref={NAV.ctaHref}
-      />
+      <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />
 
-      <PageHero title={HERO.title} body={HERO.body} />
+      <main id="main">
+        <PageHeader title={HERO.title} body={HERO.body} cta={CTA.primaryCta} />
 
-      <ServiceCards
-        label={INTRO.label}
-        title={INTRO.title}
-        services={SERVICES}
-      />
+        <section className="section" id="services">
+          <div className="wrap">
+            <div className="section-head">
+              <h2 className="h2">{INTRO.title}</h2>
+              <a href={CTA.otherLink.href} className="text-link">{CTA.otherLink.label}</a>
+            </div>
+            <LinkList items={SERVICES.map((s) => ({ label: s.name, desc: s.desc, href: s.href }))} />
+          </div>
+        </section>
 
-      <CtaBand
-        title={<>Ready for infrastructure<br />you can <em>rely on?</em></>}
-        body="Tell us about your business and your site. We'll scope the right system."
-        primaryCta={CTA.primaryCta}
-        ghostCta={CTA.ghostCta}
-      />
+        <div className="section--tint">
+          <ContactForm title={CTA.title} intro={CTA.body} />
+        </div>
+      </main>
 
-      <ContactForm
-        label="Get in touch"
-        title={<>Tell us about<br /><em>your business.</em></>}
-      />
-
-      <Footer
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        tagline={FOOTER.tagline}
-        location={FOOTER.location}
-        columns={FOOTER.columns}
-        copyright={FOOTER.copyright}
-      />
+      <Footer tagline={FOOTER.tagline} columns={FOOTER.columns} copyright={FOOTER.copyright} />
     </>
   )
 }

@@ -30,43 +30,26 @@ export const NAV = {
 }
 
 export const HERO = {
-  titleMain:   'Smart technology that disappears into the space.',
-  titleAccent: 'disappears',
-  titleSub:  'Smart Home, audio visual, home theatre, network and Wi-Fi designed around the way you live and work.',
-  primaryCta: { label: 'Choose Your Path', href: '#offerings' },
+  title:      'Smart technology that disappears into the space.',
+  sub:        'Smart home, audio visual, home theatre, network and Wi-Fi designed around the way you live and work.',
+  primaryCta: { label: 'Get in touch', href: '#contact' },
+  image:      { src: '/img/hero-img.jpg', alt: 'Mountains reflected in a still lake, Tasmania' },
+  caption:    ['Hobart · Servicing all of Tasmania', 'Residential and commercial'],
 }
 
-export const EXPERIENCE_ITEMS = [
-  {
-    title: 'Automation & Control',
-    sub:   'Lighting · Climate · Security',
-  },
-  {
-    title: 'Cinema & Meeting Rooms',
-    sub:   'Design · Install · Calibrate',
-  },
-  {
-    title: 'Distributed Audio',
-    sub:   'Multi-zone · Premium Brands',
-  },
-  {
-    title: 'Network & Connectivity',
-    sub:   'Reliable · Invisible · Fast',
-  },
-]
-
 export const OFFERINGS = {
-  eyebrow: 'What We Do',
+  title: 'Built around how you live and work.',
+  intro: 'Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania. From home theatre and multi-room audio visual to meeting rooms, digital signage, automation and Wi-Fi, we build systems that are simple to use, reliable, and still working properly years from now.',
   items: [
     {
-      number: '01',
       name:   'Residential',
+      cta:    'Residential overview',
       desc:   'Home theatre, multi-room audio visual, network and Wi-Fi, and smart home automation, with builders and architects, from the plans or as a retrofit.',
       href:   '/residential/',
     },
     {
-      number: '02',
       name:   'Commercial',
+      cta:    'Commercial overview',
       desc:   'Meeting rooms and unified communications, digital signage and audio visual, networks, automation, managed IT and support for workplaces and venues.',
       href:   '/commercial/',
     },
@@ -80,24 +63,25 @@ export const TESTIMONIAL = {
 }
 
 export const ABOUT = {
-  eyebrow:  'Who We Are',
+  label:    'Who we are',
   body:     'Atropos exists for people who want the technology in a building properly considered, not simply installed — homeowners, business owners, builders and architects who won\'t settle for ordinary.',
   location: 'Hobart · Servicing all of Tasmania',
-  cta:      { label: 'Our Story', href: '/about' },
+  cta:      { label: 'Our story', href: '/about' },
+  image:    { src: '/img/river.jpg', alt: 'Water running over rocks in a forest creek' },
 }
 
 export const BRANDS = {
-  label:  'Brands We Work With',
-  brands: ['Bluesound', 'RTI', 'JBL Synthesis', 'Sonance', 'Epson', 'Ubiquiti', 'Samsung', 'And More'],
+  label: 'Brands we work with',
+  line:  'Bluesound, RTI, JBL Synthesis, Sonance, Epson, Ubiquiti, Samsung and more.',
 }
 
 export const CTA = {
-  primaryCta: { label: 'Get in touch', href: '#contact' },
+  title: 'Begin with a conversation.',
   body:       'Whether it\'s a home theatre or a boardroom fit-out, begin with a conversation. We\'ll handle the rest.',
 }
 
 export const FOOTER = {
-  tagline:  '"Technology that lives quietly in the background, and beautifully in the foreground."',
+  tagline:  'Technology that lives quietly in the background, and beautifully in the foreground.',
   location: 'Hobart · Servicing all of Tasmania',
   columns: [
     {

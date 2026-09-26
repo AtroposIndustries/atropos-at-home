@@ -1,6 +1,4 @@
-import '@/styles/base.css'
-import '@/styles/home-theme.css'
-import '@/styles/local.css'
+import '@/styles/field-notes.css'
 
 import { ThemeProvider }  from '@/lib/theme-context'
 
@@ -219,7 +217,9 @@ export default function RootLayout({ children }) {
             __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8RGK41Y2L5');`,
           }}
         />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet"/>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaHome) }}

@@ -1,154 +1,153 @@
 'use client'
 
-import { useState } from 'react'
-import { useNavScroll } from '../../hooks/useNavScroll'
+import { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { PHONE_DISPLAY, PHONE_TEL } from '../../lib/site.js'
 
+const LOGO = '/img/atropos-logo-ink.svg'
+
+/** '/residential/home-theatre/' and '/residential/home-theatre' are the same page. */
+const clean = (path) => (path.length > 1 ? path.replace(/\/+$/, '') : path)
+
 /**
- * Nav
+ * Nav — sticky site header, and the full-screen menu that replaces it on phones.
  *
  * Props:
- *   brand     — 'tech' | 'home'
- *   logo      — img src string or JSX element
- *   links     — array of { label, href }
- *               or { label, children: [{ label, href }] } for dropdowns
- *   ctaLabel  — CTA button text
- *   ctaHref   — CTA button href
+ *   links     — array of { label, href } or { label, href, children: [{ label, href }] }
+ *   ctaLabel  — the "Get in touch" link text
+ *   ctaHref   — where it goes; every page carries #contact
  */
-export function Nav({ brand = 'home', logo, links = [], ctaLabel, ctaHref = '#contact' }) {
-  const scrolled = useNavScroll()
-  const [drawerOpen, setDrawerOpen]   = useState(false)
-  const [openIndex, setOpenIndex]     = useState(null)
+export function Nav({ links = [], ctaLabel = 'Get in touch', ctaHref = '#contact' }) {
+  const [open, setOpen] = useState(false)
+  const pathname  = clean(usePathname() ?? '/')
+  const toggleRef = useRef(null)
+  const menuRef   = useRef(null)
+  const wasOpen   = useRef(false)
 
-  const toggleDrawer    = () => setDrawerOpen((o) => !o)
-  const closeDrawer     = () => { setDrawerOpen(false); setOpenIndex(null) }
-  const toggleAccordion = (i) => setOpenIndex(openIndex === i ? null : i)
+  const isCurrent = (href) => clean(href) === pathname
+  const inSection = (href) => href !== '/' && (pathname === clean(href) || pathname.startsWith(`${clean(href)}/`))
+
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', open)
+
+    if (open) {
+      // The panel itself, not Close: a tap should not leave a focus ring on the button.
+      menuRef.current?.focus()
+    } else if (wasOpen.current) {
+      toggleRef.current?.focus()
+    }
+    wasOpen.current = open
+
+    if (!open) return
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  const close = () => setOpen(false)
 
   return (
     <>
-      {/* ── Mobile Drawer ──────────────────────────────── */}
-      <div
-        className={`nav-drawer${drawerOpen ? ' open' : ''}`}
-        style={{ display: drawerOpen ? 'flex' : 'none' }}
-        aria-hidden={!drawerOpen}
-      >
-        {links.map((link, i) =>
-          link.children ? (
-            <div key={link.label} className="nav-drawer-group">
-              <div className={`nav-drawer-parent${openIndex === i ? ' open' : ''}`}>
-                {link.href ? (
-                  <a href={link.href} onClick={closeDrawer}>{link.label}</a>
-                ) : (
-                  <span>{link.label}</span>
-                )}
-                <button
-                  className="nav-drawer-chevron-btn"
-                  onClick={() => toggleAccordion(i)}
-                  aria-expanded={openIndex === i}
-                  aria-label={`Toggle ${link.label}`}
-                >
-                  <span className="nav-drawer-chevron" aria-hidden="true">+</span>
-                </button>
-              </div>
-              <div className={`nav-drawer-children${openIndex === i ? ' open' : ''}`}>
-                {link.children.map((child) => (
-                  <a key={child.href} href={child.href} onClick={closeDrawer}>
-                    {child.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ) : (
-            <a key={link.href} href={link.href} onClick={closeDrawer}>
-              {link.label}
-            </a>
-          )
-        )}
-        <a
-          href={`tel:${PHONE_TEL}`}
-          onClick={closeDrawer}
-          className="nav-drawer-phone"
-        >
-          {PHONE_DISPLAY}
-        </a>
+      <a className="skip-link" href="#main">Skip to content</a>
 
-        {ctaLabel && (
-          <a
-            href={ctaHref}
-            onClick={closeDrawer}
-            className={brand === 'home' ? 'btn-warm nav-drawer-cta' : 'btn-primary nav-drawer-cta'}
+      <header className="site-header">
+        <div className="wrap site-header__inner">
+          <a href="/" className="site-logo" aria-label="Atropos home">
+            <img src={LOGO} alt="" width="150" height="24" />
+          </a>
+
+          <nav className="site-nav" aria-label="Primary">
+            <ul>
+              {links.map((link) => (
+                <li key={link.label} className="site-nav__item">
+                  <a
+                    href={link.href}
+                    aria-current={isCurrent(link.href) ? 'page' : undefined}
+                    className={inSection(link.href) ? 'is-active' : undefined}
+                  >
+                    {link.label}
+                  </a>
+                  {link.children && (
+                    <div className="site-nav__dropdown">
+                      {link.children.map((child) => (
+                        <a
+                          key={child.href}
+                          href={child.href}
+                          aria-current={isCurrent(child.href) ? 'page' : undefined}
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <a href={`tel:${PHONE_TEL}`} className="site-nav__phone">{PHONE_DISPLAY}</a>
+            {ctaLabel && <a href={ctaHref} className="site-nav__cta">{ctaLabel}</a>}
+          </nav>
+
+          <button
+            ref={toggleRef}
+            type="button"
+            className="menu-toggle"
+            aria-expanded={open}
+            aria-controls="site-menu"
+            onClick={() => setOpen(true)}
           >
-            {brand === 'tech' ? <span>{ctaLabel}</span> : ctaLabel}
+            Menu
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="M3 8h18M3 16h18" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div ref={menuRef} id="site-menu" className="menu" role="dialog" aria-modal="true" aria-label="Menu" tabIndex={-1} hidden={!open}>
+        <div className="wrap menu__header">
+          <a href="/" className="site-logo" aria-label="Atropos home" onClick={close}>
+            <img src={LOGO} alt="" width="150" height="24" />
           </a>
-        )}
-      </div>
-
-      {/* ── Main Nav ───────────────────────────────────── */}
-      <nav className={scrolled ? 'scrolled' : ''}>
-        <a href="/" className="nav-logo" aria-label="Atropos home">
-          {typeof logo === 'string' ? (
-            <img src={logo} alt="Atropos logo" />
-          ) : (
-            logo
-          )}
-        </a>
-
-        <ul className="nav-links" aria-label="Primary navigation">
-          {links.map((link) =>
-            link.children ? (
-              <li key={link.label} className="nav-item nav-item--has-dropdown">
-                {link.href ? (
-                  <a href={link.href} className="nav-link-btn" aria-haspopup="true">
-                    {link.label}
-                    <svg className="nav-chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
-                    </svg>
-                  </a>
-                ) : (
-                  <button className="nav-link-btn" aria-haspopup="true">
-                    {link.label}
-                    <svg className="nav-chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
-                      <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
-                    </svg>
-                  </button>
-                )}
-                <div className="nav-dropdown" role="menu">
-                  {link.children.map((child) => (
-                    <a key={child.href} href={child.href} className="nav-dropdown-item" role="menuitem">
-                      <span className="nav-dropdown-label">{child.label}</span>
-                    </a>
-                  ))}
-                </div>
-              </li>
-            ) : (
-              <li key={link.href} className="nav-item">
-                <a href={link.href}>{link.label}</a>
-              </li>
-            )
-          )}
-        </ul>
-
-        <div className="nav-actions">
-          <a href={`tel:${PHONE_TEL}`} className="nav-phone">
-            {PHONE_DISPLAY}
-          </a>
-
-          {ctaLabel && (
-            <a href={ctaHref} className="nav-cta">
-              {ctaLabel}
-            </a>
-          )}
+          <button type="button" className="menu-toggle" onClick={close}>
+            Close
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
         </div>
 
-        <button
-          className={`nav-toggle${drawerOpen ? ' open' : ''}`}
-          onClick={toggleDrawer}
-          aria-label={drawerOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={drawerOpen}
-        >
-          <span /><span /><span />
-        </button>
-      </nav>
+        <nav className="wrap menu__nav" aria-label="Menu">
+          {links.map((link) => (
+            <div key={link.label} className="menu__group">
+              <a
+                href={link.href}
+                className="menu__parent"
+                aria-current={isCurrent(link.href) ? 'page' : undefined}
+                onClick={close}
+              >
+                {link.label}
+              </a>
+              {link.children?.map((child) => (
+                <a
+                  key={child.href}
+                  href={child.href}
+                  className="menu__child"
+                  aria-current={isCurrent(child.href) ? 'page' : undefined}
+                  onClick={close}
+                >
+                  {child.label}
+                </a>
+              ))}
+            </div>
+          ))}
+        </nav>
+
+        <div className="wrap menu__actions">
+          {ctaLabel && <a href={ctaHref} className="btn" onClick={close}>{ctaLabel}</a>}
+          <a href={`tel:${PHONE_TEL}`} onClick={close}>{PHONE_DISPLAY}</a>
+          <a href="mailto:hello@atropos.com.au" onClick={close}>hello@atropos.com.au</a>
+        </div>
+      </div>
     </>
   )
 }

@@ -14,43 +14,38 @@ export const INTRO = {
 
 export const FEATURES = [
   {
-    number: '01',
     title:  'Digital Signage & Displays',
     desc:   'Screens picked for the brightness and hours a space demands — a shopfront window in afternoon sun is a different screen from a waiting-room wall. Menu boards, wayfinding, promotions and staff noticeboards, each running from a player your people can manage.',
   },
   {
-    number: '02',
     title:  'Video Walls & Large Format',
     desc:   'Tiled walls and large-format panels sized to the viewing distance, not the wall. Bezel width, mounting, ventilation and where the content splits across tiles worked out before anything\'s ordered, so a reception wall doesn\'t end up with a face cut down a seam.',
   },
   {
-    number: '03',
     title:  'Content Scheduling',
     desc:   'Content scheduled by day-part — breakfast menu in the morning, specials after five, a quiet screen once the doors shut. Updates go to whoever\'s meant to handle them, not whoever finds the login, and a change made once pushes to every screen across every site.',
   },
   {
-    number: '04',
     title:  'Zoned Audio & Paging',
     desc:   'Background music zoned by area, with all-call paging and an emergency override that cuts through whatever\'s playing. Licensing for music played to customers sits between you and the rights holder, not us.',
   },
   {
-    number: '05',
     title:  'Acoustics',
     desc:   'Reverberation brought down so a paging announcement lands as words, not a wash of echo off hard floors and glass. Treatment sized to the room and hidden in the finishes, so speech stays clear enough that nobody\'s asking anyone to repeat themselves.',
   },
   {
-    number: '06',
     title:  'Coordinated With Your Build',
     desc:   'Power, data, speaker and screen positions coordinated with your builder before walls and joinery close up. A clear line between what we support and what your IT team does, agreed before installation.',
   },
   {
-    number: '07',
     title:  'Aftercare',
     desc:   'Screens, players and audio monitored after handover, maintenance booked on a schedule, and a response commitment agreed for your site — not a figure promised before we know what\'s installed.',
   },
 ]
 
 export const CTA = {
+  title:      'Screens that stay current, sound that carries.',
+  body:       'Tell us about your space and who\'ll be running it day to day. We\'ll scope the system.',
   primaryCta: { label: 'Get in touch', href: '#contact' },
-  ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },
+  backLink:   { label: 'All commercial services', href: '/commercial' },
 }

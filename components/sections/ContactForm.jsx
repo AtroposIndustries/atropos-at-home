@@ -1,10 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useTheme } from '../../lib/theme-context'
-import { SectionLabel } from '../ui/SectionLabel'
-import { Button } from '../ui/Button'
-import { initCircuitPulses } from '../../lib/circuit-pulses'
 import { PHONE_DISPLAY, PHONE_TEL } from '../../lib/site.js'
 import {
   ZOHO_CONFIG,
@@ -24,8 +20,7 @@ const SUBMIT_TIMEOUT_MS = 15000
  * ContactForm
  *
  * Props:
- *   label    — eyebrow label
- *   title    — JSX headline (use <em> for emphasis)
+ *   title    — the section heading
  *   intro    — supporting paragraph
  *
  * Submits natively to Zoho CRM's Web-to-Lead endpoint, into a hidden iframe.
@@ -34,21 +29,9 @@ const SUBMIT_TIMEOUT_MS = 15000
  * POST is a navigation rather than an XHR, so it is not subject to CORS.
  */
 export function ContactForm({
-  label   = 'Get in Touch',
-  title,
-  intro   = "Tell us about your project and we'll be in touch within one business day.",
+  title = 'Begin with a conversation.',
+  intro = "Tell us about your project and we'll be in touch within one business day.",
 }) {
-  const brand = useTheme()
-  const isHome = brand === 'home'
-  const archRef = useRef(null)
-
-  useEffect(() => {
-    if (archRef.current) {
-      const cleanup = initCircuitPulses(archRef.current)
-      return cleanup
-    }
-  }, [])
-
   const [fields, setFields] = useState({
     firstName: '', lastName: '', email: '',
     phone: '', message: '', [HONEYPOT_FIELD_NAME]: '',
@@ -121,34 +104,17 @@ export function ContactForm({
     setStatus((s) => nextSubmitState(s, { type: 'iframe-load' }))
   }
 
-  const titleEl = title ?? (
-    isHome
-      ? <>Let&apos;s start a<br /><em>conversation.</em></>
-      : <>Let&apos;s start a<br /><em>conversation.</em></>
-  )
-
   return (
-    <section className="contact" id="contact">
-      <div className="contact-bg-img" aria-hidden="true" />
-      <div className="contact-bg-overlay" aria-hidden="true" />
-      <div className="contact-bg-panel" aria-hidden="true" />
-      <div className="contact-bg-architecture" ref={archRef} aria-hidden="true">
-        <div className="arch-floor" />
-        <div className="arch-wall-left" />
-        <div className="arch-wall-right" />
-        <div className="arch-ceiling" />
-      </div>
-      <div className="contact-bg-glow" aria-hidden="true" />
-
-      <div className="contact-inner">
-        <div>
-          <SectionLabel style={{ marginBottom: '20px' }}>{label}</SectionLabel>
-          <h2 className="contact-title">{titleEl}</h2>
-          <p className="contact-intro">{intro}</p>
-          <p className="contact-phone">
-            Or call us on{' '}
+    <section className="section" id="contact">
+      <div className="wrap grid contact">
+        <div className="contact__text">
+          <h2>{title}</h2>
+          <p className="lead">{intro}</p>
+          <div className="contact__meta">
+            <a href="mailto:hello@atropos.com.au">hello@atropos.com.au</a>
             <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>
-          </p>
+            <span className="muted">Hobart · Servicing all of Tasmania</span>
+          </div>
         </div>
 
         <form
@@ -177,9 +143,8 @@ export function ContactForm({
           ))}
 
           {sent ? (
-            <div className="form-success visible">
-              <div className="success-icon">✓</div>
-              <div className="success-title">Message received.</div>
+            <div className="form-success" role="status">
+              <p className="success-title">Message received.</p>
               <p className="success-body">
                 Thanks for reaching out — we&apos;ll be in touch within one business day.
               </p>
@@ -188,13 +153,13 @@ export function ContactForm({
             <>
               <div className="form-row">
                 <Field
-                  id="firstName" name={ZOHO_FIELD_NAMES.firstName} label="First Name"
+                  id="firstName" name={ZOHO_FIELD_NAMES.firstName} label="First name"
                   value={fields.firstName} onChange={set('firstName')}
                   invalid={errors.firstName} error="Please enter your first name."
                   autoComplete="given-name"
                 />
                 <Field
-                  id="lastName" name={ZOHO_FIELD_NAMES.lastName} label="Last Name"
+                  id="lastName" name={ZOHO_FIELD_NAMES.lastName} label="Last name"
                   value={fields.lastName} onChange={set('lastName')}
                   invalid={errors.lastName} error="Please enter your last name."
                   autoComplete="family-name"
@@ -203,7 +168,7 @@ export function ContactForm({
 
               <div className="form-row">
                 <Field
-                  id="email" name={ZOHO_FIELD_NAMES.email} label="Email Address" type="email"
+                  id="email" name={ZOHO_FIELD_NAMES.email} label="Email address" type="email"
                   value={fields.email} onChange={set('email')}
                   invalid={errors.email} error="Please enter a valid email address."
                   autoComplete="email"
@@ -246,9 +211,9 @@ export function ContactForm({
               </div>
 
               <div className="form-footer">
-                <Button variant="submit" type="submit" loading={sending}>
-                  Send Message
-                </Button>
+                <button type="submit" className="btn" disabled={sending}>
+                  {sending ? 'Sending…' : 'Send message'}
+                </button>
                 {notice === 'unavailable' ? (
                   <p className="form-privacy" role="status">
                     Our enquiry form is temporarily unavailable. Please email us

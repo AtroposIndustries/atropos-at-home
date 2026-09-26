@@ -1,16 +1,13 @@
-import { Nav }             from '@/components/layout/Nav'
-import { Footer }          from '@/components/layout/Footer'
-import { HeroHome }        from '@/components/sections/HeroHome'
-import { ExperienceStrip } from '@/components/sections/ExperienceStrip'
-import { AboutHome }       from '@/components/sections/AboutHome'
-import { CtaHome }         from '@/components/sections/Cta'
-import { ContactForm }     from '@/components/sections/ContactForm'
+import { Nav }         from '@/components/layout/Nav'
+import { Footer }      from '@/components/layout/Footer'
+import { LinkList }    from '@/components/sections/LinkList'
+import { ContactForm } from '@/components/sections/ContactForm'
 
-import {
-  NAV, HERO, EXPERIENCE_ITEMS, OFFERINGS,
-  ABOUT,
-  CTA, FOOTER,
-} from './content'
+import { NAV, HERO, OFFERINGS, ABOUT, BRANDS, CTA, FOOTER } from './content'
+
+/** The nav's own service list, so the homepage lists cannot drift from it. */
+const servicesFor = (href) =>
+  NAV.links.find((l) => `${l.href}/` === href)?.children.map((c) => ({ label: c.label, href: c.href })) ?? []
 
 export const metadata = {
   title:       'Smart Home & Commercial AV, Automation Tasmania',
@@ -32,76 +29,66 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <Nav
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        links={NAV.links}
-        ctaLabel={NAV.ctaLabel}
-        ctaHref={NAV.ctaHref}
-      />
+      <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />
 
-      <HeroHome
-        eyebrow={HERO.eyebrow}
-        titleMain={HERO.titleMain}
-        titleAccent={HERO.titleAccent}
-        titleSub={HERO.titleSub}
-        body={HERO.body}
-        primaryCta={HERO.primaryCta}
-        ghostCta={HERO.ghostCta}
-      />
+      <main id="main">
+        <section className="wrap grid home-hero">
+          <h1>{HERO.title}</h1>
+          <div className="home-hero__side">
+            <p>{HERO.sub}</p>
+            <a href={HERO.primaryCta.href} className="btn">{HERO.primaryCta.label}</a>
+          </div>
+        </section>
 
-      <section className="section-dark" id="offerings">
-        <div className="section-intro" style={{ paddingBottom: 0 }}>
-          <div className="section-label">{OFFERINGS.eyebrow}</div>
-          <h2 className="section-title-home" style={{ marginTop: '16px' }}>Built around<br /><em>how you live and work.</em></h2>
-          <p style={{ fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.9, maxWidth: '640px', marginTop: '20px', marginBottom: '48px', fontWeight: 300 }}>Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania. From home theatre and multi-room audio visual to meeting rooms, digital signage, automation and Wi-Fi, we build systems that are simple to use, reliable, and still working properly years from now.</p>
+        <figure className="wrap figure">
+          <img src={HERO.image.src} alt={HERO.image.alt} width="1920" height="1080" />
+          <figcaption>
+            {HERO.caption.map((c) => <span key={c}>{c}</span>)}
+          </figcaption>
+        </figure>
+
+        <section className="section" id="offerings">
+          <div className="wrap offer">
+            <div className="offer__intro">
+              <h2 className="h2">{OFFERINGS.title}</h2>
+              <p className="lead">{OFFERINGS.intro}</p>
+            </div>
+            <div className="split-2">
+              {OFFERINGS.items.map((o) => (
+                <div key={o.name} className="vertical">
+                  <h3 className="h3">{o.name}</h3>
+                  <p className="lead">{o.desc}</p>
+                  <LinkList items={servicesFor(o.href)} />
+                  <a href={o.href} className="text-link">{o.cta}</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="wrap grid about">
+          <img src={ABOUT.image.src} alt={ABOUT.image.alt} width="1620" height="1080" loading="lazy" />
+          <div className="about__text">
+            <p className="label">{ABOUT.label}</p>
+            <p className="pull">{ABOUT.body}</p>
+            <p className="muted">{ABOUT.location}</p>
+            <a href={ABOUT.cta.href} className="text-link">{ABOUT.cta.label}</a>
+          </div>
+        </section>
+
+        <div className="wrap">
+          <section className="brands">
+            <p className="label">{BRANDS.label}</p>
+            <p>{BRANDS.line}</p>
+          </section>
         </div>
-        <div className="threads-list">
-          {OFFERINGS.items.map((o) => (
-            <a key={o.number} href={o.href} className="threads-row">
-              <span className="threads-row-number">{o.number}</span>
-              <div className="threads-row-name-wrap">
-                <h3 className="threads-row-name">{o.name}</h3>
-              </div>
-              <p className="threads-row-desc">{o.desc}</p>
-              <span className="threads-row-arrow">→</span>
-            </a>
-          ))}
+
+        <div className="section--tint">
+          <ContactForm title={CTA.title} intro={CTA.body} />
         </div>
-      </section>
+      </main>
 
-      <ExperienceStrip items={EXPERIENCE_ITEMS} />
-
-      <AboutHome
-        eyebrow={ABOUT.eyebrow}
-        title={<>Tasmanian roots.<br /><em>Global standards.</em></>}
-        body={ABOUT.body}
-        cta={ABOUT.cta}
-        location={ABOUT.location}
-        imgMain="/img/tasmania-1.jpg"
-      />
-
-      <CtaHome
-        title={<>Let&apos;s create something<br /><em>extraordinary.</em></>}
-        body={CTA.body}
-        primaryCta={CTA.primaryCta}
-        ghostCta={CTA.ghostCta}
-      />
-
-      <ContactForm
-        label="Get in touch"
-        title={<>Tell us about<br /><em>your project.</em></>}
-        intro="Whether you're mid-design, about to build, or ready to upgrade — we'd love to hear about your project."
-      />
-
-      <Footer
-        brand="home"
-        logo="/img/atropos-hero-ash.svg"
-        tagline={FOOTER.tagline}
-        location={FOOTER.location}
-        columns={FOOTER.columns}
-        copyright={FOOTER.copyright}
-      />
+      <Footer tagline={FOOTER.tagline} columns={FOOTER.columns} copyright={FOOTER.copyright} />
     </>
   )
 }

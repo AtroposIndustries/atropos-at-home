@@ -14,38 +14,34 @@ export const INTRO = {
 
 export const FEATURES = [
   {
-    number: '01',
     title:  'Continuous Monitoring & Alerting',
     desc:   'Switches, access points, firewalls and internet links monitored, with an alert the moment one drops or starts to degrade — not when the till stops taking payments.',
   },
   {
-    number: '02',
     title:  'Patch & Firmware Currency',
     desc:   'Firmware and security patches applied on a schedule agreed with you, tracked against every device on the network. Not left to pile up until something forces an update through.',
   },
   {
-    number: '03',
     title:  'Segmentation for Guest, IoT & POS Traffic',
     desc:   'Guest Wi-Fi, IoT devices and your point-of-sale sit on separate segments. A compromised guest phone or a dodgy camera has no path to the traffic that runs the business.',
   },
   {
-    number: '04',
     title:  'Redundancy & Failover',
     desc:   'A second internet connection or failover path picks up automatically when the primary drops. Sized to what the business can actually afford to lose, not assumed unnecessary.',
   },
   {
-    number: '05',
     title:  'Reporting & Configuration Ownership',
     desc:   'Network configuration and admin credentials documented and yours, not locked inside a device only we can access. Status and incident reporting available whenever you want a look.',
   },
   {
-    number: '06',
     title:  'Aftercare',
     desc:   'Maintenance booked on a schedule, not only after something breaks, and a response commitment for faults agreed for your site before anything goes wrong — not a figure quoted upfront.',
   },
 ]
 
 export const CTA = {
+  title:      'Ready for a network that’s actually managed?',
+  body:       'Tell us about your site and how many locations you\'re running. We\'ll scope the monitoring.',
   primaryCta: { label: 'Get in touch', href: '#contact' },
-  ghostCta:   { label: 'View All Services',   href: '/commercial/#services' },
+  backLink:   { label: 'All commercial services', href: '/commercial' },
 }

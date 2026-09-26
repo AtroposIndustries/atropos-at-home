@@ -45,7 +45,7 @@ components/        UI library — layout/, sections/, ui/
 hooks/             useScrollReveal, useNavScroll
 lib/               Theme context, circuit pulses, Zoho form config, routes.js
 scripts/           Build-time and test-time guards (see below)
-styles/            base.css, home-theme.css, local.css, alt-theme.css
+styles/            field-notes.css (the site), review.css (/review/ only), legacy sheets
 public/            Images, llms.txt, CNAME, .nojekyll, zoho-thanks.html
 ```
 
@@ -66,9 +66,16 @@ without a test failing.
 `lib/routes.test.mjs` adds the two-way check: every page on disk has a
 declared route, and every declared route has a page on disk.
 
-`components/` intentionally contains components no page currently renders. They
-are kept for an upcoming redesign — do not remove them as dead code.
-`styles/alt-theme.css` is retained but unused for the same reason.
+The site is styled by `styles/field-notes.css` alone — see
+`docs/specs/2026-09-26-field-notes-redesign.md`. Pages are built from
+`Nav`, `Footer`, `ContactForm`, `PageHeader`, `LinkList` and the `Intro` /
+`FeatureList` pair in `ServiceBody.jsx`.
+
+The older components in `components/` (hero, cards, strips, `AboutSplit` and
+the rest) and `styles/base.css`, `home-theme.css` and `alt-theme.css` belong to
+the previous design and nothing renders them. They are retained, not yet
+deleted; `/review/` still uses the review wizard's rules, lifted into
+`styles/review.css`.
 
 ## Editing content
 
