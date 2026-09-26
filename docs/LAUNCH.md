@@ -515,9 +515,3 @@ Shipped to `main` together with §10's branch.
   live enquiry arrived in Zoho after the redesign shipped.
 - Real photography for the service pages, and a verified testimonial — spec,
   Outstanding.
-
-## Outstanding, outside this project
-
-`atropos.com.au` has an A record to `34.50.153.87`, a Google Cloud IP that no
-longer serves. That is a dangling DNS record: if the address is reallocated,
-someone else can serve content on the apex domain. Repoint or remove it.
