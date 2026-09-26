@@ -3,6 +3,14 @@
 export const HERO = {
   label: 'Services',
   title: 'Home Theatre',
+  // Illustrative, not an Atropos install — keep the alt text descriptive and
+  // never caption it as a project. Replace with a real job's photo when there is one.
+  image: {
+    src:    '/img/home-theatre.webp',
+    alt:    'A dedicated home cinema with a projection screen, in-wall speakers and deep lounge seating',
+    width:  1672,
+    height: 941,
+  },
   body:  'Dedicated cinemas, media rooms and living spaces where picture, sound, acoustics and control are designed as one system — so film night is one button, and the room does the rest.',
 }
 

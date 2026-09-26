@@ -39,6 +39,7 @@ export default function HomeTheatrePage() {
           title={HERO.title}
           body={HERO.body}
           cta={CTA.primaryCta}
+          image={HERO.image}
         />
         <Intro title={INTRO.title} body={INTRO.body} steps={STEPS} />
         <FeatureList items={FEATURES} backLink={CTA.backLink} />

@@ -8,9 +8,12 @@
  *   body   — the paragraph beside it
  *   cta    — optional { label, href }; shown on phones only, where the
  *            form is a long scroll away
+ *   image  — optional { src, alt, width, height }; full-width under the header.
+ *            Leave it out rather than use a stand-in (spec 2026-09-26, decision 10)
  */
-export function PageHeader({ crumbs = [], title, body, cta }) {
+export function PageHeader({ crumbs = [], title, body, cta, image }) {
   return (
+    <>
     <section className="wrap grid page-header">
       {crumbs.length > 0 && (
         <p className="page-header__crumbs">
@@ -26,5 +29,11 @@ export function PageHeader({ crumbs = [], title, body, cta }) {
         {cta && <a href={cta.href} className="btn">{cta.label}</a>}
       </div>
     </section>
+    {image && (
+      <figure className="wrap figure page-header__figure">
+        <img src={image.src} alt={image.alt} width={image.width} height={image.height} fetchPriority="high" />
+      </figure>
+    )}
+    </>
   )
 }

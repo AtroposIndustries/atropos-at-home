@@ -429,6 +429,8 @@ a:hover { color: var(--accent); }
   .page-header__body .btn { display: flex; width: 100%; }
 }
 
+.page-header__figure img { object-position: 50% 50%; }
+
 /* ── Service page body ──────────────────────────────────── */
 .intro { row-gap: clamp(28px, 4vw, 80px); padding-block: clamp(44px, 5vw, 72px) var(--section); }
 .intro .h2 { grid-column: span 5; }

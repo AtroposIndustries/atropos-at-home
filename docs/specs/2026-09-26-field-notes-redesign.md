@@ -62,6 +62,8 @@ beside its page; the changes below are structural.
 
 ## Outstanding
 
-- Real photography for the service pages (decision 10).
+- Real photography for the service pages (decision 10). `PageHeader` takes an
+  optional `image`; Home Theatre carries an illustrative generated image
+  until a real install photo replaces it.
 - A verified testimonial (decision 11).
 - `/review/` keeps the old wizard styling inside the new header and footer.
