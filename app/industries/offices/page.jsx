@@ -10,24 +10,24 @@ import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'AV, Wi-Fi & Signage for Hospitality Venues in Tasmania',
-  description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+  title:       'Meeting Rooms, Networks & IT Support for Tasmanian Offices',
+  description: 'Meeting rooms that join the call, managed IT and Microsoft 365, and networks that stay up, for Tasmanian law firms, accountants, consultancies and offices.',
   keywords: [
-    'hospitality AV Tasmania',
-    'restaurant background music Hobart',
-    'digital menu boards Hobart',
-    'hotel Wi-Fi Tasmania',
-    'function room AV Hobart',
-    'cellar door audio Tasmania',
+    'meeting room AV Hobart',
+    'video conferencing Tasmania',
+    'managed IT Hobart',
+    'Microsoft 365 support Tasmania',
+    'office network Hobart',
+    'boardroom AV Tasmania',
   ],
-  alternates: { canonical: `${SITE_URL}/industries/hospitality` },
+  alternates: { canonical: `${SITE_URL}/industries/offices` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/industries/hospitality`,
-    description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+    url:         `${SITE_URL}/industries/offices`,
+    description: 'Meeting rooms that join the call, managed IT and Microsoft 365, and networks that stay up, for Tasmanian law firms, accountants, consultancies and offices.',
   }),
 }
 
-export default function HospitalityPage() {
+export default function OfficesPage() {
   return (
     <>
       <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />

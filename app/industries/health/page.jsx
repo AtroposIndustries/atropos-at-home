@@ -10,24 +10,24 @@ import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'AV, Wi-Fi & Signage for Hospitality Venues in Tasmania',
-  description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+  title:       'Networks, IT Support & AV for Tasmanian Clinics and Aged Care',
+  description: 'Dependable networks and Wi-Fi, managed IT, waiting-room screens and telehealth rooms for Tasmanian GP, dental and allied health clinics and aged care homes.',
   keywords: [
-    'hospitality AV Tasmania',
-    'restaurant background music Hobart',
-    'digital menu boards Hobart',
-    'hotel Wi-Fi Tasmania',
-    'function room AV Hobart',
-    'cellar door audio Tasmania',
+    'medical clinic IT support Hobart',
+    'clinic Wi-Fi Tasmania',
+    'aged care Wi-Fi Tasmania',
+    'waiting room screens Hobart',
+    'telehealth room setup Tasmania',
+    'dental practice IT Hobart',
   ],
-  alternates: { canonical: `${SITE_URL}/industries/hospitality` },
+  alternates: { canonical: `${SITE_URL}/industries/health` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/industries/hospitality`,
-    description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+    url:         `${SITE_URL}/industries/health`,
+    description: 'Dependable networks and Wi-Fi, managed IT, waiting-room screens and telehealth rooms for Tasmanian GP, dental and allied health clinics and aged care homes.',
   }),
 }
 
-export default function HospitalityPage() {
+export default function HealthPage() {
   return (
     <>
       <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />

@@ -23,8 +23,17 @@ export const NAV = {
         { label: 'Automation',                      href: '/commercial/automation' },
       ],
     },
-    // No dropdown until there is more than one industry page to list.
-    { label: 'Industries', href: '/industries' },
+    {
+      label: 'Industries',
+      href:  '/industries',
+      children: [
+        { label: 'Hospitality & Tourism',           href: '/industries/hospitality' },
+        { label: 'Offices & Professional Services', href: '/industries/offices' },
+        { label: 'Health & Aged Care',              href: '/industries/health' },
+        { label: 'Retail',                          href: '/industries/retail' },
+        { label: 'Education',                       href: '/industries/education' },
+      ],
+    },
     { label: 'About', href: '/about' },
   ],
   ctaLabel: 'Get in touch',

@@ -10,24 +10,24 @@ import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'AV, Wi-Fi & Signage for Hospitality Venues in Tasmania',
-  description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+  title:       'Digital Signage, Music & Networks for Tasmanian Retailers',
+  description: 'In-store screens and signage, zoned background music, and EFTPOS networks that stay up, for Tasmanian shops, showrooms and multi-site retailers.',
   keywords: [
-    'hospitality AV Tasmania',
-    'restaurant background music Hobart',
-    'digital menu boards Hobart',
-    'hotel Wi-Fi Tasmania',
-    'function room AV Hobart',
-    'cellar door audio Tasmania',
+    'retail digital signage Hobart',
+    'shop background music Tasmania',
+    'EFTPOS network Hobart',
+    'in-store screens Tasmania',
+    'retail IT support Hobart',
+    'window display screens Hobart',
   ],
-  alternates: { canonical: `${SITE_URL}/industries/hospitality` },
+  alternates: { canonical: `${SITE_URL}/industries/retail` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/industries/hospitality`,
-    description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+    url:         `${SITE_URL}/industries/retail`,
+    description: 'In-store screens and signage, zoned background music, and EFTPOS networks that stay up, for Tasmanian shops, showrooms and multi-site retailers.',
   }),
 }
 
-export default function HospitalityPage() {
+export default function RetailPage() {
   return (
     <>
       <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />

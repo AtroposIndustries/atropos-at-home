@@ -10,24 +10,24 @@ import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
-  title:       'AV, Wi-Fi & Signage for Hospitality Venues in Tasmania',
-  description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+  title:       'Classroom AV, Wi-Fi & IT Support for Tasmanian Schools',
+  description: 'Classroom displays, hall sound, campus Wi-Fi and managed IT for Tasmanian independent schools and training providers. Hobart-based, statewide.',
   keywords: [
-    'hospitality AV Tasmania',
-    'restaurant background music Hobart',
-    'digital menu boards Hobart',
-    'hotel Wi-Fi Tasmania',
-    'function room AV Hobart',
-    'cellar door audio Tasmania',
+    'classroom AV Tasmania',
+    'school Wi-Fi Hobart',
+    'school IT support Tasmania',
+    'hall sound system Hobart',
+    'interactive displays schools Tasmania',
+    'training room AV Hobart',
   ],
-  alternates: { canonical: `${SITE_URL}/industries/hospitality` },
+  alternates: { canonical: `${SITE_URL}/industries/education` },
   openGraph: pageOpenGraph({
-    url:         `${SITE_URL}/industries/hospitality`,
-    description: 'Menu screens staff can update, music by zone, guest Wi-Fi kept apart from EFTPOS, and function rooms that work — for Tasmanian hotels, restaurants, bars, function venues and cellar doors.',
+    url:         `${SITE_URL}/industries/education`,
+    description: 'Classroom displays, hall sound, campus Wi-Fi and managed IT for Tasmanian independent schools and training providers. Hobart-based, statewide.',
   }),
 }
 
-export default function HospitalityPage() {
+export default function EducationPage() {
   return (
     <>
       <Nav links={NAV.links} ctaLabel={NAV.ctaLabel} ctaHref={NAV.ctaHref} />

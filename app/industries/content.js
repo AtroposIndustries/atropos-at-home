@@ -6,6 +6,7 @@ export const HERO = {
 }
 
 // An industry without an href is listed but not linked, until its page exists.
+// Order matches the nav's Industries dropdown.
 export const INDUSTRIES = [
   {
     name: 'Hospitality & tourism',
@@ -15,18 +16,22 @@ export const INDUSTRIES = [
   {
     name: 'Offices & professional services',
     desc: 'Meeting rooms that join the call when you walk in, a network that stays up, and IT looked after month to month.',
+    href: '/industries/offices',
   },
   {
     name: 'Health & aged care',
     desc: 'Clinics and aged care homes: dependable networks and Wi-Fi, waiting-room screens, telehealth rooms and managed IT.',
+    href: '/industries/health',
   },
   {
     name: 'Retail',
     desc: 'In-store screens and signage, background music, and EFTPOS that doesn\'t drop out on a Saturday.',
+    href: '/industries/retail',
   },
   {
     name: 'Education',
     desc: 'Independent schools and training providers: classroom displays, halls and PA, and Wi-Fi that copes with every student at once.',
+    href: '/industries/education',
   },
 ]
 
