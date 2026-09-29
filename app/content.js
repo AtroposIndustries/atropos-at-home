@@ -23,6 +23,8 @@ export const NAV = {
         { label: 'Automation',                      href: '/commercial/automation' },
       ],
     },
+    // No dropdown until there is more than one industry page to list.
+    { label: 'Industries', href: '/industries' },
     { label: 'About', href: '/about' },
   ],
   ctaLabel: 'Get in touch',

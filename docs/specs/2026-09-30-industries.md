@@ -19,7 +19,7 @@ professional services, health & aged care, retail, and education.
 |---|----------|-----|
 | 1 | "Industries", not "Verticals" | Nobody outside the trade says verticals |
 | 2 | `/industries/` and `/industries/<slug>/`, `vertical: 'commercial'` in `lib/routes.js` | Short URLs; they are commercial audiences but not services, so the service-count test counts only paths under `/<vertical>/` |
-| 3 | Not in the main nav. Linked from the Commercial landing page, the footer's Company column, and each other | The nav is fixed at three items and works on a phone |
+| 3 | A top-level **Industries** item in the main nav, between Commercial and About, with no dropdown until there is more than one industry page. Also linked from the Commercial landing page and the footer | Without a nav item the pages were only reachable from the footer and one text link. A dropdown with a single entry would look unfinished |
 | 4 | An industry page is: header, what we do for this industry (links to the service pages), a typical job in three steps, the case study slot, the contact form | Lean. No "where it goes wrong" section — owners already know — and no FAQ, which the site dropped elsewhere |
 | 5 | The overview lists all five industries; one without a page is a plain row with no link or arrow (`LinkList` item with no `href`) | The list is honest about scope before every page is written |
 | 6 | The case study slot renders nothing until a real job fills it | No placeholders or invented clients on the live site. See below |
