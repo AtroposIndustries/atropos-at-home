@@ -410,7 +410,8 @@ a:hover { color: var(--accent); }
 
 /* ── Link lists ─────────────────────────────────────────── */
 .link-list { border-bottom: 1px solid var(--rule); }
-.link-list a {
+.link-list a,
+.link-list__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -424,7 +425,8 @@ a:hover { color: var(--accent); }
 .link-list svg { flex-shrink: 0; }
 
 /* With descriptions: the landing pages */
-.link-list--described a {
+.link-list--described a,
+.link-list--described .link-list__row {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--col-gap);
@@ -441,8 +443,9 @@ a:hover { color: var(--accent); }
 .link-list--described svg { grid-column: span 1; justify-self: end; margin-top: 8px; }
 
 @media (max-width: 899px) {
-  .link-list a { min-height: 56px; }
-  .link-list--described a {
+  .link-list a, .link-list__row { min-height: 56px; }
+  .link-list--described a,
+  .link-list--described .link-list__row {
     grid-template-columns: minmax(0, 1fr) auto;
     row-gap: 8px;
     padding-block: 22px;
@@ -450,6 +453,30 @@ a:hover { color: var(--accent); }
   .link-list--described .link-list__name { grid-column: 1; }
   .link-list--described .link-list__desc { grid-column: 1; grid-row: 2; }
   .link-list--described svg { grid-column: 2; grid-row: 1; }
+}
+
+/* ── Industries ─────────────────────────────────────────── */
+.section-tail { padding-bottom: var(--section); }
+
+.aside-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--ink);
+}
+.aside-note .lead { max-width: 560px; }
+
+/* Empty until a real job exists — see components/sections/CaseStudy.jsx. */
+.case-study { row-gap: 32px; align-items: center; }
+.case-study__body { grid-column: span 6; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.case-study .pull { font-family: var(--font-serif); font-size: clamp(22px, 2vw, 28px); line-height: 1.35; }
+.case-study img { grid-column: 8 / span 5; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+@media (max-width: 899px) {
+  .aside-note { flex-direction: column; padding-top: 24px; }
+  .case-study__body, .case-study img { grid-column: 1 / -1; }
 }
 
 /* ── Interior page header ───────────────────────────────── */
@@ -519,7 +546,7 @@ a:hover { color: var(--accent); }
 .features h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(25px, 2.1vw, 30px); line-height: 1.2; }
 .features p { color: var(--ink-2); }
 
-.section-foot { margin-top: 8px; }
+.section-foot { margin-top: 16px; }
 
 @media (max-width: 899px) {
   .intro .h2, .intro__body { grid-column: 1 / -1; }

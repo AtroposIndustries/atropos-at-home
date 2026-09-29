@@ -5,7 +5,7 @@ import { LinkList }    from '@/components/sections/LinkList'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, FOOTER } from '../content'
-import { HERO, INTRO, SERVICES, CTA } from './content'
+import { HERO, INTRO, SERVICES, INDUSTRIES_LINK, CTA } from './content'
 import { SITE_URL }     from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
@@ -40,6 +40,7 @@ export default function CommercialPage() {
               <a href={CTA.otherLink.href} className="text-link">{CTA.otherLink.label}</a>
             </div>
             <LinkList items={SERVICES.map((s) => ({ label: s.name, desc: s.desc, href: s.href }))} />
+            <p className="section-foot"><a href={INDUSTRIES_LINK.href} className="text-link">{INDUSTRIES_LINK.label}</a></p>
           </div>
         </section>
 

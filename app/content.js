@@ -110,8 +110,9 @@ export const FOOTER = {
     {
       heading: 'Company',
       links: [
-        { label: 'About',   href: '/about' },
-        { label: 'Contact', href: '/#contact' },
+        { label: 'About',      href: '/about' },
+        { label: 'Industries', href: '/industries' },
+        { label: 'Contact',    href: '/#contact' },
       ],
     },
   ],

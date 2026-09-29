@@ -47,6 +47,9 @@ export const SERVICES = [
   },
 ]
 
+// Industries sit under Commercial: every industry page is a commercial audience.
+export const INDUSTRIES_LINK = { label: 'Industries we work with', href: '/industries' }
+
 export const CTA = {
   title:      'Ready for infrastructure you can rely on?',
   body:       'Tell us about your business and your site. We\'ll scope the right system.',
