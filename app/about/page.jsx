@@ -68,9 +68,9 @@ export default function AboutPage() {
           <div className="wrap grid about">
             <img src="/img/river.jpg" alt="Water running over rocks in a forest creek" width="1620" height="1080" loading="lazy" />
             <div className="about__text">
-              <h2 className="h2">Technology that disappears.</h2>
+              <h2 className="h2">Designed around how you use it.</h2>
               <p className="lead">
-                The best system is the one you never have to think about. We design every installation around that principle — from the cabling behind the walls to the control interface in your hand. Invisible, reliable, and built to last.
+                The best system is the one that fits how you actually use the space. We start there on every job — who uses the room, what they need it to do, what they&apos;ll reach for — and design everything from the cabling behind the walls to the control in your hand around those answers.
               </p>
               <a href="/#offerings" className="text-link">Explore our services</a>
             </div>
