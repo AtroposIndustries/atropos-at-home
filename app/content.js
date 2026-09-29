@@ -30,7 +30,7 @@ export const NAV = {
 }
 
 export const HERO = {
-  title:      'Smart technology that disappears into the space.',
+  title:      'Technology that works the way you do.',
   sub:        'Smart home, audio visual, digital signage, home theatre, network and Wi-Fi designed around the way you live and work.',
   primaryCta: { label: 'Get in touch', href: '#contact' },
   image:      { src: '/img/hero-img.jpg', alt: 'Mountains reflected in a still lake, Tasmania' },
