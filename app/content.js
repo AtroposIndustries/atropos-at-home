@@ -31,7 +31,7 @@ export const NAV = {
 
 export const HERO = {
   title:      'Smart technology that disappears into the space.',
-  sub:        'Smart home, audio visual, home theatre, network and Wi-Fi designed around the way you live and work.',
+  sub:        'Smart home, audio visual, digital signage, home theatre, network and Wi-Fi designed around the way you live and work.',
   primaryCta: { label: 'Get in touch', href: '#contact' },
   image:      { src: '/img/hero-img.jpg', alt: 'Mountains reflected in a still lake, Tasmania' },
   caption:    ['Hobart · Servicing all of Tasmania', 'Residential and commercial'],
@@ -39,7 +39,7 @@ export const HERO = {
 
 export const OFFERINGS = {
   title: 'Built around how you live and work.',
-  intro: 'Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania. From home theatre and multi-room audio visual to meeting rooms, digital signage, automation and Wi-Fi, we build systems that are simple to use, reliable, and still working properly years from now.',
+  intro: 'Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania: home theatre and multi-room audio visual, meeting rooms, digital signage and LED screens, automation, networks and Wi-Fi.',
   items: [
     {
       name:   'Residential',
@@ -71,8 +71,12 @@ export const ABOUT = {
 }
 
 export const BRANDS = {
-  label: 'Brands we work with',
-  line:  'Bluesound, RTI, JBL Synthesis, Sonance, Epson, Ubiquiti, Samsung and more.',
+  label:  'Brands we work with',
+  brands: [
+    'Microsoft', 'Google', 'Ubiquiti', 'Netgear', 'Bluesound', 'Sonos', 'JBL',
+    'Sonance', 'Epson', 'Samsung', 'LG', 'Q-SYS', 'Kramer', 'Xilica', 'NEC',
+  ],
+  more:   'and more',
 }
 
 export const CTA = {

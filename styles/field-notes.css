@@ -335,13 +335,65 @@ a:hover { color: var(--accent); }
 .brands {
   display: flex;
   gap: 64px;
-  align-items: baseline;
+  align-items: center;
   margin-top: var(--section);
   padding-block: 40px var(--section);
   border-top: 1px solid var(--rule);
 }
 .brands .label { flex-shrink: 0; }
-.brands p:last-child { font-family: var(--font-serif); font-size: clamp(21px, 1.8vw, 26px); line-height: 1.5; color: var(--ink-2); }
+
+.ticker {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  /* Names fade in and out at the edges rather than being cut mid-word. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+.ticker__track {
+  display: flex;
+  width: max-content;
+  animation: ticker 45s linear infinite;
+}
+.ticker:hover .ticker__track,
+.ticker.is-paused .ticker__track { animation-play-state: paused; }
+
+.ticker__list {
+  display: flex;
+  gap: 56px;
+  padding-right: 56px;
+  font-family: var(--font-serif);
+  font-size: clamp(21px, 1.8vw, 26px);
+  line-height: 1.5;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.ticker__more { color: var(--ink-3); }
+
+/* Two identical lists: sliding one list's width left loops without a seam. */
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+.ticker__toggle {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  color: var(--ink-3);
+  font: 14px/1 var(--font-sans);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.ticker__toggle:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker { -webkit-mask-image: none; mask-image: none; }
+  .ticker__track { animation: none; width: auto; }
+  .ticker__list { flex-wrap: wrap; gap: 4px 32px; padding-right: 0; white-space: normal; }
+  .ticker__list[aria-hidden] { display: none; }
+  .ticker__toggle { display: none; }
+}
 
 @media (max-width: 899px) {
   .home-hero h1, .home-hero__side { grid-column: 1 / -1; }
@@ -352,7 +404,8 @@ a:hover { color: var(--accent); }
   .split-2 { grid-template-columns: minmax(0, 1fr); }
   .about img, .about__text { grid-column: 1 / -1; }
   .about img { aspect-ratio: 4 / 3; }
-  .brands { flex-direction: column; gap: 12px; }
+  .brands { flex-direction: column; align-items: stretch; gap: 12px; }
+  .ticker__toggle { align-self: flex-start; }
 }
 
 /* ── Link lists ─────────────────────────────────────────── */

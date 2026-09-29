@@ -1,6 +1,7 @@
 import { Nav }         from '@/components/layout/Nav'
 import { Footer }      from '@/components/layout/Footer'
 import { LinkList }    from '@/components/sections/LinkList'
+import { BrandTicker } from '@/components/sections/BrandTicker'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, HERO, OFFERINGS, ABOUT, BRANDS, CTA, FOOTER } from './content'
@@ -77,10 +78,7 @@ export default function HomePage() {
         </section>
 
         <div className="wrap">
-          <section className="brands">
-            <p className="label">{BRANDS.label}</p>
-            <p>{BRANDS.line}</p>
-          </section>
+          <BrandTicker label={BRANDS.label} brands={BRANDS.brands} more={BRANDS.more} />
         </div>
 
         <div className="section--tint">
