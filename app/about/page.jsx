@@ -9,7 +9,7 @@ import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'About Atropos | Hobart, Tasmania',
-  description: 'Atropos believes the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
+  description: 'Atropos designs technology around how a space is actually used. Integrated technology design and installation for homes and businesses across Tasmania.',
   keywords: [
     'Atropos Hobart',
     'AV integration company Tasmania',
@@ -18,7 +18,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/about`,
-    description: 'Atropos believes the finest technology should be felt, not seen. Integrated technology design and installation for homes and businesses across Tasmania.',
+    description: 'Atropos designs technology around how a space is actually used. Integrated technology design and installation for homes and businesses across Tasmania.',
   }),
 }
 
