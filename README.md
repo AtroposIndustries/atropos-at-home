@@ -39,13 +39,13 @@ pnpm build && npx serve out
 
 ```
 app/               Routes. Page copy lives in the content.js beside each page.
-  residential/     Landing page + three residential service pages
-  commercial/      Landing page + four commercial service pages
-components/        UI library — layout/, sections/, ui/
-hooks/             useScrollReveal, useNavScroll
-lib/               Theme context, circuit pulses, Zoho form config, routes.js
+  residential/     Landing page + four residential service pages
+  commercial/      Landing page + five commercial service pages
+  industries/      Overview + five industry pages
+components/        layout/ (Nav, Footer) and sections/
+lib/               Zoho form config, routes.js, site constants, SEO helpers
 scripts/           Build-time and test-time guards (see below)
-styles/            field-notes.css (the site), review.css (/review/ only), legacy sheets
+styles/            field-notes.css (the site), review.css (/review/ only)
 public/            Images, llms.txt, CNAME, .nojekyll, zoho-thanks.html
 ```
 
@@ -68,13 +68,11 @@ declared route, and every declared route has a page on disk.
 
 The site is styled by `styles/field-notes.css` alone — see
 `docs/specs/2026-09-26-field-notes-redesign.md`. Pages are built from
-`Nav`, `Footer`, `ContactForm`, `PageHeader`, `LinkList` and the `Intro` /
-`FeatureList` pair in `ServiceBody.jsx`.
-
-The older components in `components/` (hero, cards, strips, `AboutSplit` and
-the rest) and `styles/base.css`, `home-theme.css` and `alt-theme.css` belong to
-the previous design and nothing renders them. They are retained, not yet
-deleted; `/review/` still uses the review wizard's rules, lifted into
+`Nav`, `Footer`, `ContactForm`, `PageHeader`, `LinkList`, the `Intro` /
+`FeatureList` pair in `ServiceBody.jsx` (service pages), `IndustryBody`
+(industry pages) and `BrandTicker` (homepage). Every component in
+`components/` is in use; the previous design's components and stylesheets were
+deleted on 2026-10-03. `/review/` keeps the old review wizard's rules in
 `styles/review.css`.
 
 ## Editing content

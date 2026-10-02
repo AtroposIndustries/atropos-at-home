@@ -2,28 +2,39 @@
 > Integrated technology for Tasmanian homes and businesses — Hobart, Tasmania, Australia
 
 ## About
-Atropos designs and installs integrated technology across residential and commercial projects in Tasmania: home theatre, multi-room audio visual, unified communications and meeting rooms, digital signage, networks and Wi-Fi, automation, and managed services. We work with homeowners, business owners, builders and architects. Parent company: Atropos Industries Pty Ltd, Hobart, TAS 7000.
+Atropos designs, installs and supports integrated technology for homes and businesses across Tasmania: home theatre and multi-room audio visual, meeting rooms and unified communications, digital signage and LED screens, automation, networks and Wi-Fi, and managed IT. We work with homeowners, business owners, builders and architects. Parent company: Atropos Industries Pty Ltd, Hobart, TAS 7000.
 
 ## Services
 
 ### Residential
-- Home Theatre: Bespoke design, acoustic treatment, Dolby Atmos installation, 4K laser projection, and professional calibration for dedicated cinemas and media rooms.
-- Audio Visual: Multi-room audio (Bluesound, Sonance, KEF, Bowers & Wilkins), living-area displays, outdoor sound and screens, and streaming sources on one control surface.
-- Network & Wi-Fi: Enterprise-grade whole-home Wi-Fi and structured cabling using Ubiquiti UniFi, Ruckus, and Cisco Meraki.
-- Smart Home Automation: Whole-home integration of lighting, climate, blinds and entertainment, integrating with the security provider a client already has. Specialists across RTI, Control4, Crestron and other major platforms rather than tied to any one of them, with custom mobile, tablet and web interfaces where a project calls for it. New builds and retrofits.
+- Home Theatre: Dedicated cinemas, media rooms and living spaces — surround sound and Dolby Atmos, projection and displays, acoustic treatment, one-touch control and professional calibration.
+- Audio Visual: Music through the house, televisions set into joinery, outdoor sound and screens, all run from one app.
+- Network & Wi-Fi: Whole-home Wi-Fi and structured cabling that reaches every room, designed into the build or retrofitted.
+- Smart Home Automation: Lighting, climate, blinds and entertainment working as one system, integrated with the security a household already has, with custom mobile, tablet and web control. New builds and retrofits.
 
 ### Commercial
-- Unified Communications: Microsoft Teams and Zoom meeting rooms, video conferencing, hybrid and BYOD spaces, room booking, and integration with the telephony platform a business already runs.
-- Digital Signage & Audio Visual: Signage and displays, video walls, content scheduling, zoned audio and paging for workplaces and venues.
-- Network & Wi-Fi: Networks monitored and patched on a schedule, segmented so a compromised device cannot reach the rest of the business.
-- Managed Services & IT Support: Managed IT (helpdesk, patching, Microsoft 365 and Google Workspace licensing and administration, backups, device management), ad hoc IT support with no contract, and monitoring and scheduled maintenance for the AV, network and control systems Atropos installs.
-- Automation: Scheduling, occupancy sensing and multi-tenant zoning for offices, retail and hospitality — lighting, climate and AV governed from one system across floors and tenancies.
+- Unified Communications: Meeting rooms from huddle space to boardroom on Microsoft Teams, Zoom or the platform a business already uses, and integration with its existing phone system.
+- Digital Signage & Audio Visual: Signage, LED screens and video walls that staff can update, zoned audio and paging, for workplaces and venues.
+- Network & Wi-Fi: Business networks monitored and patched on a schedule, segmented so guests, payments and cameras are kept apart.
+- Managed Services & IT Support: Managed IT (helpdesk, Microsoft 365 and Google Workspace, backups, device management), ad hoc IT support with no contract, and maintenance of the AV, network and control systems Atropos installs.
+- Automation: Lighting, climate and blinds that follow occupancy and trading hours, across a floor, a tenancy or a building.
+
+## Industries
+- Hospitality & tourism: hotels, restaurants, bars, function venues and cellar doors.
+- Offices & professional services: law firms, accountants, consultancies, not-for-profits and government offices.
+- Health & aged care: GP, dental and allied health clinics, specialists and aged care homes.
+- Retail: shops, showrooms and multi-site retailers.
+- Education: independent schools and training providers.
+
+## Brands we work with
+Microsoft, Google, Ubiquiti, Netgear, Bluesound, Sonos, JBL, Sonance, Epson, Samsung, LG, Q-SYS, Kramer, Xilica, NEC and more.
 
 ## Service Area
 All of Tasmania — Hobart, Launceston, Devonport, Burnie and everywhere between. Based in Hobart.
 
 ## Contact
 Email: hello@atropos.com.au
+Phone: (03) 6159 6780
 Website: https://atropos.com.au/
 
 ## Links
@@ -38,4 +49,10 @@ Website: https://atropos.com.au/
 - Network & Wi-Fi: https://atropos.com.au/commercial/networks/
 - Managed Services & IT Support: https://atropos.com.au/commercial/support/
 - Automation: https://atropos.com.au/commercial/automation/
+- Industries: https://atropos.com.au/industries/
+- Hospitality & tourism: https://atropos.com.au/industries/hospitality/
+- Offices & professional services: https://atropos.com.au/industries/offices/
+- Health & aged care: https://atropos.com.au/industries/health/
+- Retail: https://atropos.com.au/industries/retail/
+- Education: https://atropos.com.au/industries/education/
 - About: https://atropos.com.au/about/

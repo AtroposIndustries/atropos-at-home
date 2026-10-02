@@ -20,13 +20,6 @@ export const INTRO = {
   body:  'A great home theatre isn\'t about screen size or speaker count. It\'s about the moment the room disappears and you\'re somewhere else. So we start with the room, how you\'ll actually use it and what you want to spend, and design the experience before we pick a single piece of gear.',
 }
 
-// The intro's "It goes like this" — same words, set as three steps.
-export const STEPS = [
-  { title: 'We talk first',              body: 'About the space and what you\'re after, and give you a clear quote.' },
-  { title: 'Then we design it properly', body: 'Sight lines, acoustics, speaker positions, lighting, control — as one system.' },
-  { title: 'Then we install it',         body: 'Test it end to end, leave the room tidy, and hand it over calibrated and explained, with the documentation to match.' },
-]
-
 export const FEATURES = [
   {
     title:  'Dedicated Cinemas',
@@ -50,7 +43,7 @@ export const FEATURES = [
   },
   {
     title:  'Control & Smart Integration',
-    desc:   'One remote or one tap. "Movie Night" drops the lights, closes the blinds, fires up the projector and sets the volume, then puts it all back afterwards. Control4, RTI or Crestron underneath, and it ties into the rest of the house.',
+    desc:   'One remote or one tap. "Movie Night" drops the lights, closes the blinds, fires up the projector and sets the volume, then puts it all back afterwards, and it ties into the rest of the house.',
   },
   {
     title:  'Professional Calibration',

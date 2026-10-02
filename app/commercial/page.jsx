@@ -11,7 +11,7 @@ import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Commercial AV, Automation & Managed Services Tasmania',
-  description: 'Audio visual, automation and smart lighting, networking and Wi-Fi, and managed services for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
+  description: 'Audio visual, automation and smart lighting, networking and Wi-Fi, and managed services for Tasmanian businesses. Hobart-based.',
   keywords: [
     'commercial AV integrator Hobart',
     'business automation Tasmania',
@@ -21,7 +21,7 @@ export const metadata = {
   alternates: { canonical: `${SITE_URL}/commercial` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/commercial`,
-    description: 'Audio visual, automation and smart lighting, networking and Wi-Fi, and managed services for Tasmanian businesses. Accredited across every major control platform. Hobart-based.',
+    description: 'Audio visual, automation and smart lighting, networking and Wi-Fi, and managed services for Tasmanian businesses. Hobart-based.',
   }),
 }
 

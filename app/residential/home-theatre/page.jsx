@@ -5,7 +5,7 @@ import { Intro, FeatureList } from '@/components/sections/ServiceBody'
 import { ContactForm } from '@/components/sections/ContactForm'
 
 import { NAV, FOOTER } from '../../content'
-import { HERO, INTRO, STEPS, FEATURES, CTA } from './content'
+import { HERO, INTRO, FEATURES, CTA } from './content'
 import { SITE_URL }   from '@/lib/site'
 import { pageOpenGraph } from '@/lib/seo'
 
@@ -41,7 +41,7 @@ export default function HomeTheatrePage() {
           cta={CTA.primaryCta}
           image={HERO.image}
         />
-        <Intro title={INTRO.title} body={INTRO.body} steps={STEPS} />
+        <Intro title={INTRO.title} body={INTRO.body} />
         <FeatureList items={FEATURES} backLink={CTA.backLink} />
         <ContactForm title={CTA.title} intro={CTA.body} />
       </main>

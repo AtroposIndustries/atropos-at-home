@@ -19,7 +19,7 @@ export const FEATURES = [
   },
   {
     title:  'Video Conferencing',
-    desc:   'Microsoft Teams Rooms and Zoom Rooms on hardware from Poly, Logitech, Yealink or Crestron Flex — whichever suits the room and your budget. Native to your platform, so the meeting on the calendar shows up on the panel and joins with a tap.',
+    desc:   'Microsoft Teams Rooms and Zoom Rooms on hardware from Poly, Logitech or Yealink — whichever suits the room and your budget. Native to your platform, so the meeting on the calendar shows up on the panel and joins with a tap.',
   },
   {
     title:  'Hybrid & BYOD',

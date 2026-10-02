@@ -68,11 +68,6 @@ export const OFFERINGS = {
 }
 
 
-export const TESTIMONIAL = {
-  quote:       'We handed over the keys to a house. Atropos gave it back as a home that thinks.',
-  attribution: 'Architect, South Hobart Residence',
-}
-
 export const ABOUT = {
   label:    'Who we are',
   body:     'Atropos exists for people who want the technology in a building properly considered, not simply installed — homeowners, business owners, builders and architects who won\'t settle for ordinary.',
@@ -96,7 +91,7 @@ export const CTA = {
 }
 
 export const FOOTER = {
-  tagline:  'Technology that lives quietly in the background, and beautifully in the foreground.',
+  tagline:  'Technology designed, installed and looked after across Tasmania.',
   location: 'Hobart · Servicing all of Tasmania',
   columns: [
     {

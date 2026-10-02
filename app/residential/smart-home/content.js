@@ -31,7 +31,7 @@ export const FEATURES = [
   },
   {
     title:  'Unified Control',
-    desc:   'One interface for everything, not the platform we happen to sell. We work across Control4, RTI, Crestron and the rest, and build custom mobile, tablet and web interfaces where a project calls for it.',
+    desc:   'One interface for everything, not the platform we happen to sell. We work across the major control systems, and build custom mobile, tablet and web interfaces where a project calls for it.',
   },
   {
     title:  'Scenes & Automation',

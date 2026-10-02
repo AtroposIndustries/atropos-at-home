@@ -13,7 +13,7 @@ const servicesFor = (href) =>
 export const metadata = {
   title:       'Smart Home & Commercial AV, Automation Tasmania',
   description:
-    'Integrated technology for Tasmanian homes and businesses — smart home automation, home theatre and whole-home audio for residential, and building control, conference room AV and managed networks for commercial. Hobart-based, accredited across every major control platform.',
+    'Integrated technology for Tasmanian homes and businesses — smart home automation, home theatre and whole-home audio for residential, and building control, conference room AV and managed networks for commercial. Hobart-based, servicing all of Tasmania.',
   keywords: [
     'smart home Hobart',
     'home automation Tasmania',
@@ -21,8 +21,8 @@ export const metadata = {
     'building automation Tasmania',
     'home theatre Hobart',
     'managed network provider Tasmania',
-    'Crestron Tasmania',
-    'Control4 Tasmania',
+    'digital signage Tasmania',
+    'LED screens Hobart',
     'AV installer Tasmania',
   ],
 }

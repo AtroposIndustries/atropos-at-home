@@ -11,20 +11,17 @@ import { pageOpenGraph } from '@/lib/seo'
 
 export const metadata = {
   title:       'Smart Home Automation Hobart & Tasmania',
-  description: 'Whole-home automation — lighting, climate, blinds and AV behind one intuitive interface, integrating with the security system you already have. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
+  description: 'Whole-home automation — lighting, climate, blinds and AV behind one intuitive interface, integrating with the security system you already have. One system across the house, with custom mobile, tablet and web control.',
   keywords: [
     'smart home Hobart',
     'home automation Tasmania',
-    'Control4 installer',
     'smart lighting system',
-    'RTI installer Hobart',
-    'Crestron Tasmania',
     'smart home installer Tasmania',
   ],
   alternates: { canonical: `${SITE_URL}/residential/smart-home` },
   openGraph: pageOpenGraph({
     url:         `${SITE_URL}/residential/smart-home`,
-    description: 'Whole-home automation — lighting, climate, blinds and AV behind one intuitive interface, integrating with the security system you already have. Specialists across Control4, RTI and Crestron, plus custom mobile, tablet and web control.',
+    description: 'Whole-home automation — lighting, climate, blinds and AV behind one intuitive interface, integrating with the security system you already have. One system across the house, with custom mobile, tablet and web control.',
   }),
 }
 

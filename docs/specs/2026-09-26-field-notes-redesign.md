@@ -31,7 +31,7 @@ beside its page; the changes below are structural.
 | 6 | Desktop nav keeps plain-label dropdowns (hover and keyboard focus). The phone menu is a full-screen list with every service visible, no accordion | Nine services fit one screen; an accordion costs a tap for nothing |
 | 7 | The phone number stays in the nav and the phone menu | It was there before and a trades business gets calls |
 | 8 | Header is sticky, not fixed-over-hero | There is no full-bleed hero to sit on any more |
-| 9 | Home Theatre's intro is split: the first half stays the intro, "It goes like this…" becomes three plain steps (`STEPS` in its `content.js`). Other pages keep a single intro | The process was buried in a paragraph. Wording is unchanged |
+| 9 | ~~Home Theatre's intro is split into an intro and three steps~~ — **reversed 2026-10-03**: the steps were removed. Home Theatre keeps only the first half of the intro, like the other service pages. Three-step sections now appear only on industry pages | The steps read poorly, and no other residential page had them |
 | 10 | No photo slot is rendered on service pages until a real install photo exists | The canvas shows a labelled placeholder; the live site shows nothing rather than a placeholder or an unrelated landscape |
 | 11 | The homepage testimonial is **not** shipped | `TESTIMONIAL` has never rendered on this site and cannot be verified as a real client's words. Revisit when there is one |
 | 12 | Scroll-reveal animation and the circuit-pulse canvas are not used by the new components | Nothing moves on this site now |
@@ -40,14 +40,14 @@ beside its page; the changes below are structural.
 
 - `styles/field-notes.css` — the whole stylesheet: tokens, type, layout,
   nav, footer, form. `app/layout.jsx` imports only this.
-- `styles/base.css`, `home-theme.css` and `alt-theme.css` are retained but
-  imported by nothing. They and the components that use them are legacy.
+- `styles/base.css`, `home-theme.css` and `alt-theme.css`, and the previous
+  design's components, hooks and theme context, were deleted on 2026-10-03.
 - Rewritten in place (same names, so every page's imports and the
   `<ContactForm` guard in `scripts/check-form-pages.mjs` still hold):
   `Nav`, `Footer`, `ContactForm`. ContactForm's submit logic is unchanged —
   only the markup around the form moves.
 - New in `components/sections/`: `PageHeader`, `LinkList`, and
-  `ServiceBody.jsx` (`Intro`, which takes optional steps, and `FeatureList`).
+  `ServiceBody.jsx` (`Intro` and `FeatureList`).
 - Each page's CTA title and body moved from `page.jsx` into its
   `content.js` (`CTA.title`, `CTA.body`), with `CTA.backLink` / `CTA.otherLink`
   replacing the old `ghostCta`. Item numbers (`number: '01'`) are removed.

@@ -1,28 +1,17 @@
 /**
- * Intro — a service page's opening statement, optionally followed by steps.
+ * Intro — a service page's opening statement.
  *
  * Props:
  *   title — h2
  *   body  — string; blank lines ("\n\n") separate paragraphs
- *   steps — optional [{ title, body }]
  */
-export function Intro({ title, body = '', steps = [] }) {
+export function Intro({ title, body = '' }) {
   return (
     <section className="wrap grid intro">
       <h2 className="h2">{title}</h2>
       <div className="intro__body">
         {body.split(/\n\s*\n/).map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
       </div>
-      {steps.length > 0 && (
-        <ol className="steps">
-          {steps.map((s) => (
-            <li key={s.title}>
-              <h3>{s.title}</h3>
-              <p>{s.body}</p>
-            </li>
-          ))}
-        </ol>
-      )}
     </section>
   )
 }

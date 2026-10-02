@@ -1,7 +1,5 @@
 import '@/styles/field-notes.css'
 
-import { ThemeProvider }  from '@/lib/theme-context'
-
 import { SITE_URL, PHONE_TEL } from '@/lib/site'
 import { OG_IMAGE } from '@/lib/seo'
 
@@ -20,9 +18,6 @@ export const metadata = {
     'distributed audio Tasmania',
     'AV installation Tasmania',
     'smart lighting Hobart',
-    'Crestron Tasmania',
-    'Control4 Tasmania',
-    'Lutron Tasmania',
     'smart home installer Hobart',
   ],
   openGraph: {
@@ -85,9 +80,6 @@ const schemaHome = {
         'Home Theatre',
         'Distributed Audio',
         'Home Networking',
-        'Crestron',
-        'Control4',
-        'Lutron',
         'Acoustic Treatment',
         'Custom AV Integration',
         'Digital Signage',
@@ -226,9 +218,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <ThemeProvider brand="home">
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )

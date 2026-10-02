@@ -35,7 +35,7 @@ export const FEATURES = [
   },
   {
     title:  'One Control Surface',
-    desc:   'One app, one remote, for the music, the TVs and the rest of the house. Pick a room, pick a source, and the lights can come down with it. Control4, RTI or Crestron underneath, chosen for the job, not for us.',
+    desc:   'One app, one remote, for the music, the TVs and the rest of the house. Pick a room, pick a source, and the lights can come down with it.',
   },
   {
     title:  'Coordinated With Your Build',
