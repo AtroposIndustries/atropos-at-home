@@ -202,11 +202,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-AU">
       <head>
-        {/* Google tag (gtag.js) */}
+        {/* Google tag (gtag.js), property "Atropos".
+            Visiting any page with ?internal=1 marks that browser as ours, and
+            its hits carry traffic_type=internal, which the property's active
+            "Internal Traffic" data filter excludes. ?internal=0 clears it. An
+            IP rule does the same for the home connection, but that IP is
+            dynamic; the flag is what keeps working when it changes. */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RGK41Y2L5" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-8RGK41Y2L5');`,
+            __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}var internal=false;try{var q=new URLSearchParams(location.search).get('internal');if(q==='1')localStorage.setItem('atropos_internal','1');if(q==='0')localStorage.removeItem('atropos_internal');internal=localStorage.getItem('atropos_internal')==='1';}catch(e){}gtag('js', new Date());gtag('config', 'G-8RGK41Y2L5', internal ? { traffic_type: 'internal' } : {});`,
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

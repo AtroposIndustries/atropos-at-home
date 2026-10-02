@@ -59,6 +59,12 @@ export function ContactForm({
   const sending = status === 'submitting'
   const sent    = status === 'sent'
 
+  // One accepted enquiry, one Analytics event. `generate_lead` is marked as a
+  // key event in the property, so reports show which pages produce enquiries.
+  useEffect(() => {
+    if (sent) window.gtag?.('event', 'generate_lead', { form_location: window.location.pathname })
+  }, [sent])
+
   const set = (key) => (e) => {
     setFields((f) => ({ ...f, [key]: e.target.value }))
     setErrors((err) => ({ ...err, [key]: false }))

@@ -513,3 +513,44 @@ Shipped to `main` together with §10's branch.
   live enquiry arrived in Zoho after the redesign shipped.
 - Real photography for the service pages, and a verified testimonial — spec,
   Outstanding.
+
+## 12. Google Analytics (2026-10-03 clean-up)
+
+One account, **AtroposPtyLtd** (395208611). The site's tag `G-8RGK41Y2L5`
+belongs to property **Atropos** (538221707), stream `atropos.com.au`
+(14899877053).
+
+### Done
+
+- Property renamed from "AtroposHome"; stream name and URL now
+  `atropos.com.au`. The measurement ID did not change.
+- Event data retention raised from 2 to 14 months (applies from now on).
+- Search Console (`atropos.com.au`, domain property) linked to the stream.
+- Unused lead-template key events `qualify_lead` and `close_convert_lead`
+  unmarked. `purchase` is Google's built-in key event and cannot be unmarked;
+  it never fires.
+- Internal traffic: an IP rule for the home connection (`115.70.61.28/32`,
+  dynamic, so it will go stale) and the "Internal Traffic" data filter
+  switched from Testing to **Active**.
+- The site sends `generate_lead` when an enquiry is accepted
+  (`components/sections/ContactForm.jsx`), with `form_location` = the page.
+- `?internal=1` on any page marks that browser as ours from then on
+  (`traffic_type=internal`, excluded by the filter); `?internal=0` clears it.
+  See the comment above the tag in `app/layout.jsx`. Do this once in each
+  browser and on each phone used to look at the site.
+
+### Outstanding
+
+- **Mark `generate_lead` as a key event** (Admin → Events → star it) once
+  it appears, after the first real enquiry following this deploy. Analytics
+  only lists an event after it has fired.
+- **Move AtroposTechnologies (538157634) to the Bin**: its only stream is
+  the retired atropostechnologies.com.au and has no data. Export any history
+  wanted first; the Bin is permanent after 35 days.
+- **Move test-project-9a5… (555470792) to the Bin**: no streams, never used.
+  Its Firebase project (757237622164) can be deleted in the Firebase console
+  if unused, which removes its four permission groups from the account.
+- When the home IP changes, update or delete the IP rule (stream →
+  Configure tag settings → Define internal traffic). The `?internal=1` flag
+  does not depend on it.
+
